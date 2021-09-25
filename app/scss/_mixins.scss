@@ -1,0 +1,20 @@
+%icon {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 50%;
+  transform: translateX(-50%);
+}
+
+%image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+%flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
