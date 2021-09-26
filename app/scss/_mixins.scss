@@ -18,3 +18,24 @@
   justify-content: center;
   align-items: center;
 }
+
+%fw300 {
+  font-family: "SF UI Display Thin";
+  font-weight: 300;
+}
+%fw400 {
+  font-family: "SF UI Display Light";
+  font-weight: 400;
+}
+%fw500 {
+  font-weight: 500;
+  font-family: "SF UI Display Medium";
+}
+%fw600 {
+  font-weight: 600;
+  font-family: "SF UI Display Semibold";
+}
+%fw700 {
+  font-weight: 700;
+  font-family: "SF UI Display Bold";
+}

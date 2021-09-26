@@ -5,9 +5,143 @@
 @import "global";
 @import "libs/normalize";
 
+.header {
+  .logo {
+    padding: 50px 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__nav {
+    a {
+      color: #292929;
+    }
+    width: 100%;
+    background-color: #fff;
+  }
+  &__nav-wrapper {
+    padding-top: 26px;
+    @extend %fw300;
+    display: flex;
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 1100px;
+  }
 
+  &__nav-link {
+    font-size: 18px;
+  }
 
+  &__nav-link.active {
+    @extend %fw400;
+    padding-bottom: 40px;
+    border-bottom: 2px solid #D52BFF;;
+  }
+  
+  &__nav-link + .header__nav-link {
+    margin-left: 42px;
+  }
 
+  &__nav-phone {
+    padding: 19px 34px;
+    font-size: 18px;
+    @extend %fw400;
+    border: 1px solid rgba(53, 53, 55, 0.12);
+    border-radius: 157px;
+    margin-left: 50px;
+    // margin-right: 22px;
+    margin-top: -20px;
+  }
+  &__nav-button {
+    margin-top: -30px;
+  }
+}
+
+.top {
+  &__inner {
+    display: flex;
+  }
+
+  &__box {
+    max-width: 492px;
+    // margin: 0 150px;
+    margin-top: 157px;
+  }
+
+  &__address-text {
+    font-size: 18px;
+    @extend %fw300;
+    margin-bottom: 20px;
+  }
+  &__address-info {
+    font-size: 20px;
+    @extend %fw500;
+    padding-left: 28px;
+    line-height: 30px;
+    margin-bottom: 49px;
+    position: relative;
+    
+
+    &::before {
+      content: "";
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 28px;
+      height: 28px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-35%);
+      background-image: url('../images/icons/map.svg');
+    }
+  }
+  
+  &__info-title {
+    font-family: 'Cormorant', serif;
+    font-size: 57px;
+    font-weight: 700;
+    line-height: 70px;
+    color: #353537;
+    margin-bottom: 31px;
+  }
+  &__info-text {
+    margin-bottom: 48px;
+  }
+  
+  button.top__info-button.pink {
+    background-color: #D52BFF;
+    box-shadow: 0px 27px 37px -8px rgba(213, 43, 255, 0.28);
+    border-radius: 50px;
+    padding: 27px 47px;
+    margin-right: 25px;
+    border-radius: 157px;
+    color: #fff;
+  }
+  button.top__info-button.white {
+    border: 1px solid #353537;
+    border-radius: 157px;
+    padding: 27px 47px;
+    background-color: transparent;
+  }
+  
+  &__info-arrow {
+    margin-top: 100px;
+    border: 1px solid rgba(53, 53, 55, 0.12);
+    border-radius: 50%;
+    width: 81px;
+    height: 81px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    width: 1130px;
+    height: 962px;
+  }
+}
 
 
 
