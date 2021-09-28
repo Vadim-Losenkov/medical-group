@@ -28,6 +28,7 @@ body {
   background: linear-gradient(90deg, #FEFBFF -1.28%, #FFFFFF 54.4%);
   color: #353537;
   position: relative;
+  zoom: 80%;
   &.open {
     position: fixed;
   }
@@ -37,6 +38,52 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  max-width: 1930px;
+  padding: 0 5px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  /* &.home {
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url('../images/icons/grad-main.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 400px;
+      height: 1000px;
+      top: 100px;
+      left: -5px;
+    }
+  } */
+}
+
+.bolt {
+  width: 50px;
+  height: 50px;
+  background-color: #FF5A5A;
+  box-shadow: 0px 27px 37px -8px rgba(255, 90, 90, 0.25);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 29px;
+  &.red {
+    box-shadow: 0px 27px 37px -8px rgba(255, 90, 90, 0.25);
+    background-color: #FF5A5A;
+  }
+  &.blue {
+    background-color: #855AFF;
+    box-shadow: 0px 27px 37px -8px rgba(133, 90, 255, 0.32);
+  }
+  &.green {
+    background: #62DB99;
+    box-shadow: 0px 27px 37px -8px rgba(96, 214, 149, 0.4);
+  }
+  img {
+    margin-top: 17px;
+  }
 }
 
 .title {
@@ -47,4 +94,6 @@ body {
   margin-top: 94px;
   margin-bottom: 36px;
   text-align: center;
+  display: flex;
+  align-items: center;
 }

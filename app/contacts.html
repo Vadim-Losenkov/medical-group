@@ -11,9 +11,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap" rel="stylesheet">
-
+<!-- 
   <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-  <script>eruda.init();</script>
+  <script>
+    eruda.init();
+  </script> -->
 
 </head>
 
@@ -21,18 +23,18 @@
   <div class="wrapper">
     <header class="header">
       <div class="header__inner">
-        <div class="logo">
+        <a href="index.html" class="logo">
           <img src="images/global/logo.svg" alt="" class="header__logo">
-        </div>
+        </a>
         <nav class="header__nav">
           <div class="header__nav-wrapper">
-            <a class="header__nav-link active" href="/">Home</a>
+            <a class="header__nav-link" href="/">Home</a>
             <a class="header__nav-link" href="/">News</a>
             <a class="header__nav-link" href="/">Service</a>
             <a class="header__nav-link" href="/">Complex programs</a>
             <a class="header__nav-link" href="/">Articles</a>
             <a class="header__nav-link" href="/">Gallery</a>
-            <a class="header__nav-link" href="/">Contacts</a>
+            <a class="header__nav-link active" href="/">Contacts</a>
             <a href="tel:+9951787278" class="header__nav-phone">+995 1787278</a>
             <a href="/" class="header__nav-button">
               <img src="images/icons/user.svg" alt="">
@@ -41,11 +43,11 @@
         </nav>
       </div>
     </header>
-    <div class="header-mobile">
+    <div class="header-mobile"> 
       <div class="header-mobile__box">
-        <div class="header-mobile__logo">
+        <a href="index.html" class="header-mobile__logo">
           <img src="images/global/logo.svg" alt="">
-        </div>
+        </a>
         <div class="header-mobile__burger">
           <span></span>
           <span></span>
@@ -73,36 +75,96 @@
     <main class="main">
       <div class="contacts">
         <img src="images/content/map.jpg" alt="" class="contacts__map">
-        <div class="contacts__info">
-          <h1 class="contacts__info-title title">
-            <img src="images/icons/red-flash.svg" alt="">
-            Contacts
-          </h1>
-          <p class="contacts__info-text">
-            The recent interest in crafts in America is not only a matter of economics. It’s also a reflection of people’s new environmental sensibilities
-          </p>
-          <div class="contacts__info-contact">
-            <span>E-mail: </span>
-            <a href="mailto:info@medicalgroup.ge">info@medicalgroup.ge</a>
-          </div>
-          <a href="tel:+9951787278" class="contacts__info-button">
-            Call the number
-          </a>
-        </div>
-        <div class="contacts__list">
-          <div class="contacts__list-item">
-            <h5 class="contacts__list-num">1</h5>
-            <p class="contacts__list-text">
-              
-            </p>
-            <div class="contacts__list-phone">
-              <div class="contacts__list-phone__box">
-                <span>Tel: </span>
-                <a href="tel:77777777" class="contacts__list-tel"></a>
+        <div class="contacts__inner">
+          <div class="contacts__info">
+            <h1 class="contacts__info-title title">
+              <div class="bolt red">
+                <img src="images/icons/bolt.svg" alt="">
               </div>
-              <div class="contacts__list-phone__box">
-                <span>Mob: </span>
-                <a href="tel:77777777" class="contacts__list-tel"></a>
+              Contacts
+            </h1>
+            <p class="contacts__info-text">
+              The recent interest in crafts in America is not only a matter of economics. It’s also a reflection of people’s new environmental sensibilities
+            </p>
+            <div class="contacts__info-contact">
+              <span>E-mail: </span>
+              <a href="mailto:info@medicalgroup.ge">info@medicalgroup.ge</a>
+            </div>
+            <a href="tel:+9951787278" class="contacts__info-button">
+              Call the number
+            </a>
+          </div>
+          <div class="contacts__list">
+            <div class="contacts__list-item">
+              <h5 class="contacts__list-num">1</h5>
+              <div class="contacts__list-inner">
+                <p class="contacts__list-text">
+                  Vaja-Pshavela 78a (at the exit of Vazha-Pshavela metro station)
+                </p>
+                <div class="contacts__list-phone">
+                  <div class="contacts__list-phone__box">
+                    <span>Tel: </span>
+                    <a href="tel:(+995 32) 215 52 25 (* 1)" class="contacts__list-tel">(+995 32) 215 52 25 (* 1)</a>
+                  </div>
+                  <div class="contacts__list-phone__box">
+                    <span>Mob .: </span>
+                    <a href="tel:(+995) 593 32 01 69" class="contacts__list-tel">(+995) 593 32 01 69</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contacts__list-item">
+              <h5 class="contacts__list-num">2</h5>
+              <div class="contacts__list-inner">
+                <p class="contacts__list-text">
+                  Vaja-Pshavela 78a (at the exit of Vazha-Pshavela metro station)
+                </p>
+                <div class="contacts__list-phone">
+                  <div class="contacts__list-phone__box">
+                    <span>Tel: </span>
+                    <a href="tel:(+995 32) 215 52 25 (* 1)" class="contacts__list-tel">(+995 32) 215 52 25 (* 1)</a>
+                  </div>
+                  <div class="contacts__list-phone__box">
+                    <span>Mob .: </span>
+                    <a href="tel:(+995) 593 32 01 69" class="contacts__list-tel">(+995) 593 32 01 69</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contacts__list-item">
+              <h5 class="contacts__list-num">3</h5>
+              <div class="contacts__list-inner">
+                <p class="contacts__list-text">
+                  Vaja-Pshavela 78a (at the exit of Vazha-Pshavela metro station)
+                </p>
+                <div class="contacts__list-phone">
+                  <div class="contacts__list-phone__box">
+                    <span>Tel: </span>
+                    <a href="tel:(+995 32) 215 52 25 (* 1)" class="contacts__list-tel">(+995 32) 215 52 25 (* 1)</a>
+                  </div>
+                  <div class="contacts__list-phone__box">
+                    <span>Mob .: </span>
+                    <a href="tel:(+995) 593 32 01 69" class="contacts__list-tel">(+995) 593 32 01 69</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="contacts__list-item">
+              <h5 class="contacts__list-num">4</h5>
+              <div class="contacts__list-inner">
+                <p class="contacts__list-text">
+                  Vaja-Pshavela 78a (at the exit of Vazha-Pshavela metro station)
+                </p>
+                <div class="contacts__list-phone">
+                  <div class="contacts__list-phone__box">
+                    <span>Tel: </span>
+                    <a href="tel:(+995 32) 215 52 25 (* 1)" class="contacts__list-tel">(+995 32) 215 52 25 (* 1)</a>
+                  </div>
+                  <div class="contacts__list-phone__box">
+                    <span>Mob .: </span>
+                    <a href="tel:(+995) 593 32 01 69" class="contacts__list-tel">(+995) 593 32 01 69</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -110,7 +172,9 @@
       </div>
     </main>
     <footer class="footer">
-      <img src="images/global/logo.svg" alt="" class="footer__logo">
+      <a href="index.html" class="logo">
+        <img src="images/global/logo.svg" alt="" class="footer__logo">
+      </a>
       <div class="footer__nav">
         <a class="footer__nav-link" href="/">Service</a>
         <a class="footer__nav-link" href="/">Complex programs</a>
