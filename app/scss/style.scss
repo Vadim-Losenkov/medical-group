@@ -4,6 +4,7 @@
 @import "libs";
 @import "global";
 
+
 .header {
   &-mobile {
     display: none;
@@ -97,7 +98,6 @@
     margin-bottom: 49px;
     position: relative;
     
-
     &::before {
       content: "";
       background-size: cover;
@@ -272,7 +272,7 @@
     
     &:hover {
       background-color: #fff;
-      border: 0;
+      border: 1px solid rgba(#000, 0.0);
       box-shadow: 0px 37px 58px rgba(142, 142, 142, 0.03);
     }
   }
@@ -309,9 +309,19 @@
 }
 
 .articles {
+  &__inner {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+  }
   &__item {
     max-width: 520px;
     border-radius: 12px;
+    margin: 0 15px;
+    margin-bottom: 44px;
   }
   &__item-inner {
     background-color: #fff;
@@ -324,11 +334,38 @@
     @extend %fw600;
     margin-bottom: 29px;
   }
-  &__item-text {
-    
-  }
   &__item-footer {
     background-color: rgba(226, 226, 226, .24);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    line-height: 148.34%;
+    /* identical to box height, or 27px */
+    
+    letter-spacing: 0.035em;
+    
+    color: #ABABAB;
+    padding: 36px 46px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+  &__item-time {
+    position: relative;
+    padding-left: 36px;
+    &::before {
+      content: "";
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url('../images/icons/time.svg');
+    }
   }
 }
 
@@ -336,7 +373,6 @@
   margin-top: 100px;
   .logo {
     display: block;
-    
   }
   &__logo {
     margin: 0 auto;
@@ -369,6 +405,11 @@
     color: #000000;
     @extend %fw400;
   }
+}
+
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+  filter: grayscale(100%)!important;
 }
 
 

@@ -216,7 +216,9 @@
   .contacts__list span,
   .contacts__info-text,
   .contacts__info a,
-  .contacts__info span{
+  .contacts__info span,
+  .articles__item-text,
+  .articles__item-footer{
     font-size: 14px!important;
     line-height: 18px!important;
   }
@@ -257,5 +259,17 @@
   .footer__rights {
     font-size: 14px;
     line-height: 20px;
+  }
+  
+  .articles__item-title {
+    font-size: 21px;
+    line-height: 28px;
+  }
+  
+  .articles__item-inner {
+    padding: 15px 20px;
+  }
+  .articles__item-footer {
+    padding: 15px 20px;
   }
 }
