@@ -407,10 +407,22 @@
   }
 }
 
-
 [class*="ymaps-2"][class*="-ground-pane"] {
   filter: grayscale(100%)!important;
 }
+[class*="ymaps-2"][class*="-copyrights-pane"],
+[class*="ymaps-2"][class*="-controls-pane"] {
+  display: none !important;
+}
 
+[class*="ymaps-2"][class*="-places-pane"] {
+  .info {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    position: absolute;top: 50%;
+    left: 50%;
+  }
+}
 
 @import "media";

@@ -1,11 +1,49 @@
-$(function() {
-  $('.header-mobile__burger').on('click', () => {
-    $('.header-mobile__burger').toggleClass('open')
-    $('.header-mobile__box').toggleClass('open')
-    $('.header-mobile__content').toggleClass('open')
-    $(document.body).toggleClass('open')
-  })
+$(function () {
+    $('.header-mobile__burger').on('click', () => {
+        $('.header-mobile__burger').toggleClass('open')
+        $('.header-mobile__box').toggleClass('open')
+        $('.header-mobile__content').toggleClass('open')
+        $(document.body).toggleClass('open')
+    })
+    let inter
+    let promise = new Promise((resolve, reject) => {
+        inter = setInterval(() => {
+            const $marker = $('[class*="ymaps-2"][class*="-places-pane"]')[0]
+            if ($marker) {
+                resolve($marker);
+            }
+        }, 100);
+
+    });
+
+    promise
+        .then(
+            $mapMarker => {
+                clearInterval(inter)
+
+                $($mapMarker).append('<div class="info"></div>')
+                console.log($mapMarker)
+            },
+            error => {
+                console.log(error.message);
+            }
+        );
+
 })
+
+// ymapsInit.then(res => console.log(res))
+
+// console.log($marker);
+
+// if ($marker) {
+
+// }
+
+// setTimeout(() => {
+//     console.log($marker);
+//     clearInterval(ymapsInit)
+// }, 2000);
+
 /*
 ymaps.ready(init);
 
@@ -72,11 +110,11 @@ function init () {
 } */
 
 new Swiper(".swiper-images", {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  }
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    }
 })
