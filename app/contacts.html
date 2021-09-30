@@ -3,29 +3,30 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1920px"> <!-- device-width, initial-scale=1.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- device-width, initial-scale=1.0 -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>hosp</title>
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="css/style.min.css" type="text/css" media="all" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap" rel="stylesheet">
 
-  <!-- <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-
+<!--
   <script src="//api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&lang=ru-RU" type="text/javascript"></script>
-
+-->
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
   <script>
     eruda.init();
-  </script> -->
+  </script> 
+  
   <script src="https://api-maps.yandex.ru/2.1/?apikey=2edcc8c3-2f38-48da-8de9-95e6078163c0&lang=ru_RU"></script>
 </head>
 
 <body>
   <div class="wrapper">
-    <div class="grad-3"></div>
-    <div class="grad-4"></div>
+    <div class="grad-3 grad"></div>
+    <div class="grad-4 grad"></div>
     <header class="header">
       <div class="header__inner">
         <a href="index.html" class="logo">
@@ -105,8 +106,8 @@
               Call the number
             </a>
           </div>
-          <div class="contacts__list">
-            <div class="contacts__list-item">
+          <div id="buttons" class="contacts__list">
+            <div class="contacts__list-item" data-index="0">
               <h5 class="contacts__list-num">1</h5>
               <div class="contacts__list-inner">
                 <p class="contacts__list-text">
@@ -124,7 +125,7 @@
                 </div>
               </div>
             </div>
-            <div class="contacts__list-item">
+            <div class="contacts__list-item" data-index="1">
               <h5 class="contacts__list-num">2</h5>
               <div class="contacts__list-inner">
                 <p class="contacts__list-text">
@@ -142,7 +143,7 @@
                 </div>
               </div>
             </div>
-            <div class="contacts__list-item">
+            <div class="contacts__list-item" data-index="2">
               <h5 class="contacts__list-num">3</h5>
               <div class="contacts__list-inner">
                 <p class="contacts__list-text">
@@ -160,7 +161,7 @@
                 </div>
               </div>
             </div>
-            <div class="contacts__list-item">
+            <div class="contacts__list-item" data-index="3">
               <h5 class="contacts__list-num">4</h5>
               <div class="contacts__list-inner">
                 <p class="contacts__list-text">
@@ -198,44 +199,6 @@
     </footer>
   </div>
   
-  <script>
-  ymaps.ready(init)
-  function init() {
-    // 2edcc8c3-2f38-48da-8de9-95e6078163c0
-    // https://vc.ru/design/117708-delaem-cherno-beluyu-kartu-yandeks-dlya-sayta-i-marker-lyuboy-kartinkoy
-    var myMap = new ymaps.Map("map", {
-        center: [55.751979, 37.617499],
-        zoom: 15
-      }),
-  
-      // Создаем метку с помощью вспомогательного класса.
-      myPlacemark1 = new ymaps.Placemark([55.751979, 37.617499], {
-        // Свойства.
-        // Содержимое хинта.
-        // hintContent: 'Надпись, которая всплаывет при наведении на метку'
-      }, {
-        // Опции
-        // Своё изображение иконки метки.
-        iconLayout: 'default#image',
-        iconImageHref: './images/icons/map-marker.svg',
-        // Размеры метки.
-        iconImageSize: [530, 530],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [-200, -200]
-      })
-    
-  
-    // Добавляем все метки на карту.
-    myMap.geoObjects
-      .add(myPlacemark1)
-      myMap.behaviors.disable('scrollZoom')
-    }
-
-    // ymaps.ready(console.log(document.querySelector('[class*="ymaps-2"][class*="-places-pane"]')))
-    
-  </script>
-
   <script src="js/jquery.min.js"></script>
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>

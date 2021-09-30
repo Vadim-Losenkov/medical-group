@@ -1,3 +1,70 @@
+const items = [
+  { 
+    coord: [ 55.751244, 37.618423 ],
+    obj: {},
+    obj2: {
+      // Опции
+      // Своё изображение иконки метки.
+      iconLayout: 'default#image',
+      iconImageHref: './images/icons/map-marker.svg',
+      // Размеры метки.
+      iconImageSize: [530, 530],
+      // Смещение левого верхнего угла иконки относительно
+      // её "ножки" (точки привязки).
+      iconImageOffset: [-260, -200],
+    },
+    text: `Vaja-Pshavela 78a (at the exit of Vazha-Pshavela metro station)`
+  },
+  { 
+    coord: [ 48.864716, 2.349014 ],
+    obj: {},
+    obj2: {
+      // Опции
+      // Своё изображение иконки метки.
+      iconLayout: 'default#image',
+      iconImageHref: './images/icons/map-marker.svg',
+      // Размеры метки.
+      iconImageSize: [530, 530],
+      // Смещение левого верхнего угла иконки относительно
+      // её "ножки" (точки привязки).
+      iconImageOffset: [-260, -200],
+    },
+    text: 'город 1'
+  },
+  { 
+    coord: [ 34.052235, -118.243683 ],
+    obj: {},
+    obj2: {
+      // Опции
+      // Своё изображение иконки метки.
+      iconLayout: 'default#image',
+      iconImageHref: './images/icons/map-marker.svg',
+      // Размеры метки.
+      iconImageSize: [530, 530],
+      // Смещение левого верхнего угла иконки относительно
+      // её "ножки" (точки привязки).
+      iconImageOffset: [-260, -200],
+    },
+    text: 'город 2'
+  },
+  { 
+    coord: [ 30.052235, 118.243683 ],
+    obj: {},
+    obj2: {
+      // Опции
+      // Своё изображение иконки метки.
+      iconLayout: 'default#image',
+      iconImageHref: './images/icons/map-marker.svg',
+      // Размеры метки.
+      iconImageSize: [530, 530],
+      // Смещение левого верхнего угла иконки относительно
+      // её "ножки" (точки привязки).
+      iconImageOffset: [-260, -200],
+    },
+    text: 'город 3'
+  },
+];
+
 $(function () {
     $('.header-mobile__burger').on('click', () => {
         $('.header-mobile__burger').toggleClass('open')
@@ -5,109 +72,67 @@ $(function () {
         $('.header-mobile__content').toggleClass('open')
         $(document.body).toggleClass('open')
     })
-    let inter
-    let promise = new Promise((resolve, reject) => {
-        inter = setInterval(() => {
-            const $marker = $('[class*="ymaps-2"][class*="-places-pane"]')[0]
-            if ($marker) {
-                resolve($marker);
-            }
-        }, 100);
-
-    });
-
-    promise
-        .then(
-            $mapMarker => {
-                clearInterval(inter)
-
-                $($mapMarker).append('<div class="info"></div>')
-                console.log($mapMarker)
-            },
-            error => {
-                console.log(error.message);
-            }
-        );
-
+    const $grad = $('.grad')
+    const $grad2 = $('.grad2')
+    
+    $grad.each(function() {
+      $(this).css({
+        transition: 'opacity .3s',
+        opacity: 1,
+        // top: `${setTop(Number.parseInt($(this).css('top')))}px`,
+        filter: `blur(${$(window).width() * 0.14}px)`
+      })
+    })
+    $grad2.each(function() {
+      $(this).css({
+        transition: 'opacity .3s',
+        opacity: 1,
+        // top: `${setTop(Number.parseInt($(this).css('top')))}px`,
+        filter: `blur(${$(window).width() * 0.3}px)`
+      })
+    })
+    
+    
+    
+    
+    if (ymaps) {
+      
+      let inter
+      let promise = new Promise((resolve, reject) => {
+          inter = setInterval(() => {
+              const $marker = $('[class*="ymaps-2"][class*="-image"]')
+              if ($marker[0]) {
+                  resolve($marker);
+              }
+          }, 100);
+    
+      });
+    
+      promise
+          .then(
+              $mapMarker => {
+                  clearInterval(inter)
+    
+                  $($mapMarker).each(function(index) {
+                    console.log(items[index]);
+                    $(this).append(`<div class="info">
+                                      ${items[index].text}
+                                      <div id="player">
+                                        <div id="outer">
+                                          <div id="inner"></div>
+                                        </div>
+                                      </div>
+                                    </div>`)
+                  })
+                  console.log($mapMarker)
+              },
+              error => {
+                  console.log(error.message);
+              }
+          );
+      }
 })
 
-// ymapsInit.then(res => console.log(res))
-
-// console.log($marker);
-
-// if ($marker) {
-
-// }
-
-// setTimeout(() => {
-//     console.log($marker);
-//     clearInterval(ymapsInit)
-// }, 2000);
-
-/*
-ymaps.ready(init);
-
-function init () {
-    var myMap = new ymaps.Map("map", {
-            center: [55.76, 37.64],
-            zoom: 100
-        }),
-
-        // Создаем геообъект с типом геометрии "Точка".
-        myGeoObject = new ymaps.GeoObject({
-            // Описание геометрии.
-            geometry: {
-                type: "Point",
-                coordinates: [55.8, 37.8]
-            },
-            // Свойства.
-            properties: {
-                // Контент метки.
-                iconContent: 'Метка',
-                balloonContent: 'Меня можно перемещать'
-            }
-        }, {
-            // Опции.
-            // Иконка метки будет растягиваться под размер ее содержимого.
-            preset: 'twirl#redStretchyIcon',
-            // Метку можно перемещать.
-            draggable: true
-        }),
-
-        // Создаем метку с помощью вспомогательного класса.
-        myPlacemark1 = new ymaps.Placemark([55.8, 37.6], {
-            // Свойства.
-            // Содержимое иконки, балуна и хинта.
-            iconContent: '1',
-            balloonContent: 'Балун',
-            hintContent: 'Стандартный значок метки'
-        }, {
-            // Опции.
-            // Стандартная фиолетовая иконка.
-            preset: 'twirl#violetIcon'
-        }),
-
-        myPlacemark2 = new ymaps.Placemark([55.76, 37.56], {
-            // Свойства.
-            hintContent: 'Собственный значок метки'
-        }, {
-            // Опции.
-            // Своё изображение иконки метки.
-            iconImageHref: '/maps/doc/jsapi/2.x/examples/images/myIcon.gif',
-            // Размеры метки.
-            iconImageSize: [30, 42],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
-            iconImageOffset: [-3, -42]
-        });
-    
-    myMap.controls.add('smallZoomControl');
-    // Добавляем все метки на карту.
-    myMap.geoObjects
-        .add(myPlacemark1)
-        .add(myPlacemark2)
-        .add(myGeoObject);
-} */
 
 new Swiper(".swiper-images", {
     slidesPerView: 1,
@@ -118,3 +143,33 @@ new Swiper(".swiper-images", {
         clickable: true,
     }
 })
+
+if (ymaps) {
+  
+  ymaps.ready(init)
+  function init() {
+  // 2edcc8c3-2f38-48da-8de9-95e6078163c0
+  // https://vc.ru/design/117708-delaem-cherno-beluyu-kartu-yandeks-dlya-sayta-i-marker-lyuboy-kartinkoy
+  var myMap = new ymaps.Map("map", {
+      center: [55.751244, 37.618423],
+      zoom: 15
+    })
+  
+  
+  // Добавляем все метки на карту.
+  items.forEach(n => {
+      myMap.geoObjects.add(new ymaps.Placemark(n.coord, n.obj1, n.obj2))
+    });
+    myMap.behaviors.disable('scrollZoom')
+    
+    const buttons = document.querySelector('#buttons');
+  
+    buttons.addEventListener('click', (event) => {
+      const $target = event.target.closest('[data-index]')
+      if ($target) {
+        myMap.setCenter(items[$target.dataset.index].coord);
+      }
+    });
+    
+  }
+}

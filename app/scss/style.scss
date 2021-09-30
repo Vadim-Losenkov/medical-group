@@ -4,7 +4,6 @@
 @import "libs";
 @import "global";
 
-
 .header {
   &-mobile {
     display: none;
@@ -120,6 +119,7 @@
     line-height: 70px;
     color: #353537;
     margin-bottom: 31px;
+    text-transform: uppercase;
   }
   &__info-text {
     margin-bottom: 48px;
@@ -208,6 +208,7 @@
   max-width: 715px;
 }
 
+
 .contacts {
   &__inner {
     display: flex;
@@ -269,6 +270,7 @@
     max-width: 560px;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
     
     &:hover {
       background-color: #fff;
@@ -369,6 +371,98 @@
   }
 }
 
+.news {
+  &__inner {
+    display: flex;
+    justify-content: center;
+  }
+  &__block {
+    max-width: 681px;
+    width: 100%;
+  }
+  &__block.right {
+    background: linear-gradient(97.26deg, rgba(19, 0, 23, 0.0216) -48.04%, rgba(19, 0, 23, 0.0052) 88.35%);
+    
+  }
+  &__text {
+    margin-bottom: 54px;
+  }
+
+  &__card {
+    background: linear-gradient(178.74deg, rgba(255, 43, 234, 0.08) 1.06%, rgba(213, 43, 255, 0) 118.8%);
+    border-radius: 23px;
+    width: 100%;
+    margin-bottom: 45px;
+  }
+  &__card-box {
+    padding: 40px 30px;
+    padding-top: 70px;
+    max-width: 377px;
+    margin-left: auto;
+  }
+  &__card.green {
+    background: linear-gradient(314.75deg, #37BB85 25.08%, #42CB93 102.34%);
+  }
+  &__card.left .news__card-box {
+    margin: 0;
+    margin-right: auto;
+    padding-left: 60px;
+  }
+  &__card.purple {
+    background: linear-gradient(314.75deg, #AE2BFF 25.08%, #6642CB 102.34%);
+  }
+  &__card.white .news__card-title,
+  &__card.white .news__card-text {
+    color: #fff;
+  }
+  &__card-button {
+    background: linear-gradient(89.36deg, #000000 1.5%, #000000 23.41%, #000000 92.05%);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 13px 27px;
+    padding-left: 57px;
+    
+    @extend %fw600;
+    font-size: 18px;
+    line-height: 148.34%;
+    /* identical to box height, or 27px */
+    letter-spacing: 0.035em;
+    color: #FFFFFF;
+    position: relative;
+    
+    &::before {
+      content: "⚡";
+      position: absolute;
+      left: 15px;
+      font-size: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__card-title {
+    @extend %fw600;
+    font-size: 30px;
+    line-height: 138.84%;
+    /* or 42px */
+    color: #26262B;
+    margin-bottom: 28px;
+  }
+  &__card-text {
+    font-size: 18px;
+    line-height: 148.34%;
+    letter-spacing: 0.035em;
+    color: #353537;
+  }
+  
+  &__item {
+    max-width: 750px;
+    display: flex;
+    border-radius: 23px;
+  }
+  &__item-box {
+    padding: 30px 60px;
+  }
+}
 .footer {
   margin-top: 100px;
   .logo {
@@ -417,11 +511,40 @@
 
 [class*="ymaps-2"][class*="-places-pane"] {
   .info {
-    width: 100px;
-    height: 100px;
+    position: absolute;
+    top: 19%;
+    right: 50%;
+    transform: translate(50%, 0%);
+    width: 314px;
+    padding: 26px 22px;
+    border-radius: 12px;
     background-color: #fff;
-    position: absolute;top: 50%;
-    left: 50%;
+    z-index: 100;
+    box-shadow: 0 23px 29px rgba(#000, .08);
+    
+    #player {
+      transform: translateX(31%) rotate(90deg) scale(.8);
+}
+
+#inner {
+  transform: rotate(45deg);
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  top: 20px;
+  left: -50px;
+  position: absolute;
+  border-radius: 30px;
+}
+
+#outer {
+  position: absolute;
+  top: 50px;
+  left: 165px;
+  width: 70px;
+  height: 140px;
+  overflow: hidden;
+}
   }
 }
 
