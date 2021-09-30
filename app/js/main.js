@@ -91,6 +91,11 @@ $(function () {
         filter: `blur(${$(window).width() * 0.3}px)`
       })
     })
+
+    $('[data-index]').click(function () {
+      const destination = $('#map').offset().top;
+      $('html, body').animate({ scrollTop: destination }, 200)
+    });
     
     
     
