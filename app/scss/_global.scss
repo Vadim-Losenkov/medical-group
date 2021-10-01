@@ -40,9 +40,10 @@ body {
   margin: 0 auto;
   width: 100%;
   position: relative;
+  overflow: hidden;
 
   .grad {
-    opacity: 0;
+    // opacity: 0;
   }
   .grad-gal-1,
   .grad-1 {
@@ -104,12 +105,26 @@ body {
     left: 10%;
     opacity: 0.5;
   }
+  .grad-footer {
+    left: 30%;
+    height: 300px;
+    width: 300px;
+    top: 0;
+    position: absolute;
+    animation: gradient 5s infinite linear;
+    z-index: 100;
+    border-radius: 50%;
+    
+    filter: blur(200px);
+  }
   
 }
 #map {
   height: 510px;
 }
-
+.main {
+  background-color: transparent;
+}
 .bolt {
   width: 50px;
   height: 50px;
@@ -156,6 +171,37 @@ body {
   display: flex;
   align-items: center;
   position: relative;
+  
+  .title-grad-2 {
+    left: 60%;
+    height: 300px;
+    width: 300px;
+    top: 0;
+    position: absolute;
+    animation: gradient 3s infinite linear;
+    z-index: 100;
+    border-radius: 50%;
+    
+    filter: blur(200px);
+  }
+  .title-grad-1 {
+    top: -40%;
+    left: 20%;
+    height: 300px;
+    width: 300px;
+    top: 0;
+    position: absolute;
+    animation: gradient 5s infinite linear;
+    z-index: 100;
+    border-radius: 50%;
+    
+    filter: blur(200px);
+    
+  }
+}
+
+.article-grad {
+  
 }
 
 .plants {

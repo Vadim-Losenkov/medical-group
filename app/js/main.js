@@ -80,7 +80,7 @@ $(function () {
         transition: 'opacity .3s',
         opacity: 1,
         // top: `${setTop(Number.parseInt($(this).css('top')))}px`,
-        filter: `blur(${$(window).width() * 0.14}px)`
+        // filter: `blur(${$(window).width() * 0.1}px)`
       })
     })
     $grad2.each(function() {

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1920px"> <!-- device-width, initial-scale=1.0 -->
+  <meta name="viewport" content="width=320px"> <!-- device-width, initial-scale=1.0 -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>hosp</title>
   <link rel="stylesheet" href="css/style.min.css" type="text/css" media="all" />
@@ -11,9 +11,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap" rel="stylesheet">
-  
-    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-    <script>eruda.init();</script>
+
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+  <script>
+    eruda.init();
+  </script>
 
 </head>
 
@@ -28,11 +30,11 @@
         <nav class="header__nav">
           <div class="header__nav-wrapper">
             <a class="header__nav-link" href="/">Home</a>
-            <a class="header__nav-link" href="/">News</a>
+            <a class="header__nav-link active" href="/">News</a>
             <a class="header__nav-link" href="/">Service</a>
             <a class="header__nav-link" href="/">Complex programs</a>
             <a class="header__nav-link" href="/">Articles</a>
-            <a class="header__nav-link active" href="/">Gallery</a>
+            <a class="header__nav-link" href="/">Gallery</a>
             <a class="header__nav-link" href="/">Contacts</a>
             <a href="tel:+9951787278" class="header__nav-phone">+995 1787278</a>
             <a href="/" class="header__nav-button">
@@ -74,88 +76,137 @@
     <main class="main">
       <div class="news">
         <div class="news__inner">
-          <div class="news__block">
-            <h1 class="news__title title">
-              <div class="bolt orange">
-                <img src="images/icons/bolt.svg" alt="">
-              </div>
-              Gallery
-            </h1>
-            <p class="news__text">
-              Admiration stimulated cultivated reasonable be projection possession of.
-            </p>
-            
-            <a href="/" class="news__card">
-              <img src="images/content/news-1.jpg" alt="" class="news__card-image">
-              <div class="news__card-box">
-                <button class="news__card-button">
-                  NEW STOCK
-                </button>
-                <h5 class="news__card-title">
-                  The concepts of "reduce, reuse”.
-                </h5>
-                <p class="news__card-text">
-                  Admiration stimulated cultivated reasonable be projection
-                </p>
-              </div>
-            </a>
-            <a href="/" class="news__card green white left">
-              <img src="images/content/news-1.jpg" alt="" class="news__card-image">
-              <div class="news__card-box">
-                <button class="news__card-button">
-                  NEW STOCK
-                </button>
-                <h5 class="news__card-title">
-                  The concepts of "reduce, reuse”.
-                </h5>
-                <p class="news__card-text">
-                  Admiration stimulated cultivated reasonable be projection
-                </p>
-              </div>
-            </a>
-            <a href="/" class="news__card purple white">
-              <img src="images/content/news-1.jpg" alt="" class="news__card-image">
-              <div class="news__card-box">
-                <button class="news__card-button">
-                  NEW STOCK
-                </button>
-                <h5 class="news__card-title">
-                  The concepts of "reduce, reuse”.
-                </h5>
-                <p class="news__card-text">
-                  Admiration stimulated cultivated reasonable be projection
-                </p>
-              </div>
-            </a>
+          <div class="news__block-wrapper">
+            <div class="news__block">
+              <h1 class="news__title title">
+                <div class="bolt orange">
+                  <img src="images/icons/bolt.svg" alt="">
+                </div>
+                Gallery
+              </h1>
+              <p class="news__text">
+                Admiration stimulated cultivated reasonable be projection possession of.
+              </p>
+
+              <a href="/" class="news__card pink">
+                <img src="images/content/news-1.png" alt="" class="news__card-image">
+                <div class="news__card-box">
+                  <button class="news__card-button">
+                    NEW STOCK
+                  </button>
+                  <h5 class="news__card-title">
+                    The concepts of "reduce, reuse”.
+                  </h5>
+                  <p class="news__card-text">
+                    Admiration stimulated cultivated reasonable be projection
+                  </p>
+                </div>
+              </a>
+              <a href="/" class="news__card green white left">
+                <img src="images/content/news-2.png" alt="" class="news__card-image">
+                <div class="news__card-box">
+                  <button class="news__card-button">
+                    NEW STOCK
+                  </button>
+                  <h5 class="news__card-title">
+                    I love learning foreign languages.
+                  </h5>
+                  <p class="news__card-text">
+                    I find that it really helps to get closer to other people.
+                  </p>
+                </div>
+              </a>
+              <a href="/" class="news__card purple white">
+                <img src="images/content/news-3.png" alt="" class="news__card-image">
+                <div class="news__card-box">
+                  <button class="news__card-button">
+                    NEW STOCK
+                  </button>
+                  <h5 class="news__card-title">
+                    Last year I went to China.
+                  </h5>
+                  <p class="news__card-text">
+                    Сhinese culture is very rich and I am delighted by it.
+                  </p>
+                </div>
+              </a>
+            </div>
           </div>
-           <div class="news__block right">
-            <h1 class="news__title title">
-              <div class="bolt l-green">
-                <img src="images/icons/bolt.svg" alt="">
-              </div>
-              News
-            </h1>
-            <p class="news__text">
-              The recent interest in crafts in America is not only a matter of economics. It’s also a reflection of people’s new environmental sensibilities
-            </p>
-            
-            <a href="/" class="news__item">
-              <img src="images/content/news-item-1.jpg" alt="" class="news__item-image">
-              <div class="news__item-box">
-                <div class="news__item-date">21.01.21 in 14:30</div>
-                <h4 class="news__item-title">
-                  This year I would like to learn another foreign language.
-                </h4>
-                <p class="news__item-text">
-                  I speak Russian, it’s my mother language. Also I can speak English; I try to practice every day.
-                </p>
-              </div>
-            </a>
-          </div> 
+          <div class="news__block-wrapper right">
+            <div class="news__block">
+              <h1 class="news__title title">
+                <div class="bolt l-green">
+                  <img src="images/icons/bolt.svg" alt="">
+                </div>
+                News
+              </h1>
+              <p class="news__text">
+                The recent interest in crafts in America is not only a matter of economics. It’s also a reflection of people’s new environmental sensibilities
+              </p>
+
+              <a href="/" class="news__item">
+                <img src="images/content/news-item-1.jpg" alt="" class="news__item-image">
+                <div class="news__item-box">
+                  <div class="news__item-date">
+                    21.01.21 in 14:30
+                  </div>
+                  <h4 class="news__item-title">
+                    <i></i> This year I would like to learn another foreign language.
+                  </h4>
+                  <p class="news__item-text">
+                    I speak Russian, it’s my mother language. Also I can speak English; I try to practice every day.
+                  </p>
+                </div>
+              </a>
+              <a href="/" class="news__item">
+                <img src="images/content/news-item-2.jpg" alt="" class="news__item-image">
+                <div class="news__item-box">
+                  <div class="news__item-date">
+                    21.01.21 in 14:30
+                  </div>
+                  <h4 class="news__item-title">
+                    <i></i> My father prefers popular science films and my mother.
+                  </h4>
+                  <p class="news__item-text">
+                    My sister watches a good love story with pleasure. And I enjoy detective films.
+                  </p>
+                </div>
+              </a>
+              <a href="/" class="news__item">
+                <img src="images/content/news-item-3.jpg" alt="" class="news__item-image">
+                <div class="news__item-box">
+                  <div class="news__item-date">
+                    21.01.21 in 14:30
+                  </div>
+                  <h4 class="news__item-title">
+                    <i></i> I would like to go to Africa or Asia, but it will be in a future.
+                  </h4>
+                  <p class="news__item-text">
+                    nd owing to films we can keep our family tradition. Our going to the cinema is not only a way of relaxing.
+                  </p>
+                </div>
+              </a>
+              <a href="/" class="news__item">
+                <img src="images/content/news-item-4.jpg" alt="" class="news__item-image">
+                <div class="news__item-box">
+                  <div class="news__item-date">
+                    21.01.21 in 14:30
+                  </div>
+                  <h4 class="news__item-title">
+                    <i></i> After watching we share our impressions by the acting.
+                  </h4>
+                  <p class="news__item-text">
+                    Any film extends our knowledge about people and about the world we live.
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </main>
     <footer class="footer">
+      <div class="grad-footer grad"></div>
       <a class="logo" href="index.html">
         <img src="images/global/logo.svg" alt="" class="footer__logo">
       </a>
