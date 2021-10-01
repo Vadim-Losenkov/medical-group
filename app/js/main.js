@@ -48,7 +48,7 @@ const items = [
     text: 'город 2'
   },
   { 
-    coord: [ 30.052235, 118.243683 ],
+    coord: [ 59.9386, 30.3141 ],
     obj: {},
     obj2: {
       // Опции
@@ -76,11 +76,12 @@ $(function () {
     const $grad2 = $('.grad2')
     
     $grad.each(function() {
+      // console.log($(this).css('filter') ? $(this).css('filter') : `blur(${$(window).width() * 0.1}px)`)
       $(this).css({
         transition: 'opacity .3s',
         opacity: 1,
         // top: `${setTop(Number.parseInt($(this).css('top')))}px`,
-        // filter: `blur(${$(window).width() * 0.1}px)`
+        // filter: `${$(this).css('filter') ? $(this).css('filter') : `blur(${$(window).width() * 0.1}px)`}`
       })
     })
     $grad2.each(function() {

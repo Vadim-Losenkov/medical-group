@@ -42,9 +42,6 @@ body {
   position: relative;
   overflow: hidden;
 
-  .grad {
-    // opacity: 0;
-  }
   .grad-gal-1,
   .grad-1 {
     top: 20%;
@@ -58,6 +55,7 @@ body {
     width: 20%;
     left: -10%;
     box-shadow: 0px 27px 37px -8px rgba(133, 90, 255, 0.32);
+    filter: blur(200px);
   }
 
   .grad-gal-2,
@@ -73,6 +71,7 @@ body {
     height: 20%;
     width: 20%;
     box-shadow: 0px 27px 37px -8px rgba(133, 90, 255, 0.32);
+    filter: blur(200px);
   }
   .grad-3 {
     z-index: -1;
@@ -85,6 +84,7 @@ body {
     height: 400px;
     width: 400px;
     box-shadow: 0px 27px 37px -8px rgba(133, 90, 255, 0.32);
+    filter: blur(200px);
   }
   .grad-4 {
     z-index: -1;
@@ -96,11 +96,12 @@ body {
     height: 300px;
     width: 300px;
     box-shadow: 0px 27px 37px -8px rgba(133, 90, 255, 0.32);
+    filter: blur(200px);
   }
 
   .grad-gal-1 {
     top: 7%;
-    
+
     // right: 50%;
     left: 10%;
     opacity: 0.5;
@@ -114,10 +115,9 @@ body {
     animation: gradient 5s infinite linear;
     z-index: 100;
     border-radius: 50%;
-    
+
     filter: blur(200px);
   }
-  
 }
 #map {
   height: 510px;
@@ -171,7 +171,7 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  
+
   .title-grad-2 {
     left: 60%;
     height: 300px;
@@ -181,7 +181,7 @@ body {
     animation: gradient 3s infinite linear;
     z-index: 100;
     border-radius: 50%;
-    
+
     filter: blur(200px);
   }
   .title-grad-1 {
@@ -194,14 +194,33 @@ body {
     animation: gradient 5s infinite linear;
     z-index: 100;
     border-radius: 50%;
-    
+
     filter: blur(200px);
-    
   }
 }
 
 .article-grad {
-  
+  bottom: 0;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  filter: blur(100px);
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  animation: gradient 4s infinite linear;
+
+  &.item-2 {
+    animation: gradient 6s infinite linear;
+  }
+  &.item-3 {
+    animation: gradient 7s infinite linear;
+  }
+  &.item-4 {
+    animation: gradient 8s infinite linear;
+  }
+
+  // filter: blur(50px);
 }
 
 .plants {
