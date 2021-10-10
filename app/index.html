@@ -3,19 +3,20 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- device-width, initial-scale=1.0 -->
+  <meta name="viewport" content="width=1920px"> <!-- device-width, initial-scale=1.0 -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>hosp</title>
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="css/style.min.css" type="text/css" media="all" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap" rel="stylesheet">
 
-  <!-- <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-  <script>eruda.init();</script> -->
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+  <script>eruda.init();</script>
 
 </head>
+
 
 <body>
   <div class="wrapper home">
@@ -28,13 +29,13 @@
         </a>
         <nav class="header__nav">
           <div class="header__nav-wrapper">
-            <a class="header__nav-link active" href="/">Home</a>
-            <a class="header__nav-link" href="/">News</a>
-            <a class="header__nav-link" href="/">Service</a>
-            <a class="header__nav-link" href="/">Complex programs</a>
-            <a class="header__nav-link" href="/">Articles</a>
-            <a class="header__nav-link" href="/">Gallery</a>
-            <a class="header__nav-link" href="/">Contacts</a>
+            <a class="header__nav-link active" href="index.html">Home</a>
+            <a class="header__nav-link" href="news.html">News</a>
+            <a class="header__nav-link" href="news.html">Service</a>
+            <a class="header__nav-link" href="news.htmm">Complex programs</a>
+            <a class="header__nav-link" href="articles.html">Articles</a>
+            <a class="header__nav-link" href="gallery.html">Gallery</a>
+            <a class="header__nav-link" href="contacts.html">Contacts</a>
             <a href="tel:+9951787278" class="header__nav-phone">+995 1787278</a>
             <a href="/" class="header__nav-button">
               <img src="images/icons/user.svg" alt="">
@@ -76,14 +77,14 @@
       <div class="top">
         <div class="container">
           <div class="top__inner">
-            <div class="top__box">
+            <div class="top__box wow slideInLeft" data-wow-duration="1s">
               <div class="top__address">
                 <div class="top__address-text">
                   Our address:
                 </div>
-                <div class="top__address-info">
+                <a href="contacts.html" class="top__address-info">
                   15 Bidzina Kvernadze St, T'bilisi
-                </div>
+                </a>
               </div>
               <div class="top__info">
                 <h1 class="top__info-title">
@@ -100,12 +101,12 @@
                     Call the number
                   </button>
                 </div>
-                <a href="#" class="top__info-arrow">
+                <a style="opacity: 0;" class="top__info-arrow">
                   <img src="images/icons/arrow-down.svg" alt="">
                 </a>
               </div>
             </div>
-            <div class="top__image swiper-images">
+            <div class="top__image swiper-images wow slideInRight" data-wow-duration="0.8s">
               <div class="swiper-wrapper">
                 <img class="swiper-slide" src="images/content/top-1.jpg" alt="">
                 <img class="swiper-slide" src="images/content/top-1.jpg" alt="">
@@ -124,8 +125,9 @@
 
 
   <script src="js/jquery.min.js"></script>
+  <script src="js/wow.min.js"></script>
   <script src="js/swiper-bundle.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
 </body>
 
 </html>

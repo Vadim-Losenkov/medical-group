@@ -1,0 +1,99 @@
+@import "fonts";
+@import "../../scss/vars";
+@import "../../scss/libs/reset";
+@import "../../scss/libs/animate";
+@import "../../scss/mixins";
+@import "../../scss/global";
+
+.articles {
+  
+  &__inner {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__item {
+    max-width: 520px;
+    border-radius: 12px;
+    margin: 0 15px;
+    margin-bottom: 44px;
+    position: relative;
+    z-index: 1000;
+    transition: .3s;
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 10px 10px 10px rgba(#000, 0.03);
+    }
+  }
+  &__item-image {
+    // border-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  &__item-inner {
+    background: #fff;
+    padding: 46px 56px;
+  }
+  &__item-title {
+    font-size: 30px;
+    line-height: 42px;
+    color: #26262b;
+    @extend %fw600;
+    margin-bottom: 29px;
+  }
+  &__item-footer {
+    background-color: rgba(226, 226, 226, 0.24);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    position: relative;
+    z-index: 10;
+    line-height: 148.34%;
+    /* identical to box height, or 27px */
+
+    letter-spacing: 0.035em;
+
+    color: #ababab;
+    padding: 36px 46px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+  &__item-time {
+    position: relative;
+    padding-left: 36px;
+    &::before {
+      content: "";
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 18px;
+      height: 20px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url("../../images/icons/time.svg");
+    }
+  }
+}
+
+.articles__title {
+  justify-content: center;
+}
+.articles__text {
+  @extend %fw300;
+  font-size: 18px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: 0.035em;
+  color: #353537;
+  margin: 0 auto;
+  margin-bottom: 105px;
+  max-width: 715px;
+}
+
+@import "media";

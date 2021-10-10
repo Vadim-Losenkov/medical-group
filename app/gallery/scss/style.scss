@@ -1,0 +1,34 @@
+@import "fonts";
+@import "../../scss/vars";
+@import "../../scss/libs/reset";
+@import "../../scss/libs/animate";
+@import "../../scss/mixins";
+@import "../../scss/global";
+
+.gallery {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 55px;
+
+    img {
+      width: 100%;
+    }
+  }
+  &__title {
+    justify-content: center;
+  }
+  &__text {
+    @extend %fw300;
+    font-size: 18px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: 0.035em;
+    color: #353537;
+    margin: 0 auto;
+    margin-bottom: 105px;
+    max-width: 715px;
+  }
+}
+
+@import "media";

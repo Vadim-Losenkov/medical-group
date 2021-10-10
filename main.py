@@ -15,9 +15,9 @@ class ChangeHandler(FileSystemEventHandler):
       
     def on_modified(self, event):
         if event.is_directory==True:
-          if event.src_path=='./app/scss':
+          if event.src_path==f"{os.path.dirname(event.src_path)}/scss":
             print(event)
-            list_files = subprocess.run(["sass", "app/scss/style.scss", "app/css/style.min.css"])
+            list_files = subprocess.run(["sass", f"{event.src_path}/style.scss", f"{event.src_path}/../css/style.min.css",  "--style", "compressed"])
 
     def on_deleted(self, event):
         pass

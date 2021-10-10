@@ -6,17 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- device-width, initial-scale=1.0 -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>hosp</title>
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="css/style.min.css" type="text/css" media="all" />
 
-<!--
-  <script src="//api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&lang=ru-RU" type="text/javascript"></script>
--->
   <!-- <script src="//cdn.jsdelivr.net/npm/eruda"></script>
   <script>
     eruda.init();
   </script> -->
   
   <script src="https://api-maps.yandex.ru/2.1/?apikey=2edcc8c3-2f38-48da-8de9-95e6078163c0&lang=ru_RU"></script>
+  <script src="//api-maps.yandex.ru/2.1/?load=package.standard,package.geoObjects&lang=ru-RU&amp;scroll=false" type="text/javascript"></script>
 </head>
 
 <body>
@@ -30,13 +28,13 @@
         </a>
         <nav class="header__nav">
           <div class="header__nav-wrapper">
-            <a class="header__nav-link" href="/">Home</a>
-            <a class="header__nav-link" href="/">News</a>
-            <a class="header__nav-link" href="/">Service</a>
-            <a class="header__nav-link" href="/">Complex programs</a>
-            <a class="header__nav-link" href="/">Articles</a>
-            <a class="header__nav-link" href="/">Gallery</a>
-            <a class="header__nav-link active" href="/">Contacts</a>
+            <a class="header__nav-link" href="index.html">Home</a>
+            <a class="header__nav-link" href="news.html">News</a>
+            <a class="header__nav-link" href="news.html">Service</a>
+            <a class="header__nav-link" href="news.htmm">Complex programs</a>
+            <a class="header__nav-link" href="articles.html">Articles</a>
+            <a class="header__nav-link" href="gallery.html">Gallery</a>
+            <a class="header__nav-link active" href="contacts.html">Contacts</a>
             <a href="tel:+9951787278" class="header__nav-phone">+995 1787278</a>
             <a href="/" class="header__nav-button">
               <img src="images/icons/user.svg" alt="">
@@ -78,7 +76,6 @@
       <div class="contacts">
         
   
-  <script src="//api-maps.yandex.ru/2.1/?load=package.standard,package.geoObjects&lang=ru-RU&amp;scroll=false" type="text/javascript"></script>
 <div id="map" style="width:100%; height:510px;"></div>
   
       
@@ -103,7 +100,7 @@
             </a>
           </div>
           <div id="buttons" class="contacts__list">
-            <div class="contacts__list-item" data-index="0">
+            <div class="contacts__list-item" data-wave data-index="0">
               <h5 class="contacts__list-num">1</h5>
               <div class="contacts__list-inner">
                 <p class="contacts__list-text">
@@ -121,7 +118,7 @@
                 </div>
               </div>
             </div>
-            <div class="contacts__list-item" data-index="1">
+            <div class="contacts__list-item" data-wave data-index="1">
               <h5 class="contacts__list-num">2</h5>
               <div class="contacts__list-inner">
                 <p class="contacts__list-text">
@@ -139,7 +136,7 @@
                 </div>
               </div>
             </div>
-            <div class="contacts__list-item" data-index="2">
+            <div class="contacts__list-item" data-wave data-index="2">
               <h5 class="contacts__list-num">3</h5>
               <div class="contacts__list-inner">
                 <p class="contacts__list-text">
@@ -157,7 +154,7 @@
                 </div>
               </div>
             </div>
-            <div class="contacts__list-item" data-index="3">
+            <div class="contacts__list-item" data-wave data-index="3">
               <h5 class="contacts__list-num">4</h5>
               <div class="contacts__list-inner">
                 <p class="contacts__list-text">
@@ -185,10 +182,10 @@
         <img src="images/global/logo.svg" alt="" class="footer__logo">
       </a>
       <div class="footer__nav">
-        <a class="footer__nav-link" href="/">Service</a>
-        <a class="footer__nav-link" href="/">Complex programs</a>
-        <a class="footer__nav-link" href="/">Articles</a>
-        <a class="footer__nav-link" href="/">Gallery</a>
+        <a class="footer__nav-link" href="news.html">Service</a>
+        <a class="footer__nav-link" href="news.html">Complex programs</a>
+        <a class="footer__nav-link" href="articles.html">Articles</a>
+        <a class="footer__nav-link" href="gallery.html">Gallery</a>
       </div>
       <p class="footer__rights">
         All rights reserved
@@ -197,8 +194,7 @@
   </div>
   
   <script src="js/jquery.min.js"></script>
-  <script src="js/swiper-bundle.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/contacts.js"></script>
 </body>
 
 </html>

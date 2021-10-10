@@ -9,6 +9,8 @@
   "author": "Vadim Losenkov <vprog0729@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "animate.css": "^4.1.1",
+    "normalize.css": "^8.0.1",
+    "wow.js": "^1.2.2"
   }
 }

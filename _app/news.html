@@ -3,19 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- device-width, initial-scale=1.0 -->
+  <meta name="viewport" content="width=1920px"> <!-- device-width, initial-scale=1.0 -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>hosp</title>
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="css/style.min.css" type="text/css" media="all" />
+<!-- 
   <script src="//cdn.jsdelivr.net/npm/eruda"></script>
   <script>
     eruda.init();
-  </script>
+  </script> -->
 
 </head>
 
@@ -29,13 +25,13 @@
         </a>
         <nav class="header__nav">
           <div class="header__nav-wrapper">
-            <a class="header__nav-link" href="/">Home</a>
-            <a class="header__nav-link active" href="/">News</a>
-            <a class="header__nav-link" href="/">Service</a>
-            <a class="header__nav-link" href="/">Complex programs</a>
-            <a class="header__nav-link" href="/">Articles</a>
-            <a class="header__nav-link" href="/">Gallery</a>
-            <a class="header__nav-link" href="/">Contacts</a>
+            <a class="header__nav-link" href="index.html">Home</a>
+            <a class="header__nav-link active" href="news.html">News</a>
+            <a class="header__nav-link" href="news.html">Service</a>
+            <a class="header__nav-link" href="news.htmm">Complex programs</a>
+            <a class="header__nav-link" href="articles.html">Articles</a>
+            <a class="header__nav-link" href="gallery.html">Gallery</a>
+            <a class="header__nav-link" href="contacts.html">Contacts</a>
             <a href="tel:+9951787278" class="header__nav-phone">+995 1787278</a>
             <a href="/" class="header__nav-button">
               <img src="images/icons/user.svg" alt="">
@@ -78,17 +74,18 @@
         <div class="news__inner">
           <div class="news__block-wrapper">
             <div class="news__block">
-              <h1 class="news__title title">
+              <h1 class="news__title title wow slideInLeft" data-wow-duration="0.9s">
+                <div class="grad-news grad"></div>
                 <div class="bolt orange">
                   <img src="images/icons/bolt.svg" alt="">
                 </div>
                 Gallery
               </h1>
-              <p class="news__text">
+              <p class="news__text wow slideInLeft" data-wow-duration="0.9s">
                 Admiration stimulated cultivated reasonable be projection possession of.
               </p>
 
-              <a href="/" class="news__card pink">
+              <a href="/" class="news__card pink wow slideInLeft" data-wave data-wow-duration="0.9s">
                 <img src="images/content/news-1.png" alt="" class="news__card-image">
                 <div class="news__card-box">
                   <button class="news__card-button">
@@ -102,7 +99,7 @@
                   </p>
                 </div>
               </a>
-              <a href="/" class="news__card green white left">
+              <a href="/" class="news__card green white left wow slideInLeft" data-wave data-wow-duration="1.1s">
                 <img src="images/content/news-2.png" alt="" class="news__card-image">
                 <div class="news__card-box">
                   <button class="news__card-button">
@@ -116,7 +113,7 @@
                   </p>
                 </div>
               </a>
-              <a href="/" class="news__card purple white">
+              <a href="/" class="news__card purple white wow slideInLeft" data-wave data-wow-duration="1.3s">
                 <img src="images/content/news-3.png" alt="" class="news__card-image">
                 <div class="news__card-box">
                   <button class="news__card-button">
@@ -134,17 +131,18 @@
           </div>
           <div class="news__block-wrapper right">
             <div class="news__block">
-              <h1 class="news__title title left">
+              <h1 class="news__title title left wow slideInRight" data-wow-duration="0.7s">
+              <div class="grad-news grad first"></div>
                 <div class="bolt l-green">
                   <img src="images/icons/bolt.svg" alt="">
                 </div>
                 News
               </h1>
-              <p class="news__text">
+              <p class="news__text wow slideInRight" data-wow-duration="0.7s">
                 The recent interest in crafts in America is not only a matter of economics. It’s also a reflection of people’s new environmental sensibilities
               </p>
 
-              <a href="/" class="news__item">
+              <a href="/" data-wave class="news__item wow slideInRight" data-wow-duration="0.7s">
                 <img src="images/content/news-item-1.jpg" alt="" class="news__item-image">
                 <div class="news__item-box">
                   <div class="news__item-date">
@@ -158,7 +156,7 @@
                   </p>
                 </div>
               </a>
-              <a href="/" class="news__item">
+              <a href="/" data-wave class="news__item wow slideInRight" data-wow-duration="0.9s">
                 <img src="images/content/news-item-2.jpg" alt="" class="news__item-image">
                 <div class="news__item-box">
                   <div class="news__item-date">
@@ -172,7 +170,7 @@
                   </p>
                 </div>
               </a>
-              <a href="/" class="news__item">
+              <a href="/" data-wave class="news__item wow slideInRight" data-wow-duration="1.1s">
                 <img src="images/content/news-item-3.jpg" alt="" class="news__item-image">
                 <div class="news__item-box">
                   <div class="news__item-date">
@@ -186,7 +184,7 @@
                   </p>
                 </div>
               </a>
-              <a href="/" class="news__item">
+              <a href="/" data-wave class="news__item wow slideInRight" data-wow-duration="1.3s">
                 <img src="images/content/news-item-4.jpg" alt="" class="news__item-image">
                 <div class="news__item-box">
                   <div class="news__item-date">
@@ -224,8 +222,8 @@
 
 
   <script src="js/jquery.min.js"></script>
-  <script src="js/swiper-bundle.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/other-pages.js"></script>
 </body>
 
 </html>
