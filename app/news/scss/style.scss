@@ -6,6 +6,24 @@
 @import "../../scss/global";
 
 
+.grad-news {
+  bottom: -30%;
+  transform: translateY(-10%);
+  left: -20%;
+  width: 150px;
+  height: 150px;
+  filter: blur(130px);
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  animation: gradient 12s infinite linear;
+  
+  &.first {
+    animation: gradient 14s infinite linear;
+  }
+}
+
+
 .news {
   &__inner {
     display: flex;

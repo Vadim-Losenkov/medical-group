@@ -3,6 +3,22 @@
   padding: 0 15px;
   margin: 0 auto;
 }
+.test {
+  // @extend %fw700;
+  font-weight: 700;
+  font-family: 'BPG Nino Mtavruli Bold' !important;
+  font-size: 28px;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+.test1 {
+  // @extend %fw700;
+  // font-weight: 700;
+  font-family: 'BPG Nino Mtavruli Bold' !important;
+  font-size: 11px;
+  margin-bottom: 40px;
+  // font-weight: 700;
+}
 
 html {
   scroll-behavior: smooth;
@@ -25,7 +41,8 @@ button {
 body {
   // min-width: 320px;
   // min-width: 1920px;
-  opacity: 0;
+  // opacity: 0;
+  padding-bottom: 50px;
   transition: opacity .3s;
   &.visible {
     transition: opacity .3s;
@@ -130,12 +147,11 @@ body {
     filter: blur(200px);
   }
 }
-#map {
-  height: 510px;
-}
+
 .main {
   background-color: transparent;
 }
+
 .bolt {
   width: 50px;
   height: 50px;
@@ -209,47 +225,6 @@ body {
     filter: blur(200px);
   }
 }
-
-.grad-news {
-  bottom: -30%;
-  transform: translateY(-10%);
-  left: -20%;
-  width: 150px;
-  height: 150px;
-  filter: blur(130px);
-  position: absolute;
-  z-index: -1;
-  border-radius: 50%;
-  animation: gradient 12s infinite linear;
-  
-  &.first {
-    animation: gradient 14s infinite linear;
-  }
-}
-.article-grad {
-  bottom: 0;
-  left: 50%;
-  width: 150px;
-  height: 150px;
-  filter: blur(100px);
-  position: absolute;
-  z-index: -1;
-  border-radius: 50%;
-  animation: gradient 9s infinite linear;
-
-  &.item-2 {
-    animation: gradient 11s infinite linear;
-  }
-  &.item-3 {
-    animation: gradient 13s infinite linear;
-  }
-  &.item-4 {
-    animation: gradient 15s infinite linear;
-  }
-
-  // filter: blur(50px);
-}
-
 
 .header {
   &-mobile {
@@ -346,7 +321,6 @@ body {
   }
 }
 
-
 .footer {
   position: relative;
   margin-top: 100px;
@@ -387,7 +361,6 @@ body {
   }
 }
 
-
 .plants {
   position: relative;
   &::before {
@@ -424,58 +397,19 @@ body {
   }
 }
 
-
-[class*="ymaps-2"][class*="-ground-pane"] {
-  filter: grayscale(100%) !important;
-}
-[class*="ymaps-2"][class*="-copyrights-pane"],
-[class*="ymaps-2"][class*="-controls-pane"] {
-  display: none !important;
-}
-
-[class*="ymaps-2"][class*="-places-pane"] {
-  .info {
-    position: absolute;
-    top: 19%;
-    right: 50%;
-    transform: translate(50%, 0%);
-    width: 314px;
-    padding: 26px 22px;
-    border-radius: 12px;
-    background-color: #fff;
-    z-index: 100;
-    box-shadow: 0 23px 29px rgba(#000, 0.08);
-
-    #player {
-      transform: translateX(31%) rotate(90deg) scale(0.8);
-    }
-
-    #inner {
-      transform: rotate(45deg);
-      background-color: #fff;
-      width: 100px;
-      height: 100px;
-      top: 20px;
-      left: -50px;
-      position: absolute;
-      border-radius: 30px;
-    }
-
-    #outer {
-      position: absolute;
-      top: 50px;
-      left: 165px;
-      width: 70px;
-      height: 140px;
-      overflow: hidden;
-    }
-  }
-}
-
 [data-wave] {
   overflow: hidden;
   position: relative;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.pulse {
+ background-color: #eee;
+ border-radius: 50%;
+ z-index: -1;
+ animation: pulse 0.7s ease-out;
+ transform: scale(0);
+ position: absolute;
 }
 
 @keyframes gradient {
@@ -494,19 +428,6 @@ body {
   100% {
     background-color: #855aff;
   }
-}
-
-
-.pulse {
- background-color: #eee;
- border-radius: 50%;
- z-index: -1;
- animation: pulse 0.7s ease-out;
- transform: scale(0);
- position: absolute;
-}
-.pulse.articles__item {
-  z-index: 100;
 }
 
 @keyframes pulse {
