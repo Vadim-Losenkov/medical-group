@@ -26,22 +26,20 @@ $(function () {
     })
 })
 
-
-/* new Swiper(".swiper-images", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    autoplay: { delay: 3000, }
-}) */
-new Swiper(".swiper-images", {
-    direction: "vertical",
-    effect: "cards",
-    grabCursor: true,
-    autoplay: { delay: 3000, }
-})
+var swiper = new Swiper(".mySwiper", {
+  direction: "vertical",
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 'auto',
+  autoplay: { delay: 2000, },
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 52,
+    depth: 20,
+    modifier: 10,
+    slideShadows: true,
+  }
+});
 
 new WOW().init();

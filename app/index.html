@@ -6,37 +6,12 @@
   <meta name="viewport" content="width=1920px"> <!-- device-width, initial-scale=1.0 -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>hosp</title>
-  <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="css/style.min.css" type="text/css" media="all" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-  <!-- Demo styles -->
-  <style>
-    .swiper {
-      height: 800px;
-    }
-    .swiper-container {
-      width: 100%;
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
-
-    .swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width: 700px;
-      height: 600px;
-      border-radius: 40px;
-      opacity: 0.6;
-    }
-    .swiper-slide-active {
-      transition: all .6s;
-      opacity: 1;
-    }
-  </style>
   <!-- <script src="//cdn.jsdelivr.net/npm/eruda"></script>
   <script>eruda.init();</script> -->
 </head>
@@ -138,46 +113,6 @@
                 <img class="swiper-slide" src="images/content/top-1.jpg" alt="">
               </div>
             </div>
-
-            <!-- Swiper JS -->
-            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-            <!-- Initialize Swiper -->
-            <script>
-              // const s = document.querySelector(".swiper")
-              // , i = () => {
-              //   const e = s.parentElement.offsetWidth
-              //     , r = s.offsetWidth;
-              //   let t = (e - (e - r) / 2) / r;
-              //   return t = Math.max(t, 1),
-              //     100 * t + "%"
-              // }
-              var swiper = new Swiper(".mySwiper", {
-                direction: "vertical",
-                effect: 'coverflow',
-                grabCursor: true,
-                centeredSlides: true,
-                slidesPerView: 'auto',
-                autoplay: { delay: 2000, },
-                // loop: true,
-                coverflowEffect: {
-                  rotate: 0,
-                  stretch: 52,
-                  depth: 20,
-                  modifier: 10,
-                  slideShadows: true,
-                }
-              });
-
-            </script>
-            <!--<div class="top__image swiper swiper-images wow slideInRight" data-wow-duration="0.8s">-->
-            <!--  <div class="swiper-wrapper">-->
-            <!--    <img class="swiper-slide" src="images/content/top-1.jpg" alt="">-->
-            <!--    <img class="swiper-slide" src="images/content/top-1.jpg" alt="">-->
-            <!--    <img class="swiper-slide" src="images/content/top-1.jpg" alt="">-->
-            <!--  </div>-->
-            <!--  <div class="swiper-pagination"></div>-->
-            <!--</div>-->
           </div>
         </div>
       </div>
@@ -187,7 +122,7 @@
 
   <script src="js/jquery.min.js"></script>
   <script src="js/wow.min.js"></script>
-  <!--<script src="js/swiper-bundle.min.js"></script>-->
+  <script src="js/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
