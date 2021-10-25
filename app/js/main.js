@@ -32,7 +32,7 @@ var swiper = new Swiper(".mySwiper", {
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: 'auto',
-  autoplay: { delay: 2000, },
+  autoplay: { delay: 3000, },
   coverflowEffect: {
     rotate: 0,
     stretch: 52,

@@ -2,25 +2,20 @@
   body {
     zoom: 90%;
   }
-  .top__inner {
-    display: block;
-  }
-  .top__box {
-    margin: 0 auto;
-    margin-top: 50px;
-    max-width: 800px;
-    // text-align: center;
+  .top__image {
+    flex: none;
   }
   .top__info-arrow {
     display: none;
   }
-  .top__image {
-    position: static;
-    margin: 0 auto;
-    margin-top: 50px;
-  }
 }
 
+@media (max-width: 1180px) {
+  .mySwiper .swiper-slide {
+    width: 500px;
+    height: 400px;
+  }
+}
 @media (max-width: 1100px) {
   .header {
     display: none;
