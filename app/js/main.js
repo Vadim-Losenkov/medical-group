@@ -24,10 +24,13 @@ $(function () {
         filter: `blur(${$(window).width() * 0.3}px)`
       })
     })
+    
+    console.log($('.mySwiper .swiper-slide-next').attr('style'));
+    
 })
 
 
-new Swiper(".swiper-images", {
+/* new Swiper(".swiper-images", {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
@@ -35,6 +38,12 @@ new Swiper(".swiper-images", {
         el: ".swiper-pagination",
         clickable: true,
     },
+    autoplay: { delay: 3000, }
+}) */
+new Swiper(".swiper-images", {
+    direction: "vertical",
+    effect: "cards",
+    grabCursor: true,
     autoplay: { delay: 3000, }
 })
 

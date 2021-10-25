@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- device-width, initial-scale=1.0 -->
+  <meta name="viewport" content="width=1920px"> <!-- device-width, initial-scale=1.0 -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>hosp</title>
   <link rel="stylesheet" href="css/style.min.css" type="text/css" media="all" />
@@ -11,7 +11,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@700&display=swap" rel="stylesheet">
+<link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 
+    <!-- Demo styles -->
+    <style>
+      .swiper {
+        margin-top: 100px;
+        width: 700px;
+        height: 600px;
+      }
+    </style>
   <script src="//cdn.jsdelivr.net/npm/eruda"></script>
   <script>eruda.init();</script>
 </head>
@@ -106,14 +118,33 @@
                 </a>
               </div>
             </div>
-            <div class="top__image swiper-images wow slideInRight" data-wow-duration="0.8s">
-              <div class="swiper-wrapper">
-                <img class="swiper-slide" src="images/content/top-1.jpg" alt="">
-                <img class="swiper-slide" src="images/content/top-1.jpg" alt="">
-                <img class="swiper-slide" src="images/content/top-1.jpg" alt="">
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
+            <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <img class="swiper-slide" src="images/content/top-1.jpg" alt="">
+        <img class="swiper-slide" src="images/content/top-1.jpg" alt="">
+        <img class="swiper-slide" src="images/content/top-1.jpg" alt="">
+      </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        direction: "vertical",
+        effect: "cards",
+        grabCursor: true,
+      });
+    </script>
+            <!--<div class="top__image swiper swiper-images wow slideInRight" data-wow-duration="0.8s">-->
+            <!--  <div class="swiper-wrapper">-->
+            <!--    <img class="swiper-slide" src="images/content/top-1.jpg" alt="">-->
+            <!--    <img class="swiper-slide" src="images/content/top-1.jpg" alt="">-->
+            <!--    <img class="swiper-slide" src="images/content/top-1.jpg" alt="">-->
+            <!--  </div>-->
+            <!--  <div class="swiper-pagination"></div>-->
+            <!--</div>-->
           </div>
         </div>
       </div>
@@ -123,7 +154,7 @@
 
   <script src="js/jquery.min.js"></script>
   <script src="js/wow.min.js"></script>
-  <script src="js/swiper-bundle.min.js"></script>
+  <!--<script src="js/swiper-bundle.min.js"></script>-->
   <script src="js/main.js"></script>
 </body>
 
