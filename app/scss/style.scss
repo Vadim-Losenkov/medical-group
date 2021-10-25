@@ -149,17 +149,7 @@
   .swiper-pagination-bullet-active {
     background-color: #bf3dd5;
   }
-  .swiper-slide-active {
-    border-radius: 15px;
-    box-shadow: 2px 2px 20px rbga(#000, .1);
-    //transform: translateX(-10%)!important;
-  }
-  .swiper-slide-next {
-    transform: translate3d(0px, calc(-600px + 7.25%), -100px) rotateZ(0deg)!important;
-  }
-  .swiper-slide-prev {
-    transform: translate3d(0px, calc(0px + -7.25%), -100px) rotateZ(0deg)!important;
-  }
+
 }
 
 @import "media";

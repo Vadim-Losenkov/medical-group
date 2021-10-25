@@ -24,9 +24,6 @@ $(function () {
         filter: `blur(${$(window).width() * 0.3}px)`
       })
     })
-    
-    console.log($('.mySwiper .swiper-slide-next').attr('style'));
-    
 })
 
 
