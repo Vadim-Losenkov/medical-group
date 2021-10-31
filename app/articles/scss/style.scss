@@ -5,11 +5,11 @@
 @import "../../scss/mixins";
 @import "../../scss/global";
 
-
 .articles {
   &__inner {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
     flex-wrap: wrap;
     max-width: 1920px;
     width: 100%;
@@ -21,11 +21,80 @@
     margin: 0 15px;
     margin-bottom: 44px;
     position: relative;
-    z-index: 100;
-    transition: .3s;
+    z-index: 0;
+    transition: 0.3s;
     &:hover {
       transform: translateY(-10px);
       box-shadow: 10px 10px 10px rgba(#000, 0.03);
+    }
+    
+    &.main.purple .articles__item-inner {
+      background: linear-gradient(359.97deg, #AE2BFF 0.03%, #6642CB 121.68%) !important;
+    }
+    &.main.orange .articles__item-inner {
+      background: linear-gradient(359.97deg, #FF9D2B 0.03%, #CB8C42 118.57%);
+    }
+    &.main {
+      position: relative;
+      padding-top: 290px;
+      img {
+        position: absolute;
+        z-index: 111;
+        top: 0;
+        height: 448px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: none;
+      }
+      .articles__item-inner {
+        position: relative;
+        padding-top: 157px;
+        background: linear-gradient(357.23deg, #38a77a 2.31%, #42cb93 99.44%);
+        border-radius: 12px 12px 0px 0px;
+        .articles__item-title,
+        .articles__item-text {
+          color: #fff;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 157px;
+          top: 0;
+          // bottom: 157px;
+          background: linear-gradient(159.16deg, rgba(255, 255, 255, 0.08) 18%, rgba(29, 29, 29, 0.12) 91.03%);
+          border-radius: 12px 12px 0px 0px;
+        }
+      }
+    }
+  }
+  &__item-button {
+    background: linear-gradient(89.36deg, #000000 1.5%, #000000 23.41%, #000000 92.05%);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 13px 27px;
+    padding-left: 57px;
+    margin-top: 44px;
+
+    @extend %fw600;
+    font-size: 18px;
+    line-height: 148.34%;
+    /* identical to box height, or 27px */
+    letter-spacing: 0.035em;
+    color: #ffffff;
+    position: relative;
+
+    &::before {
+      content: "⚡";
+      position: absolute;
+      left: 15px;
+      font-size: 24px;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
   &__item-image {
@@ -121,6 +190,5 @@
 .pulse.articles__item {
   z-index: 100;
 }
-
 
 @import "media";

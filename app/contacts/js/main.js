@@ -6,7 +6,7 @@ const items = [
       // Опции
       // Своё изображение иконки метки.
       iconLayout: 'default#image',
-      iconImageHref: './../../images/icons/map-marker.svg',
+      iconImageHref: './map-marker.svg',
       // Размеры метки.
       iconImageSize: [480, 480],
       // Смещение левого верхнего угла иконки относительно
@@ -22,7 +22,7 @@ const items = [
       // Опции
       // Своё изображение иконки метки.
       iconLayout: 'default#image',
-      iconImageHref: './../../images/icons/map-marker.svg',
+      iconImageHref: './map-marker.svg',
       // Размеры метки.
       iconImageSize: [480, 480],
       // Смещение левого верхнего угла иконки относительно
@@ -38,7 +38,7 @@ const items = [
       // Опции
       // Своё изображение иконки метки.
       iconLayout: 'default#image',
-      iconImageHref: './../../images/icons/map-marker.svg',
+      iconImageHref: './map-marker.svg',
       // Размеры метки.
       iconImageSize: [480, 480],
       // Смещение левого верхнего угла иконки относительно
@@ -54,7 +54,7 @@ const items = [
       // Опции
       // Своё изображение иконки метки.
       iconLayout: 'default#image',
-      iconImageHref: './../../images/icons/map-marker.svg',
+      iconImageHref: './map-marker.svg',
       // Размеры метки.
       iconImageSize: [480, 480],
       // Смещение левого верхнего угла иконки относительно

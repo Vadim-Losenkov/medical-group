@@ -188,6 +188,18 @@
   .title-grad-2 {
     display: none;
   }
+
+  .news__item.main {
+    .news__item-inner {
+      padding-top: 0;
+      &::before {
+        display: none;
+      }
+    }
+    img {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 420px) {
