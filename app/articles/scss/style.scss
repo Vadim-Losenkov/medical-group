@@ -21,7 +21,7 @@
     margin: 0 15px;
     margin-bottom: 44px;
     position: relative;
-    z-index: 1000;
+    z-index: 100;
     transition: .3s;
     &:hover {
       transform: translateY(-10px);
@@ -95,7 +95,6 @@
   margin-bottom: 105px;
   max-width: 715px;
 }
-
 
 .article-grad {
   bottom: 0;

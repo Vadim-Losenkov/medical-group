@@ -3,14 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- device-width, initial-scale=1.0 -->
+  <meta name="viewport" content="width=450px"> <!-- device-width, initial-scale=1.0 -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Gallery</title>
   <link rel="stylesheet" href="css/style.min.css" type="text/css" media="all" />
 
-<!-- 
-  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-  <script>eruda.init();</script> -->
+  
+    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
 
 </head>
 
@@ -34,10 +34,7 @@
             <a class="header__nav-link" href="../articles">Articles</a>
             <a class="header__nav-link active" href="../gallery">Gallery</a>
             <a class="header__nav-link" href="../contacts">Contacts</a>
-            <a href="tel:+9951787278" class="header__nav-phone">+995 1787278</a>
-            <a href="tel:+9951787278" class="header__nav-button">
-              <img src="../images/icons/user.svg" alt="">
-            </a>
+            <a href="tel:+9951787278" class="header-mobile__nav-phone"><span>+995 1787278</span></a>
           </div>
         </nav>
       </div>
@@ -52,23 +49,20 @@
           <span></span>
           <span></span>
         </div>
-      </div>
       <div class="header-mobile__content">
         <nav class="header-mobile__nav">
           <div class="header-mobile__nav-wrapper">
-            <a class="header-mobile__nav-link active" href="/">Home</a>
+            <a class="header-mobile__nav-link" href="/">Home</a>
             <a class="header-mobile__nav-link" href="../news">News</a>
             <a class="header-mobile__nav-link" href="../news">Service</a>
             <a class="header-mobile__nav-link" href="../news">Complex programs</a>
             <a class="header-mobile__nav-link" href="../articles">Articles</a>
-            <a class="header-mobile__nav-link" href="../gallery">Gallery</a>
+            <a class="header-mobile__nav-link active" href="../gallery">Gallery</a>
             <a class="header-mobile__nav-link" href="../contacts">Contacts</a>
             <a href="tel:+9951787278" class="header-mobile__nav-phone">+995 1787278</a>
-            <a href="tel:+9951787278" class="header-mobile__nav-button">
-              <img src="../images/icons/user.svg" alt="">
-            </a>
           </div>
         </nav>
+      </div>
       </div>
     </div>
     <main class="main">
@@ -82,13 +76,24 @@
         <p class="gallery__text plants gallery">
           The recent interest in crafts in America is not only a matter of economics. It’s also a reflection of people’s new environmental sensibilities
         </p>
-        <div class="gallery__wrapper">
-          <img src="../images/content/gallery-1.jpg" class="wow slideInLeft" data-wow-duration="0.6s" alt="">
-          <img src="../images/content/gallery-2.jpg" class="wow slideInRight" data-wow-duration="0.9s" alt="">
-          <img src="../images/content/gallery-3.jpg" class="wow slideInLeft" data-wow-duration="0.9s" alt="">
-          <img src="../images/content/gallery-4.jpg" class="wow slideInRight" data-wow-duration="0.6s" alt="">
-          <img src="../images/content/gallery-5.jpg" class="wow slideInLeft" data-wow-duration="0.6s" alt="">
-          <img src="../images/content/gallery-6.jpg" class="wow slideInRight" data-wow-duration="0.9s" alt="">
+        <div class="swiper mySwiper">
+          <!--<div class="gallery__wrapper swiper-wrapper">-->
+          <!--  <img src="../images/content/gallery-1.jpg" class="wow slideInLeft" data-wow-duration="0.6s" alt="">-->
+          <!--  <img src="../images/content/gallery-2.jpg" class="wow slideInRight" data-wow-duration="0.9s" alt="">-->
+          <!--  <img src="../images/content/gallery-3.jpg" class="wow slideInLeft" data-wow-duration="0.9s" alt="">-->
+          <!--  <img src="../images/content/gallery-4.jpg" class="wow slideInRight" data-wow-duration="0.6s" alt="">-->
+          <!--  <img src="../images/content/gallery-5.jpg" class="wow slideInLeft" data-wow-duration="0.6s" alt="">-->
+          <!--  <img src="../images/content/gallery-6.jpg" class="wow slideInRight" data-wow-duration="0.9s" alt="">-->
+          <!--</div>-->
+          <div class="gallery__wrapper swiper-wrapper">
+            <img src="../images/content/gallery-1.jpg" class="swiper-slide" data-wow-duration="0.6s" alt="">
+            <img src="../images/content/gallery-2.jpg" class="swiper-slide" data-wow-duration="0.9s" alt="">
+            <img src="../images/content/gallery-3.jpg" class="swiper-slide" data-wow-duration="0.9s" alt="">
+            <img src="../images/content/gallery-4.jpg" class="swiper-slide" data-wow-duration="0.6s" alt="">
+            <img src="../images/content/gallery-5.jpg" class="swiper-slide" data-wow-duration="0.6s" alt="">
+            <img src="../images/content/gallery-6.jpg" class="swiper-slide" data-wow-duration="0.9s" alt="">
+          </div>
+          <!-- <div class="swiper-pagination"></div> -->
         </div>
       </div>
     </main>
@@ -112,6 +117,7 @@
 
   <script src="../js/jquery.min.js"></script>
   <script src="../js/wow.min.js"></script>
+  <script src="../js/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 

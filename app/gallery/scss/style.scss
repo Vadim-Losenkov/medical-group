@@ -2,19 +2,11 @@
 @import "../../scss/vars";
 @import "../../scss/libs/reset";
 @import "../../scss/libs/animate";
+@import "../../scss/libs/swiper-bundle.min.scss";
 @import "../../scss/mixins";
 @import "../../scss/global";
 
 .gallery {
-  &__wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 55px;
-
-    img {
-      width: 100%;
-    }
-  }
   &__title {
     justify-content: center;
   }
@@ -30,5 +22,55 @@
     max-width: 715px;
   }
 }
+
+.mySwiper {
+  height: 600px;
+  margin: 0 auto;
+}
+.mySwiper .swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.mySwiper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  max-width: 400px;
+  height: 270px;
+  border-radius: 40px;
+  opacity: 0.6;
+  margin: 0 auto;
+}
+.mySwiper .swiper-slide-active {
+  transition: all 0.6s;
+  opacity: 1;
+}
+
+
+/*
+.swiper-pagination {
+  max-width: 400px;
+  margin: 400px!important;
+} */
+/*
+  .swiper-pagination {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+  }
+  .swiper-pagination-bullet {
+    height: 3px;
+    width: 82px;
+    margin: 0 6px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #bf3dd5;
+  }*/
 
 @import "media";

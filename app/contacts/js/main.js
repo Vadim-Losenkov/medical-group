@@ -6,7 +6,7 @@ const items = [
       // Опции
       // Своё изображение иконки метки.
       iconLayout: 'default#image',
-      iconImageHref: './images/icons/map-marker.svg',
+      iconImageHref: './../../images/icons/map-marker.svg',
       // Размеры метки.
       iconImageSize: [480, 480],
       // Смещение левого верхнего угла иконки относительно
@@ -22,7 +22,7 @@ const items = [
       // Опции
       // Своё изображение иконки метки.
       iconLayout: 'default#image',
-      iconImageHref: './images/icons/map-marker.svg',
+      iconImageHref: './../../images/icons/map-marker.svg',
       // Размеры метки.
       iconImageSize: [480, 480],
       // Смещение левого верхнего угла иконки относительно
@@ -38,7 +38,7 @@ const items = [
       // Опции
       // Своё изображение иконки метки.
       iconLayout: 'default#image',
-      iconImageHref: './images/icons/map-marker.svg',
+      iconImageHref: './../../images/icons/map-marker.svg',
       // Размеры метки.
       iconImageSize: [480, 480],
       // Смещение левого верхнего угла иконки относительно
@@ -54,7 +54,7 @@ const items = [
       // Опции
       // Своё изображение иконки метки.
       iconLayout: 'default#image',
-      iconImageHref: './images/icons/map-marker.svg',
+      iconImageHref: './../../images/icons/map-marker.svg',
       // Размеры метки.
       iconImageSize: [480, 480],
       // Смещение левого верхнего угла иконки относительно
@@ -69,9 +69,7 @@ $(function () {
   $(document.body).addClass('visible')
     $('.header-mobile__burger').on('click', () => {
         $('.header-mobile__burger').toggleClass('open')
-        $('.header-mobile__box').toggleClass('open')
         $('.header-mobile__content').toggleClass('open')
-        $(document.body).toggleClass('open')
     })
     const $grad = $('.grad')
     const $grad2 = $('.grad2')

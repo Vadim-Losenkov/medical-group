@@ -2,9 +2,7 @@ $(function () {
   $(document.body).addClass('visible')
     $('.header-mobile__burger').on('click', () => {
         $('.header-mobile__burger').toggleClass('open')
-        $('.header-mobile__box').toggleClass('open')
         $('.header-mobile__content').toggleClass('open')
-        $(document.body).toggleClass('open')
     })
     
     const $grad = $('.grad')
@@ -47,5 +45,57 @@ function addElement(e) {
     addDiv.classList.add('pulse');
     this.appendChild(addDiv);
 }
+
+var swiper = new Swiper(".mySwiper", {
+  direction: "vertical",
+      effect: 'coverflow',
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      autoplay: { delay: 3000, },
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 33,
+        depth: 30,
+        modifier: 10,
+        slideShadows: true
+      }
+  /* breakpoints: {
+    320: {
+      direction: "vertical",
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      autoplay: { delay: 3000, },
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 52,
+        depth: 20,
+        modifier: 10,
+        slideShadows: true,
+      },
+    },
+    769: {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      autoplay: { delay: 3000, },
+      spaceBetween: 100,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar
+      },
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 52,
+        depth: 20,
+        modifier: 10,
+        slideShadows: true,
+      },
+    }
+  } */
+});
+
 
 new WOW().init();

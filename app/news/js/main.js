@@ -2,9 +2,7 @@ $(function () {
   $(document.body).addClass('visible')
     $('.header-mobile__burger').on('click', () => {
         $('.header-mobile__burger').toggleClass('open')
-        $('.header-mobile__box').toggleClass('open')
         $('.header-mobile__content').toggleClass('open')
-        $(document.body).toggleClass('open')
     })
     
     const $grad = $('.grad')

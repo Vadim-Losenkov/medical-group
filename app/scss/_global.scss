@@ -3,22 +3,6 @@
   padding: 0 15px;
   margin: 0 auto;
 }
-.test {
-  // @extend %fw700;
-  font-weight: 700;
-  font-family: 'BPG Nino Mtavruli Bold' !important;
-  font-size: 28px;
-  margin-bottom: 40px;
-  font-weight: 700;
-}
-.test1 {
-  // @extend %fw700;
-  // font-weight: 700;
-  font-family: 'BPG Nino Mtavruli Bold' !important;
-  font-size: 11px;
-  margin-bottom: 40px;
-  // font-weight: 700;
-}
 
 html {
   scroll-behavior: smooth;
@@ -54,11 +38,7 @@ body {
   @extend %fw400;
   background: linear-gradient(90deg, #fefbff -1.28%, #ffffff 54.4%);
   color: #353537;
-  position: relative;
   zoom: 85%;
-  &.open {
-    position: fixed;
-  }
 }
 
 .wrapper {
@@ -259,6 +239,7 @@ body {
     @extend %fw300;
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     margin: 0 auto;
     max-width: 1100px;
   }
@@ -436,4 +417,10 @@ body {
   background-color: #fff;
   opacity: 0;
  }
+}
+
+@media (max-width: 768px) {
+  .grad {
+    animation: 0 !important;
+  }
 }
