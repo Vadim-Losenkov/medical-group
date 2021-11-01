@@ -28,10 +28,11 @@ $(function () {
 })
 
 
-var swiper = new Swiper(".mySwiper", {
+new Swiper(".mySwiper", {
   effect: 'coverflow',
   centeredSlides: true,
   slidesPerView: 'auto',
+  grabCursor: true,
   spaceBetween: 140,
   autoplay: { delay: 3000, },
   coverflowEffect: {
@@ -43,6 +44,7 @@ var swiper = new Swiper(".mySwiper", {
   pagination: {
     el: '.swiper-pagination',
     type: 'bullets',
+    clickable: true
   },
   breakpoints: {
     1100: {
@@ -51,5 +53,21 @@ var swiper = new Swiper(".mySwiper", {
   }
 });
 
+new Swiper(".mobile-swiper", {
+  direction: "vertical",
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 'auto',
+  reverseDirection: true,
+  autoplay: { delay: 3000, },
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 220,
+    depth: 220,
+    modifier: 1,
+    slideShadows: false,
+  }
+});
 
 new WOW().init();
