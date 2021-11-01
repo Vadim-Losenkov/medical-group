@@ -32,13 +32,22 @@ var swiper = new Swiper(".mySwiper", {
   effect: 'coverflow',
   centeredSlides: true,
   slidesPerView: 'auto',
-  spaceBetween: 200,
+  spaceBetween: 140,
   autoplay: { delay: 3000, },
   coverflowEffect: {
     rotate: 0,
     stretch: 0,
     depth: 30,
     modifier: 10,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+  },
+  breakpoints: {
+    1100: {
+      spaceBetween: 200,
+    }
   }
 });
 
