@@ -186,6 +186,9 @@
   .title-grad-2 {
     display: none;
   }
+  #map {
+    height: 320px !important;
+  }
 }
 
 @media (max-width: 420px) {

@@ -354,7 +354,7 @@ body {
     background-repeat: no-repeat;
     width: 250px;
     height: 250px;
-    background-image: url("../images/icons/plants.svg");
+    background-image: url("../../images/icons/plants.svg");
   }
   &::after {
     content: "";
@@ -366,7 +366,7 @@ body {
     background-repeat: no-repeat;
     width: 250px;
     height: 250px;
-    background-image: url("../images/icons/plants.svg");
+    background-image: url("../../images/icons/plants.svg");
   }
   &.gallery {
     &::before {
@@ -376,6 +376,7 @@ body {
       transform: translateY(-40%) scale(-1, 1);
     }
   }
+  
 }
 
 [data-wave] {
