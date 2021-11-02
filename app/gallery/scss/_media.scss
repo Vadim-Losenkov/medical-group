@@ -11,6 +11,8 @@
   .header-mobile {
     display: block;
     padding: 56px 15px;
+    background: #ffffff;
+    box-shadow: 0px 4px 54px rgba(96, 96, 96, 0.02);
     &__box {
       max-width: 768px;
       margin: 0 auto;
@@ -65,14 +67,14 @@
       }
     }
     &__content {
-      background: #FFFFFF;
+      background: #ffffff;
       box-shadow: 0px 60px 86px rgba(0, 0, 0, 0.07);
       backdrop-filter: blur(30px);
       /* Note: backdrop-filter has minimal browser support */
       border-radius: 18px;
       width: 277px;
       box-shadow: 2px 2px 20px rgba(#000, 0.07);
-      
+
       position: absolute;
       top: 100px;
       z-index: 1000;
@@ -106,7 +108,7 @@
       &.active {
         font-family: "SF UI Display Light";
         font-weight: 400;
-        border-right: 2px solid #d52bff
+        border-right: 2px solid #d52bff;
       }
     }
     &__nav-phone {
@@ -135,13 +137,13 @@
       width: 150px;
       height: 150px;
       right: 0;
-      transform: translateY(0);
+      transform: translateY(35%);
     }
     &::after {
       width: 150px;
       height: 150px;
       left: 0;
-      transform: translateY(-40%) scale(-1, 1);
+      transform: translateY(5%) scale(-1, 1);
     }
   }
 }
@@ -158,9 +160,13 @@
     width: 100px;
     height: 100px;
   }
-  
+
   .title-grad-2 {
     display: none;
+  }
+  .gallery__text {
+    font-size: 17px;
+    padding: 0 45px;
   }
 }
 
@@ -180,10 +186,6 @@
     font-size: 34px;
     line-height: 40px;
   }
-  .gallery__text {
-    font-size: 14px;
-    line-height: 20px;
-  }
 
   .footer__nav-link {
     font-size: 14px;
@@ -192,5 +194,15 @@
   .footer__rights {
     font-size: 14px;
     line-height: 20px;
+  }
+  .gallery__text {
+    font-size: 17px;
+    padding: 0 15px;
+    &.plants {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
   }
 }

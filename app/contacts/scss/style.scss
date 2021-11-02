@@ -68,7 +68,7 @@
     border-radius: 157px;
     padding: 20px 47px;
     background-color: transparent;
-    transition: .3s;
+    transition: 0.3s;
     &:hover,
     &:active {
       background-color: #000;
@@ -90,17 +90,17 @@
     max-width: 560px;
     align-items: center;
     justify-content: space-between;
-    
     overflow: hidden;
     position: relative;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     &:hover {
       cursor: pointer;
-      // background-color: #fff;
       border: 1px solid rgba(#000, 0);
+      background: #ffffff;
       box-shadow: 0px 37px 58px rgba(142, 142, 142, 0.03);
     }
   }
+  
   &__list-text {
     font-weight: 300;
     font-size: 18px;

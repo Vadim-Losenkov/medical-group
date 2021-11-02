@@ -146,7 +146,6 @@
   width: 390px;
   height: 270px;
   border-radius: 40px;
-  // opacity: 0.6;
   filter: blur(2px);
   &::before {
     content: "";
@@ -160,9 +159,9 @@
     right: 0;
     top: 0;
     bottom: 0;
-    // background:
     z-index: 9999;
   }
+
   img {
     border-radius: 11px;
   }
@@ -184,7 +183,6 @@
     right: 0;
     top: 0;
     bottom: 0;
-    // background:
     z-index: 9999;
   }
 }
@@ -208,7 +206,11 @@
   .mobile-swiper {
     display: block;
   }
+  .gallery__title {
+    margin-top: 43px;
+  }
 }
+
 @media (max-width: 380px) {
   .mobile-swiper .swiper-slide {
     width: 100%;
