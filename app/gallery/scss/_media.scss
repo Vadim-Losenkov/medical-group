@@ -130,11 +130,19 @@
   .gallery__wrapper {
     grid-template-columns: 1fr;
   }
-  .mySwiper .swiper-slide {
-    // opacity: .4;
-  }
-  .mySwiper .swiper-slide-active {
-    // opacity: 1;
+  .gallery.plants {
+    &::before {
+      width: 150px;
+      height: 150px;
+      right: 0;
+      transform: translateY(0);
+    }
+    &::after {
+      width: 150px;
+      height: 150px;
+      left: 0;
+      transform: translateY(-40%) scale(-1, 1);
+    }
   }
 }
 

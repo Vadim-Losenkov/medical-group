@@ -30,6 +30,7 @@
   .header-mobile {
     display: block;
     padding: 56px 15px;
+    margin-bottom: 60px;
     &__box {
       max-width: 768px;
       margin: 0 auto;
@@ -141,6 +142,14 @@
         border-radius: 157px;
         margin: 0 auto;
       }
+    }
+  }
+  .top {
+    &__address-text {
+      margin-bottom: 5px;
+    }
+    &__address-info {
+      margin-bottom: 20px;
     }
   }
 }
