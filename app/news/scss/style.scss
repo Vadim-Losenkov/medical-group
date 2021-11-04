@@ -23,8 +23,10 @@
   }
 }
 
-
 .news {
+  &-grad-mobile {
+    display: none;
+  }
   &__inner {
     display: flex;
     justify-content: center;
@@ -58,6 +60,8 @@
   &__block-wrapper {
     padding: 0 92px;
     width: auto;
+    position: relative;
+    z-index: 10;
     &.right {
       background: linear-gradient(97.26deg, rgba(19, 0, 23, 0.0216) -48.04%, rgba(19, 0, 23, 0.0052) 88.35%);
 
@@ -80,7 +84,9 @@
     letter-spacing: 0.035em;
     color: #353537;
   }
-
+  &__mobile {
+    display: none;
+  }
   &__card {
     background: linear-gradient(178.74deg, rgba(255, 43, 234, 0.08) 1.06%, rgba(213, 43, 255, 0) 118.8%);
     border-radius: 23px;
@@ -224,6 +230,5 @@
     }
   }
 }
-
 
 @import "media";
