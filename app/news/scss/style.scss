@@ -41,8 +41,6 @@
       right: -100px;
       transform: translateY(30px) scale(-1, 1);
       
-      // bottom: -40px;
-
       background-repeat: no-repeat;
       width: 250px;
       height: 250px;
@@ -52,10 +50,12 @@
       transform: translateY(30px) scale(1, 1);
     }
   }
+
   &__block {
     max-width: 681px;
     width: 100%;
     position: relative;
+    z-index: 20;
   }
   &__block-wrapper {
     padding: 0 92px;
@@ -157,6 +157,8 @@
     color: #ffffff;
     position: relative;
 
+
+
     &::before {
       content: "⚡";
       position: absolute;
@@ -228,6 +230,27 @@
       background-color: #bf3dd5;
       box-shadow: 0px 7px 16px 1px rgba(213, 42, 255, 0.18);
     }
+  }
+}
+
+.news-grad-mobile {
+  display: block;
+  width: 250px;
+  height: 250px;
+  filter: blur(100px);
+  position: absolute;
+  z-index: -1 !important;
+  border-radius: 50%;
+  
+  &.item-1 {
+    top: 35%;
+    left: 5%;
+    opacity: 0.5 !important;
+  }
+  &.item-2 {
+    top: 60%;
+    right: 5%;
+    opacity: 0.5 !important;
   }
 }
 
