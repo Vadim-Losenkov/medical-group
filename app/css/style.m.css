@@ -3090,7 +3090,7 @@ body.open {
   width: 100%;
 }
 .header__nav-link.active {
-  border-bottom: 2px solid #d52bff;
+  border-bottom: 2px solid #A500D0;
 }
 .header__nav-link {
   margin-left: 42px;
@@ -3175,7 +3175,7 @@ body.open {
   margin-bottom: 48px;
 }
 .top button.top__info-button.pink {
-  background-color: #d52bff;
+  background-color: #A500D0;
   border-radius: 50px;
   padding: 20px 47px;
   margin-right: 25px;
@@ -3798,7 +3798,7 @@ body.open {
     background-color: white;
   }
   .header-mobile__burger {
-    background: #d52bff;
+    background: #A500D0;
     width: 62px;
     height: 62px;
     padding: 20px 20px;

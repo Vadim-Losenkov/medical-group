@@ -208,6 +208,11 @@ body {
 }
 
 .header {
+  &__nav-phone {
+    &:hover {
+      background-color: #A500D0 !important;
+    }
+  }
   &-mobile {
     display: none;
   }
@@ -272,7 +277,7 @@ body {
 
   &__nav-link.active {
     @extend %fw400;
-    border-bottom: 2px solid #d52bff;
+    border-bottom: 2px solid #A500D0;
   }
 
   &__nav-link {
