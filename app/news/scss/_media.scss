@@ -147,6 +147,9 @@
 }
 
 @media (max-width: 610px) {
+  .news-grad-mobile {
+    display: block;
+  }
   .news__title,
   .news__text {
     justify-content: center;

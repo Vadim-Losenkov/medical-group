@@ -42,7 +42,6 @@
       border-radius: 47px;
       margin-left: 0;
     }
-
     &::before {
       content: "";
       background-size: cover;
@@ -76,10 +75,10 @@
     column-gap: 15px;
   }
 
-  button.top__info-button.pink {
+  .top__info-button.pink {
     background-color: #d52bff;
     border-radius: 50px;
-    padding: 20px 47px;
+    padding: 15px 35px;
     margin-right: 25px;
     flex: none;
     border-radius: 157px;
@@ -92,7 +91,7 @@
       background-color: #c51fee;
     }
   }
-  button.top__info-button.white {
+  .top__info-button.white {
     flex: none;
     border: 1px solid #353537;
     border-radius: 157px;

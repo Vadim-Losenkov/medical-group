@@ -74,6 +74,7 @@
       }
     }
   }
+  
   &__text {
     margin-bottom: 115px;
     max-width: 485px;
@@ -234,7 +235,7 @@
 }
 
 .news-grad-mobile {
-  display: block;
+  display: none;
   width: 250px;
   height: 250px;
   filter: blur(100px);
