@@ -210,7 +210,7 @@ body {
 .header {
   &__nav-phone {
     &:hover {
-      background-color: #A500D0 !important;
+      background-color: #A13791 !important;
     }
   }
   &-mobile {
@@ -277,7 +277,7 @@ body {
 
   &__nav-link.active {
     @extend %fw400;
-    border-bottom: 2px solid #A500D0;
+    border-bottom: 2px solid #A13791;
   }
 
   &__nav-link {

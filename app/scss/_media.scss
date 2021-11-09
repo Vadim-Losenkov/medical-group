@@ -44,7 +44,7 @@
       position: relative;
     }
     &__burger {
-      background: #A500D0;
+      background: #A13791;
       width: 62px;
       height: 62px;
       padding: 20px 20px;
@@ -128,7 +128,7 @@
       &.active {
         font-family: "SF UI Display Light";
         font-weight: 400;
-        border-right: 2px solid #A500D0
+        border-right: 2px solid #A13791
       }
     }
     &__nav-phone {
@@ -201,7 +201,8 @@
     padding: 15px 25px !important;
   }
   .top__info-button.pink {
-    margin-right: 1px !important;
+    padding: 15px 25px !important;
+    margin-right: 5px;
   }
 }
 @media (max-width: 420px) {

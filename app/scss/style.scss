@@ -26,6 +26,7 @@
     @extend %fw300;
     margin-bottom: 20px;
   }
+
   &__address-info {
     font-size: 20px;
     @extend %fw500;
@@ -75,12 +76,10 @@
     display: flex;
     column-gap: 15px;
   }
-
   .top__info-button.pink {
-    background-color: #A500D0;
+    background-color: #A13791;
     border-radius: 50px;
-    padding: 15px 35px;
-    margin-right: 25px;
+    padding: 22px 60px;
     flex: none;
     border-radius: 157px;
     color: #fff;
