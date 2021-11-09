@@ -28,9 +28,9 @@ body {
   // opacity: 0;
   // padding-bottom: 50px;
   // min-width: 610px;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   &.visible {
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     opacity: 1;
   }
   font-size: 18px;
@@ -147,6 +147,10 @@ body {
     box-shadow: 0px 27px 37px -8px rgba(255, 90, 90, 0.25);
     background-color: #ff5a5a;
   }
+  &.pink {
+    background-color: #fc688b;
+    box-shadow: 0px 27px 37px -8px rgba(248, 102, 137, 0.31);
+  }
   &.blue {
     background-color: #855aff;
     box-shadow: 0px 27px 37px -8px rgba(133, 90, 255, 0.32);
@@ -210,7 +214,7 @@ body {
 .header {
   &__nav-phone {
     &:hover {
-      background-color: #A13791 !important;
+      background-color: #a13791 !important;
     }
   }
   &-mobile {
@@ -237,7 +241,13 @@ body {
     padding-top: 15px;
     position: relative;
     z-index: 1000;
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 17.85%, #FFFFFF 26.06%, #FFFFFF 74.91%, rgba(255, 255, 255, 0) 82.79%)!important;
+    background: linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0) 17.85%,
+      #ffffff 26.06%,
+      #ffffff 74.91%,
+      rgba(255, 255, 255, 0) 82.79%
+    ) !important;
   }
   &__nav-wrapper {
     position: relative;
@@ -253,10 +263,10 @@ body {
     font-size: 18px;
     position: relative;
     padding-bottom: 40px;
-    transition: all .3s;
-    
+    transition: all 0.3s;
+
     &:not(.active)::before {
-      transition: all .3s;
+      transition: all 0.3s;
       content: "";
       width: 0;
       left: auto;
@@ -268,7 +278,7 @@ body {
       bottom: -2px;
     }
     &:not(.active):hover::before {
-      transition: .3s;
+      transition: 0.3s;
       left: 0;
       right: auto;
       width: 100%;
@@ -277,7 +287,7 @@ body {
 
   &__nav-link.active {
     @extend %fw400;
-    border-bottom: 2px solid #A13791;
+    border-bottom: 2px solid #a13791;
   }
 
   &__nav-link {
@@ -293,7 +303,7 @@ body {
     margin-left: 50px;
     // margin-right: 22px;
     margin-top: -20px;
-    transition: .3s;
+    transition: 0.3s;
     &:hover,
     &:active {
       background-color: #000;
@@ -382,7 +392,6 @@ body {
       transform: translateY(-40%) scale(-1, 1);
     }
   }
-  
 }
 
 [data-wave] {
@@ -392,12 +401,12 @@ body {
 }
 
 .pulse {
- background-color: #eee;
- border-radius: 50%;
- z-index: -1;
- animation: pulse 0.7s ease-out;
- transform: scale(0);
- position: absolute;
+  background-color: #eee;
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulse 0.7s ease-out;
+  transform: scale(0);
+  position: absolute;
 }
 
 @keyframes gradient {
@@ -419,11 +428,11 @@ body {
 }
 
 @keyframes pulse {
- to {
-  transform: scale(2);
-  background-color: #fff;
-  opacity: 0;
- }
+  to {
+    transform: scale(2);
+    background-color: #fff;
+    opacity: 0;
+  }
 }
 
 @media (max-width: 768px) {
