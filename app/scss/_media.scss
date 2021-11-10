@@ -186,8 +186,8 @@
     margin: 0 auto;
   }
 }
-@media (max-width: 600px) {
 
+@media (max-width: 600px) {
   .grad-1,
   .grad-2,
   .grad-3,
@@ -196,6 +196,7 @@
     filter: blur(50px) !important;
   }
 }
+
 @media (max-width: 530px) {
   .top__info-buttons button {
     padding: 15px 25px !important;
@@ -204,7 +205,20 @@
     padding: 15px 25px !important;
     margin-right: 5px;
   }
+  
+  .faq__item-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .faq__item-text {
+    font-size: 14px;
+  }
+  .faq__item-button {
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
 }
+
 @media (max-width: 420px) {
   .header-mobile {
     padding: 30px 10px;
@@ -239,5 +253,9 @@
       margin: 0 !important;
       margin-bottom: 5px !important;
     }
+  }
+  
+  .faq__item {
+    padding: 20px 30px;
   }
 }

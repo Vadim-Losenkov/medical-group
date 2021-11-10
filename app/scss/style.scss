@@ -242,6 +242,7 @@
     padding: 35px 45px;
     border-radius: 21px;
     margin-bottom: 40px;
+    position: relative;
 
     &--white {
       background: #ffffff;
@@ -333,6 +334,30 @@
     }
     &--lightpurple {
       background: #cc68fc;
+    }
+  }
+  
+  .faq-grad {
+    right: -70px;
+    height: 300px;
+    width: 300px;
+    bottom: -70px;
+    position: absolute;
+    animation: gradient 13s infinite linear;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(200px);
+    &.item-2 {
+      animation: gradient 10s infinite linear;
+    }
+    &.item-3 {
+      animation: gradient 15s infinite linear;
+    }
+    &.item-4 {
+      animation: gradient 12s infinite linear;
+    }
+    &.item-5 {
+      animation: gradient 14s infinite linear;
     }
   }
 }
