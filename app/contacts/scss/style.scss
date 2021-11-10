@@ -101,13 +101,16 @@
       box-shadow: 0px 37px 58px rgba(142, 142, 142, 0.03);
     }
   }
+
   &__list-text {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 18px;
     line-height: 29px;
     letter-spacing: 0.035em;
     color: #353537;
     margin-bottom: 20px;
+    font-family: 'BPG Nino Mtavruli';
+  
   }
   &__list-phone {
     span {

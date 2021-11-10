@@ -109,7 +109,6 @@
       transform: translateY(0);
       opacity: 1;
     }
-
     &__nav-link {
       width: 100%;
       margin-bottom: 10px;
@@ -123,11 +122,11 @@
       font-size: 18px;
       color: #292929;
       line-height: 27px;
-      font-family: "SF UI Display Thin";
-      font-weight: 300;
+      font-family: "BPG Nino Mtavruli";
+      font-weight: 400;
       &.active {
-        font-family: "SF UI Display Light";
-        font-weight: 400;
+        font-family: "BPG Nino Mtavruli";
+        font-weight: 700;
         border-right: 2px solid #A13791
       }
     }

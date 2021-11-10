@@ -1,6 +1,6 @@
 const items = [
   { 
-    coord: [ 55.751244, 37.618423 ],
+    coord: [ 41.72345379451328, 44.73105219770946 ],
     obj: {},
     obj2: {
       // Опции
@@ -13,10 +13,10 @@ const items = [
       // её "ножки" (точки привязки).
       iconImageOffset: [-260, -200],
     },
-    text: `Vaja-Pshavela 78a (at the exit of Vazha-Pshavela metro station)`
+    text: `ვაჟა-ფშაველას 78ა, მეტროსადგურ ვაჟა-ფშაველას ამოსასვლელთან`
   },
   { 
-    coord: [ 48.864716, 2.349014 ],
+    coord: [41.686470, 44.837647],
     obj: {},
     obj2: {
       // Опции
@@ -29,10 +29,10 @@ const items = [
       // её "ножки" (точки привязки).
       iconImageOffset: [-260, -200],
     },
-    text: 'город 1'
+    text: 'ქეთევან წამებულის 65'
   },
   { 
-    coord: [ 34.052235, -118.243683 ],
+    coord: [41.755939, 44.775789],
     obj: {},
     obj2: {
       // Опции
@@ -45,10 +45,10 @@ const items = [
       // её "ножки" (точки привязки).
       iconImageOffset: [-260, -200],
     },
-    text: 'город 2'
+    text: 'დიღმის მასივი, მესამე კვარტალი, მესამე კურპუსი'
   },
   { 
-    coord: [ 59.9386, 30.3141 ],
+    coord: [41.78360186901702, 44.7994046386743],
     obj: {},
     obj2: {
       // Опции
@@ -61,7 +61,7 @@ const items = [
       // её "ножки" (точки привязки).
       iconImageOffset: [-260, -200],
     },
-    text: 'город 3'
+    text: 'მეტროსადგურ სარაჯიშვილის მიმდებარედ'
   },
 ];
 
@@ -120,7 +120,7 @@ $(function () {
     
                   $($mapMarker).each(function(index) {
                     console.log(items[index]);
-                    $(this).append(`<div class="info">
+                    $(this).append(`<div class="info" style="text-align: center; font-family: 'BPG Nino Mtavruli';">
                                       ${items[index].text}
                                       <div id="player">
                                         <div id="outer">
@@ -163,8 +163,8 @@ if (ymaps) {
   // 2edcc8c3-2f38-48da-8de9-95e6078163c0
   // https://vc.ru/design/117708-delaem-cherno-beluyu-kartu-yandeks-dlya-sayta-i-marker-lyuboy-kartinkoy
   var myMap = new ymaps.Map("map", {
-      center: [55.751244, 37.618423],
-      zoom: 12
+      center: [41.72345379451328, 44.73105219770946],
+      zoom: 17
     })
   
   
