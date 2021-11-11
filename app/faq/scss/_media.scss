@@ -3,7 +3,7 @@
     display: none;
   }
   .header-mobile {
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0));
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0));
     box-shadow: 0px 4px 54px rgba(96, 96, 96, 0.02);
     display: block;
     padding: 56px 15px;
@@ -18,7 +18,7 @@
       position: relative;
     }
     &__burger {
-      background: #A13791;
+      background: #a13791;
       width: 62px;
       height: 62px;
       padding: 20px 20px;
@@ -61,14 +61,14 @@
       }
     }
     &__content {
-      background: #FFFFFF;
+      background: #ffffff;
       box-shadow: 0px 60px 86px rgba(0, 0, 0, 0.07);
       backdrop-filter: blur(30px);
       /* Note: backdrop-filter has minimal browser support */
       border-radius: 18px;
       width: 277px;
       box-shadow: 2px 2px 20px rgba(#000, 0.07);
-      
+
       position: absolute;
       top: 100px;
       z-index: 1000;
@@ -102,7 +102,7 @@
       &.active {
         font-family: "SF UI Display Light";
         font-weight: 400;
-        border-right: 2px solid #A13791
+        border-right: 2px solid #a13791;
       }
     }
     &__nav-phone {
@@ -122,13 +122,21 @@
   }
 }
 
-@media(max-width: 530px) {
-  .faq__item-title {
+@media (max-width: 530px) {
+  .faq-popup {
+    border-radius: 10px;
+  }
+  .faq__item-title,
+  .faq-popup__title {
     font-size: 18px;
     margin-bottom: 20px;
   }
-  .faq__item-text {
+  .faq__item-text,
+  .faq-popup__text {
     font-size: 14px;
+  }
+  .faq-popup__text {
+    margin-bottom: 16px;
   }
   .faq__item-button {
     font-size: 10px;
@@ -136,7 +144,7 @@
   }
 }
 
-@media(max-width: 420px) {
+@media (max-width: 420px) {
   .faq__item {
     padding: 20px 30px;
   }
