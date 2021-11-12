@@ -24,8 +24,7 @@ button {
 
 body {
   // min-width: 320px;
-  min-width: 1920px;
-  font-family: 'SF UI Display Light', 'BPG Nino Mtavruli';
+  font-family: 'BPG Nino Mtavruli', 'SF UI Display Light', sans-serif;
   font-weight: 400;
   transition: opacity 0.3s;
   &.visible {

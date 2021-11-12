@@ -2,6 +2,7 @@
 @import "../../scss/vars";
 @import "../../scss/libs/reset";
 @import "../../scss/libs/animate";
+@import "../../scss/libs/popup";
 @import "../../scss/mixins";
 @import "../../scss/global";
 
@@ -24,6 +25,7 @@
     position: relative;
     z-index: 0;
     transition: 0.3s;
+    
     &:hover {
       transform: translateY(-10px);
       box-shadow: 10px 10px 10px rgba(#000, 0.03);
@@ -81,7 +83,8 @@
     padding: 13px 27px;
     padding-left: 57px;
     margin-top: 44px;
-    @extend %fw600;
+  
+    font-weight: 700;
     font-size: 18px;
     line-height: 148.34%;
     /* identical to box height, or 27px */
@@ -97,6 +100,9 @@
       transform: translateY(-50%);
     }
   }
+  &__item.big-article .articles__item-inner {
+    min-height: 370px;
+  }
   &__item-image {
     // border-radius: 12px;
     border-top-left-radius: 12px;
@@ -105,6 +111,7 @@
   &__item-inner {
     background: #fff;
     padding: 46px 56px;
+    min-height: 300px;
   }
   &__item-title {
     font-size: 30px;
@@ -222,4 +229,145 @@
   }
 }
 
-// @import "media";
+
+.articles-popup {
+  max-width: 1026px;
+  margin: 0 auto;
+  padding: 30px 0;
+
+  &__inner {
+    position: relative;
+    background: #fff;
+    padding: 40px;
+    max-width: 1026px;
+    border-radius: 0 0 21px 21px;
+    z-index: 2000;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-family: BPG Nino Mtavruli;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 148.34%;
+    letter-spacing: 0.035em;
+    color: #292929;
+  }
+  &__text {
+    font-family: BPG Nino Mtavruli;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 158.34%;
+    letter-spacing: 0.035em;
+    color: #353537;
+    margin-bottom: 32px;
+
+    span {
+      font-family: BPG Nino Mtavruli;
+      font-weight: 700;
+      color: #292929;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &__button {
+    margin-bottom: 32px;
+    padding: 10px 16px;
+    padding-left: 38px;
+    background: linear-gradient(89.36deg, #000000 1.5%, #000000 23.41%, #000000 92.05%);
+    border-radius: 3px;
+    // font-family: SF UI Display;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 148.34%;
+    letter-spacing: 0.035em;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      content: "⚡";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 20px;
+    }
+    &--black {
+      background: linear-gradient(89.36deg, #000000 1.5%, #000000 23.41%, #000000 92.05%);
+    }
+    &--pink {
+      background: #fc688b;
+    }
+    &--orange {
+      background: #ff9950;
+    }
+    &--blue {
+      background: #6877fc;
+    }
+    &--lightblue {
+      background: #68b5fc;
+    }
+    &--purple {
+      background: #9039ff;
+    }
+    &--lightpurple {
+      background: #cc68fc;
+    }
+  }
+}
+
+.mfp-close {
+  top: 260px !important;
+  right: 30px !important;
+  margin: 0 !important;
+  z-index: 3000 !important;
+  color: #000 !important;
+  font-size: 34px;
+
+}
+.mfp-zoom-in .mfp-with-anim {
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+.mfp-zoom-in.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.mfp-zoom-in.mfp-ready .mfp-with-anim {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.mfp-zoom-in.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+
+.mfp-zoom-in.mfp-removing .mfp-with-anim {
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+.mfp-zoom-in.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+@import "media";
