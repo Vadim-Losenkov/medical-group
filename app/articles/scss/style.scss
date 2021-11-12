@@ -110,9 +110,15 @@
     font-size: 30px;
     line-height: 42px;
     color: #26262b;
-    @extend %fw600;
     margin-bottom: 29px;
+    font-family: "BPG Nino Mtavruli";
+    font-weight: 700;
   }
+  &__item-text {
+    font-family: "BPG Nino Mtavruli";
+    font-weight: 400;
+  }
+    
   &__item-footer {
     background-color: rgba(226, 226, 226, 0.24);
     display: flex;
@@ -216,4 +222,4 @@
   }
 }
 
-@import "media";
+// @import "media";

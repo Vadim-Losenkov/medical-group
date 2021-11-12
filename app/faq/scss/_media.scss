@@ -3,10 +3,11 @@
     display: none;
   }
   .header-mobile {
-    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0));
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0));
     box-shadow: 0px 4px 54px rgba(96, 96, 96, 0.02);
     display: block;
     padding: 56px 15px;
+    margin-bottom: 60px;
     &__box {
       max-width: 768px;
       margin: 0 auto;
@@ -18,7 +19,7 @@
       position: relative;
     }
     &__burger {
-      background: #a13791;
+      background: #A13791;
       width: 62px;
       height: 62px;
       padding: 20px 20px;
@@ -61,14 +62,14 @@
       }
     }
     &__content {
-      background: #ffffff;
+      background: #FFFFFF;
       box-shadow: 0px 60px 86px rgba(0, 0, 0, 0.07);
       backdrop-filter: blur(30px);
       /* Note: backdrop-filter has minimal browser support */
       border-radius: 18px;
       width: 277px;
       box-shadow: 2px 2px 20px rgba(#000, 0.07);
-
+      
       position: absolute;
       top: 100px;
       z-index: 1000;
@@ -83,7 +84,6 @@
       transform: translateY(0);
       opacity: 1;
     }
-
     &__nav-link {
       width: 100%;
       margin-bottom: 10px;
@@ -97,12 +97,12 @@
       font-size: 18px;
       color: #292929;
       line-height: 27px;
-      font-family: "SF UI Display Thin";
-      font-weight: 300;
+      font-family: "BPG Nino Mtavruli";
+      font-weight: 400;
       &.active {
-        font-family: "SF UI Display Light";
-        font-weight: 400;
-        border-right: 2px solid #a13791;
+        font-family: "BPG Nino Mtavruli";
+        font-weight: 700;
+        border-right: 2px solid #A13791
       }
     }
     &__nav-phone {
