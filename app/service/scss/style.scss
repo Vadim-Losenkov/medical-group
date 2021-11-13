@@ -26,7 +26,13 @@
     border-radius: 21px;
     background-color: #fff;
     position: relative;
-    z-index: 10;
+    box-shadow: 0px 37px 68px rgba(142, 142, 142, 0.03);
+    transition: .3s;
+    &:hover {
+      box-shadow: 0px 37px 68px rgba(142, 142, 142, 0.12);
+      transform: translateY(-5px);
+    }
+    z-index: 100;
     img {
       object-fit: cover;
       width: 190px;
@@ -71,6 +77,7 @@
 .service__text {
   @extend %fw300;
   font-size: 18px;
+  font-weight: 400;
   line-height: 29px;
   text-align: center;
   letter-spacing: 0.035em;

@@ -335,7 +335,9 @@
 }
 
 .mfp-close {
-  
+  top: 50px !important;
+  right: 20px !important;
+  position: absolute !important;
   margin: 0 !important;
   z-index: 3000 !important;
   color: #000 !important;
