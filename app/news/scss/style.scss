@@ -315,13 +315,12 @@
   
   &__price {
     display: flex;
-    flex: 0 1 0;
-    span.middle {
+    align-items: flex-end;
+    .middle {
+      height: 1px;
+      flex: 1;
+      transform: translateY(-5px);
       border-bottom: 1px dashed #ccc;
-      
-    }
-    span {
-      flex: none;
     }
   }
 
@@ -374,10 +373,9 @@
   }
 }
 
-
 .mfp-close {
   top: 30px !important;
-  right: 30px !important;
+  right: 10px !important;
   margin: 0 !important;
   z-index: 3000 !important;
   color: #000 !important;
