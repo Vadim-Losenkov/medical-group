@@ -25,7 +25,7 @@ $(function () {
       filter: `blur(${$(window).width() * 0.3}px)`
     })
   })
-  $('.articles__item').magnificPopup({
+  $('.service__item').magnificPopup({
 
     type: 'inline',
 

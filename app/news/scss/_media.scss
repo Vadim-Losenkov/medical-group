@@ -384,6 +384,20 @@
   }
 }
 
+@media (max-width: 530px) {
+  .news-popup {
+    border-radius: 10px;
+  }
+  .news-popup__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .news-popup__text {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+}
+
 @media (max-width: 420px) {
   .header-mobile {
     padding: 30px 10px;
