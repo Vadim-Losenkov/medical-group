@@ -33,7 +33,7 @@ var swiper = new Swiper(".mySwiper", {
   autoplay: { delay: 3000, },
   coverflowEffect: {
     rotate: 0,
-    stretch: 40,
+    stretch: 32,
     depth: 20,
     modifier: 10,
     slideShadows: true,

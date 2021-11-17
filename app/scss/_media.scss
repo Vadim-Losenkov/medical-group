@@ -11,6 +11,9 @@
 }
 
 @media (max-width: 1180px) {
+  .top__info {
+    margin-right: 0;
+  }
   .top__box {
     margin-top: 80px;
   }
@@ -172,6 +175,7 @@
   .top__info-buttons {
     text-align: center;
     margin: 0 auto;
+    justify-content: center;
   }
   .top__image {
     padding: 0;
@@ -212,15 +216,26 @@
     padding: 15px 25px !important;
   }
   .top__info-button.pink {
-    padding: 15px 70px !important;
+    padding: 0 !important;
     margin-right: 5px;
-    
+    max-width: 142px !important;
+    height: 40px !important;
   }
   .top__info-button.white {
-    padding: 15px 40px !important;
-    margin-right: 10px;
+    max-width: 142px !important;
+    height: 40px !important;
+    padding:0 !important;
+  }
+  .top__info-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .top__info-text {
+    font-size: 14px;
+    line-height: 18px;
   }
 }
+
 
 @media (max-width: 420px) {
   .header-mobile {
@@ -239,22 +254,14 @@
     font-size: 14px !important;
     line-height: 18px !important;
   }
-  .top__info-title {
-    font-size: 32px;
-    line-height: 40px;
-  }
   .top__address-info {
     margin-left: -28px;
   }
-  .top__info-text {
-    font-size: 14px;
-    line-height: 18px;
-  }
-  .top__info-buttons {
-    display: block;
-    button {
-      margin: 0 !important;
-      margin-bottom: 5px !important;
-    }
-  }
+  // .top__info-buttons {
+  //   display: block;
+  //   button {
+  //     margin: 0 !important;
+  //     margin-bottom: 5px !important;
+  //   }
+  // }
 }
