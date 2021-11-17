@@ -15,6 +15,7 @@
     flex-wrap: wrap;
     max-width: 1920px;
     width: 100%;
+    padding: 0 15px;
     margin: 0 auto;
   }
   &__item {
@@ -75,6 +76,7 @@
       }
     }
   }
+  
   
   &__item-button {
     background: linear-gradient(89.36deg, #000000 1.5%, #000000 23.41%, #000000 92.05%);

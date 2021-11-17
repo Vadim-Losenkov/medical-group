@@ -11,16 +11,20 @@
 }
 
 @media (max-width: 1180px) {
+  .top__box {
+    margin-top: 80px;
+  }
   .top__image {
-    display: none;
+    margin-top: 50px;
   }
   .top__box {
-    margin-top: 0!important;
+    max-width: 100%;
   }
   .top__inner {
-    margin-top: 50px;
+    margin-top: 90px;
     max-width: 768px;
     margin: 0 auto;
+    flex-wrap: wrap;
   }
 }
 @media (max-width: 1100px) {
@@ -156,29 +160,31 @@
 }
 
 @media (max-width: 768px) {
-  .top__image {
-    display: none;
+  .header-mobile {
+    margin-bottom: 0px !important;
+  }
+  .top__inner {
+    padding-bottom: 60px !important;
   }
   .top__info-arrow {
     display: flex;
   }
+  .top__info-buttons {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .top__image {
+    padding: 0;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    position: static;
+    .square {
+      display: none;
+    }
+  }
   .top__info-title {
     font-size: 46px;
     line-height: 60px;
-  }
-  .top__box {
-    &::before {
-      content: "";
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      width: 200px;
-      height: 200px;
-      position: absolute;
-      right: 0;
-      bottom: -50px;
-      background-image: url("../images/icons/plants.svg");
-    }
   }
   .top__inner {
     max-width: 768px;
@@ -186,6 +192,11 @@
   }
 }
 
+@media (max-width: 700px) {
+  .top__image {
+    margin-top: 100px;
+  }
+}
 @media (max-width: 600px) {
   .grad-1,
   .grad-2,
@@ -201,12 +212,13 @@
     padding: 15px 25px !important;
   }
   .top__info-button.pink {
-    padding: 15px 25px !important;
+    padding: 15px 70px !important;
     margin-right: 5px;
+    
   }
   .top__info-button.white {
-    padding: 15px 25px !important;
-    margin-right: 5px;
+    padding: 15px 40px !important;
+    margin-right: 10px;
   }
 }
 

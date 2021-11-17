@@ -13,7 +13,7 @@ const items = [
       // её "ножки" (точки привязки).
       iconImageOffset: [-260, -200],
     },
-    text: `ვაჟა-ფშაველას 78ა, მეტროსადგურ ვაჟა-ფშაველას ამოსასვლელთან`
+    text: `Vaja-Pshavela 78a, at the exit of Vazha-Pshavela metro station`
   },
   { 
     coord: [41.686470, 44.837647],
@@ -29,7 +29,7 @@ const items = [
       // её "ножки" (точки привязки).
       iconImageOffset: [-260, -200],
     },
-    text: 'ქეთევან წამებულის 65'
+    text: `65 'Ketevan Tsamebuli`
   },
   { 
     coord: [41.755939, 44.775789],
@@ -45,7 +45,7 @@ const items = [
       // её "ножки" (точки привязки).
       iconImageOffset: [-260, -200],
     },
-    text: 'დიღმის მასივი, მესამე კვარტალი, მესამე კურპუსი'
+    text: 'Digomi, third quarter, third building'
   },
   { 
     coord: [41.78360186901702, 44.7994046386743],
@@ -61,7 +61,7 @@ const items = [
       // её "ножки" (точки привязки).
       iconImageOffset: [-260, -200],
     },
-    text: 'მეტროსადგურ სარაჯიშვილის მიმდებარედ'
+    text: 'Near Sarajishvili metro station'
   },
 ];
 

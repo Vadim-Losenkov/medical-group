@@ -33,11 +33,22 @@ var swiper = new Swiper(".mySwiper", {
   autoplay: { delay: 3000, },
   coverflowEffect: {
     rotate: 0,
-    stretch: 52,
+    stretch: 40,
     depth: 20,
     modifier: 10,
     slideShadows: true,
-  }
+  },
+  breakpoints: {
+    700: {
+      coverflowEffect: {
+      rotate: 0,
+      stretch: 52,
+      depth: 20,
+      modifier: 10,
+      slideShadows: true,
+      }
+    }
+  },
 });
 
 new WOW().init();

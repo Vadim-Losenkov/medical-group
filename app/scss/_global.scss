@@ -434,7 +434,8 @@ body {
 }
 
 @media (max-width: 768px) {
-  .grad {
+  .grad,
+  .slider-grad {
     animation: 0 !important;
   }
 }
