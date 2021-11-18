@@ -1,13 +1,61 @@
+// const request = new XMLHttpRequest()
+const url = (id) => `http://localhost:1234/service/js/post-${id}.json`
+const textLoader = (text) => text.map(t => `<p class="service-popup__text">${t}</p>`).join('')
+const template = (obj) => `
+  <div id="service-modal-1" class="service-popup mfp-with-anim mfp-hide">
+      <img src="${obj.image}" alt="">
+      <button title="close" type="button" class="mfp-close">&#215;</button>
+      <div class="service-popup__inner">
+        <div class="service-popup__head">
+          <h5 class="service-popup__title">
+            ${obj.title}
+          </h5>
+          <div class="service-popup__price">
+            ${obj.price} <span>დოლარიდან</span>
+          </div>
+        </div>
+        ${textLoader(obj.text)}
+        <div class="service-popup__footer">
+          <a href="#" class="service-popup__link">
+            ზარის განხორციელება
+          </a>
+          <div class="service-popup__mail">
+            <span>
+              E-mail:
+            </span>
+            <a href="mailto:info@medicalgroup.ge">
+              info@medicalgroup.ge
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+`
 
-function modalsLoader(wrapperSelector, popupWindows) {
+function modalsLoader(wrapperSelector, articlesSelector) {
   const $wrapper = document.querySelector(wrapperSelector)
+  const $service = document.querySelector(articlesSelector)
   
-  $wrapper.innerHTML = `
-    ${popupWindows}
-  `
+  axios.get(url(1)).then(function(resp) {
+    $wrapper.innerHTML = template(resp.data)
+  })
+
+  /* const $target = event.target.closest('[data-modal-loader]')
+  if ($target) {
+    const $id = $target.dataset.modalLoader
+    axios.get(url($id)).then(function(resp) {
+      $wrapper.innerHTML = template(resp.data)
+    })
+  }
+  $service.addEventListener('click', (event) => {
+  }) */
 }
 
-setTimeout(() => {
+modalsLoader('.modals-list', '.service')
+
+
+
+/* setTimeout(() => {
 modalsLoader('.modals-list', `
     <div id="service-modal-1" class="service-popup mfp-with-anim mfp-hide">
       <img src="../images/content/articles-7.jpg" alt="">
@@ -1419,4 +1467,4 @@ modalsLoader('.modals-list', `
       </div>
     </div>
 `)
-}, 10);
+}, 10); */
