@@ -18,6 +18,7 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
   &__item {
     margin-bottom: 40px;
     max-width: 520px;
@@ -27,7 +28,7 @@
     background-color: #fff;
     position: relative;
     box-shadow: 0px 37px 68px rgba(142, 142, 142, 0.03);
-    transition: .3s;
+    transition: 0.3s;
     &:hover {
       box-shadow: 0px 37px 68px rgba(142, 142, 142, 0.12);
       transform: translateY(-5px);
@@ -41,80 +42,105 @@
       background-position: center;
     }
   }
-  &__item-image.onloading {
-    background-color: #ccc;
-    border-radius: 12px 12px 0 0;
-    width: 100%;
-    height: 200px
-    
-    img {
-      opacity: 0;
-    }
-  }
-  &__item-inner {
-    border-radius: 0 12px 12px 0;
-    padding: 45px;
-    background-color: #fff;
-  }
-  &__item-title {
-    font-size: 26px;
-    line-height: 1.5;
-    @extend %fw700;
-    margin-bottom: 15px;
-    &.onloading {
+
+  &__item.onloading {
+    .service__item-title {
       font-size: 0;
       height: 26px;
       width: 160px;
-      background-color: #ccc;
+      background: rgb(204, 204, 204);
+      background: linear-gradient(90deg, rgba(204, 204, 204, 1) 35%, rgba(238, 238, 238, 1) 100%);
       border-radius: 5px;
+      margin-bottom: 20px;
     }
-  }
-  &__item-text {
-    @extend %fw400;
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    &.onloading {
+    .service__item-text {
       font-size: 0;
       height: 20px;
       width: 100%;
-      background-color: #ccc;
+      background: rgb(204, 204, 204);
+      background: linear-gradient(90deg, rgba(204, 204, 204, 1) 35%, rgba(238, 238, 238, 1) 100%);
       border-radius: 5px;
       position: relative;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
       &::before {
         content: "";
         position: absolute;
         font-size: 0;
         height: 20px;
         width: 90%;
-        background-color: #ccc;
+        background: rgb(204, 204, 204);
+        background: linear-gradient(90deg, rgba(204, 204, 204, 1) 35%, rgba(238, 238, 238, 1) 100%);
         border-radius: 5px;
         bottom: -23px;
       }
     }
+    .service__item-price {
+      span {
+        display: none;
+      }
+      font-size: 0;
+      height: 25px;
+      width: 120px;
+      background: rgb(204, 204, 204);
+      background: linear-gradient(90deg, rgba(204, 204, 204, 1) 35%, rgba(238, 238, 238, 1) 100%);
+      border-radius: 5px;
+      position: relative;
+      margin-bottom: 50px;
+      margin: 0;
+    }
+    .service__item-image {
+      background: rgb(204, 204, 204);
+      background: linear-gradient(90deg, rgba(204, 204, 204, 1) 35%, rgba(238, 238, 238, 1) 100%);
+      border-radius: 12px 0 0 12px;
+      min-width: 190px;
+      // height: 200px;
+      img {
+        opacity: 0;
+      }
+      
+      @media (max-width: 600px) {
+        border-radius: 12px 12px 0 0;
+      }
+    }
+  }
+  &__item-inner {
+    border-radius: 0 12px 12px 0;
+    padding: 45px;
+    background-color: #fff;
+    width: 100%;
+  }
+  &__item-title {
+    font-size: 26px;
+    line-height: 1.5;
+    @extend %fw700;
+    margin-bottom: 15px;
+  }
+  &__item-text {
+    @extend %fw400;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
   }
   &__item-price {
     @extend %fw700;
     font-size: 26px;
     line-height: 1.5;
-    &.onloading {
-      font-size: 0;
-      height: 25px;
-      width: 120px;
-      background-color: #ccc;
-      border-radius: 5px;
-      position: relative;
-      margin-bottom: 50px;
-    }
     span {
       @extend %fw400;
       font-size: 18px;
       color: #ccc;
     }
   }
-}
 
+  &__item-image {
+    img {
+      height: 100%;
+      width: 190px;
+    }
+    flex: none;
+    width: 190px;
+  }
+}
 
 .service__title {
   justify-content: center;
@@ -133,12 +159,11 @@
   max-width: 715px;
 }
 
-
 .service-popup {
   max-width: 1026px;
   margin: 0 auto;
   padding: 30px 0;
-  
+
   &:not(.main) {
     img {
       object-fit: cover;
@@ -236,7 +261,7 @@
       background: #cc68fc;
     }
   }
-  
+
   &__head {
     display: flex;
     flex-wrap: wrap;
@@ -310,7 +335,7 @@
     animation: gradient 14s infinite linear;
   }
 }
-  
+
 .mfp-close {
   top: 50px !important;
   right: 20px !important;
@@ -319,7 +344,6 @@
   z-index: 3000 !important;
   color: #000 !important;
   font-size: 34px;
-
 }
 .mfp-zoom-in .mfp-with-anim {
   opacity: 0;

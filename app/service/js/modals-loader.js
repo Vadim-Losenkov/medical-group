@@ -1,4 +1,8 @@
-// const request = new XMLHttpRequest()
+// 1393 => : 6
+// 1393: 4
+// 980: 3 
+
+
 const url = (id) => `http://localhost:1234/service/js/post-${id}.json`
 const textLoader = (text) => text.map(t => `<p class="service-popup__text">${t}</p>`).join('')
 const template = (obj) => `
@@ -32,11 +36,48 @@ const template = (obj) => `
     </div>
 `
 
+const preloadTemplate = (gradColor) => `
+<div data-modal-loader="1" class="service__item onloading" data-effect="mfp-zoom-in" >
+  <div style="background: ${gradColor ? gradColor : 'none'};" class="service__item-grad grad service-grad item-1"></div>
+  <div class="service__item-image">
+    <img src="../images/service/item-1.jpg" alt="">
+  </div>
+  <div class="service__item-inner">
+    <h4 class="service__item-title"></h4>
+    <p class="service__item-text"></p>
+    <h6 class="service__item-price"></h6>
+  </div>
+</div>
+`
+
+function preloader(selector) {
+  const $wrapper = document.querySelector(selector)
+
+  const deviceWidth = document.documentElement.clientWidth
+  if (deviceWidth >= 1393) {
+    for (let i = 0; i < 6; i++) {
+      $wrapper.insertAdjacentHTML('beforeend', preloadTemplate())
+    }
+  }
+  // switch (deviceWidth) {
+  //   case (deviceWidth >= 1393):
+  //     for (let i = 0; i < 6; i++) {
+  //       $wrapper.insertAdjacentHTML('beforeend', preloadTemplate)
+  //     }
+  //     break;
+  
+  //   default:
+  //     break;
+  // }
+}
+
+preloader('.service__inner')
+
 function modalsLoader(wrapperSelector, articlesSelector) {
   const $wrapper = document.querySelector(wrapperSelector)
   const $service = document.querySelector(articlesSelector)
-  
-  axios.get(url(1)).then(function(resp) {
+
+  axios.get(url(1)).then(function (resp) {
     $wrapper.innerHTML = template(resp.data)
   })
 
@@ -51,8 +92,8 @@ function modalsLoader(wrapperSelector, articlesSelector) {
   }) */
 }
 
-modalsLoader('.modals-list', '.service')
 
+modalsLoader('.modals-list', '.service')
 
 
 /* setTimeout(() => {
