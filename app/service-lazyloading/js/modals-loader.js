@@ -1,9 +1,11 @@
 const firstArticlesBlock = document.querySelector('.service__inner')
+const modalsList = document.querySelector('.modals-list')
+let postNumber = 0
 
-const url = (id) => `http://localhost:1234/service/js/post-${id}.json`
+const url = (id) => `http://localhost:1234/service-lazyloading/js/post-${id}.json`
 const textLoader = (text) => text.map(t => `<p class="service-popup__text">${t}</p>`).join('')
-const template = (obj) => `
-  <div id="service-modal-1" class="service-popup mfp-with-anim mfp-hide">
+const template = (obj, index) => `
+  <div id="service-modal-${index}" class="service-popup mfp-with-anim mfp-hide">
       <img src="${obj.image}" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
@@ -33,6 +35,26 @@ const template = (obj) => `
     </div>
 `
 
+const postTemplate = (obj, index) => `
+   <a href="#service-modal-${index}" data-modal-loader="1"  class="service__item" data-effect="mfp-zoom-in" >
+    <div style="background-color: #855aff;" class="service__item-grad grad service-grad item-1"></div>
+    <div class="service__item-image">
+      <img src="${obj.image}" alt="">
+    </div>
+    <div class="service__item-inner">
+      <h4 class="service__item-title">
+        ${obj.title}
+      </h4>
+      <p class="service__item-text">
+        ${obj.text}
+      </p>
+      <h6 class="service__item-price">
+        ${obj.price} <span>დოლარიდან</span>
+      </h6>
+    </div>
+  </a>
+`
+
 const preloadTemplate = (index, gradColor) => `
 <div data-modal-loader="${index}" class="service__item onloading" data-effect="mfp-zoom-in" >
   <div style="background: ${gradColor ? gradColor : 'none'};" class="service__item-grad grad service-grad item-1"></div>
@@ -47,11 +69,15 @@ const preloadTemplate = (index, gradColor) => `
 
 function preloadLazy(count) {
   for (let i = 0; i < count; i++) {
-    const $el = firstArticlesBlock.querySelector(`data-modal-loader="${count}"`)
-    $el.parentNode.removeChild($el)
+    postNumber++
     
-    axios.get(url(i)).then(function(resp) {
-      $wrapper.innerHTML = template(resp.data)
+    const $el = firstArticlesBlock.querySelector(`[data-modal-loader="${i + 1}"]`)
+    
+    axios.get(url(i + 1)).then((resp) => {
+      $el.parentNode.removeChild($el)
+      
+      firstArticlesBlock.insertAdjacentHTML('beforeend', postTemplate(resp.data.post, (i + 1)))
+      modalsList.insertAdjacentHTML('beforeend', template(resp.data.modal, (i + 1)))
     })
   }
 }
@@ -65,7 +91,6 @@ function preloader(selector) {
       // нужна функция которая подгружает определенное кол-в
       firstArticlesBlock.insertAdjacentHTML('beforeend', preloadTemplate(i + 1))
     }
-    
     preloadLazy(3)
   } else if (deviceWidth <= 1393) {
     for (let i = 0; i < 4; i++) {
@@ -103,7 +128,7 @@ function modalsLoader(wrapperSelector, articlesSelector) {
 }
 
 
-// preloader('.service__inner')
+preloader('.service__inner')
 // modalsLoader('.modals-list', '.service')
 
 // нужна функция, которая получает объект 
