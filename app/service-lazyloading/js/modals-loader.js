@@ -1,78 +1,88 @@
-// const firstArticlesBlock = document.querySelector('.service__inner')
+const firstArticlesBlock = document.querySelector('.service__inner')
 
-// const url = (id) => `http://localhost:1234/service/js/post-${id}.json`
-// const textLoader = (text) => text.map(t => `<p class="service-popup__text">${t}</p>`).join('')
-// const template = (obj) => `
-//   <div id="service-modal-1" class="service-popup mfp-with-anim mfp-hide">
-//       <img src="${obj.image}" alt="">
-//       <button title="close" type="button" class="mfp-close">&#215;</button>
-//       <div class="service-popup__inner">
-//         <div class="service-popup__head">
-//           <h5 class="service-popup__title">
-//             ${obj.title}
-//           </h5>
-//           <div class="service-popup__price">
-//             ${obj.price} <span>დოლარიდან</span>
-//           </div>
-//         </div>
-//         ${textLoader(obj.text)}
-//         <div class="service-popup__footer">
-//           <a href="#" class="service-popup__link">
-//             ზარის განხორციელება
-//           </a>
-//           <div class="service-popup__mail">
-//             <span>
-//               E-mail:
-//             </span>
-//             <a href="mailto:info@medicalgroup.ge">
-//               info@medicalgroup.ge
-//             </a>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-// `
+const url = (id) => `http://localhost:1234/service/js/post-${id}.json`
+const textLoader = (text) => text.map(t => `<p class="service-popup__text">${t}</p>`).join('')
+const template = (obj) => `
+  <div id="service-modal-1" class="service-popup mfp-with-anim mfp-hide">
+      <img src="${obj.image}" alt="">
+      <button title="close" type="button" class="mfp-close">&#215;</button>
+      <div class="service-popup__inner">
+        <div class="service-popup__head">
+          <h5 class="service-popup__title">
+            ${obj.title}
+          </h5>
+          <div class="service-popup__price">
+            ${obj.price} <span>დოლარიდან</span>
+          </div>
+        </div>
+        ${textLoader(obj.text)}
+        <div class="service-popup__footer">
+          <a href="#" class="service-popup__link">
+            ზარის განხორციელება
+          </a>
+          <div class="service-popup__mail">
+            <span>
+              E-mail:
+            </span>
+            <a href="mailto:info@medicalgroup.ge">
+              info@medicalgroup.ge
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+`
 
-// const preloadTemplate = (gradColor) => `
-// <div data-modal-loader="1" class="service__item onloading" data-effect="mfp-zoom-in" >
-//   <div style="background: ${gradColor ? gradColor : 'none'};" class="service__item-grad grad service-grad item-1"></div>
-//   <div class="service__item-image">
-//     <img src="../images/service/item-1.jpg" alt="">
-//   </div>
-//   <div class="service__item-inner">
-//     <h4 class="service__item-title"></h4>
-//     <p class="service__item-text"></p>
-//     <h6 class="service__item-price"></h6>
-//   </div>
-// </div>
-// `
+const preloadTemplate = (index, gradColor) => `
+<div data-modal-loader="${index}" class="service__item onloading" data-effect="mfp-zoom-in" >
+  <div style="background: ${gradColor ? gradColor : 'none'};" class="service__item-grad grad service-grad item-1"></div>
+  <div class="service__item-image"></div>
+  <div class="service__item-inner">
+    <h4 class="service__item-title"></h4>
+    <p class="service__item-text"></p>
+    <h6 class="service__item-price"></h6>
+  </div>
+</div>
+`
 
+function preloadLazy(count) {
+  for (let i = 0; i < count; i++) {
+    const $el = firstArticlesBlock.querySelector(`data-modal-loader="${count}"`)
+    $el.parentNode.removeChild($el)
+    
+    axios.get(url(i)).then(function(resp) {
+      $wrapper.innerHTML = template(resp.data)
+    })
+  }
+}
 
-
-// // грузим заглушки в 1й блок articles__inner
-// function preloader(selector) {
-//   const deviceWidth = document.documentElement.clientWidth
+// грузим заглушки в 1й блок articles__inner
+function preloader(selector) {
+  const deviceWidth = document.documentElement.clientWidth
   
-//   if (deviceWidth < 980) {
-//     for (let i = 0; i < 3; i++) {
-//       // нужна функция которая подгружает определенное кол-в
-//       firstArticlesBlock.insertAdjacentHTML('beforeend', preloadTemplate())
-//       setTimeout(function() {
-        
-//       }, 50);
-//     }
-//   } else if (deviceWidth <= 1393) {
-//     for (let i = 0; i < 4; i++) {
-//       firstArticlesBlock.insertAdjacentHTML('beforeend', preloadTemplate())
-//     }
-//   } else if (deviceWidth > 1393) {
-//     for (let i = 0; i < 6; i++) {
-//       firstArticlesBlock.insertAdjacentHTML('beforeend', preloadTemplate())
-//     }
-//   }
-// }
+  if (deviceWidth < 980) {
+    for (let i = 0; i < 3; i++) {
+      // нужна функция которая подгружает определенное кол-в
+      firstArticlesBlock.insertAdjacentHTML('beforeend', preloadTemplate(i + 1))
+    }
+    
+    preloadLazy(3)
+  } else if (deviceWidth <= 1393) {
+    for (let i = 0; i < 4; i++) {
+      firstArticlesBlock.insertAdjacentHTML('beforeend', preloadTemplate())
+    }
+    
+    preloadLazy(4)
+  } else if (deviceWidth > 1393) {
+    for (let i = 0; i < 6; i++) {
+      firstArticlesBlock.insertAdjacentHTML('beforeend', preloadTemplate())
+    }
+    
+    preloadLazy(6)
+  }
+}
 
-// // грузим модалки
+// грузим модалки
 function modalsLoader(wrapperSelector, articlesSelector) {
   const $wrapper = document.querySelector(wrapperSelector)
   const $service = document.querySelector(articlesSelector)
@@ -99,7 +109,7 @@ function modalsLoader(wrapperSelector, articlesSelector) {
 // нужна функция, которая получает объект 
 // со статьей и модалкой 
 // и грузит это вместо заглушки
-setTimeout(() => {
+/* setTimeout(() => {
 modalsLoader('.modals-list', `
     <div id="service-modal-1" class="service-popup mfp-with-anim mfp-hide">
       <img src="../images/content/articles-7.jpg" alt="">
@@ -1511,4 +1521,4 @@ modalsLoader('.modals-list', `
       </div>
     </div>
 `)
-}, 10);
+}, 10); */

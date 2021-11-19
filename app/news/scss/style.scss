@@ -225,14 +225,16 @@
     align-items: flex-start;
     i {
       position: relative;
+      height: 100%;
+      
       &::before {
         content: "";
         position: absolute;
         width: 8px;
         height: 8px;
+        transform: translateY(10px);
         border-radius: 50%;
-        position: relative;
-        bottom: -15px;
+        position: absolute;
         display: block;
         background-color: #bf3dd5;
         box-shadow: 0px 7px 16px 1px rgba(213, 42, 255, 0.18);
