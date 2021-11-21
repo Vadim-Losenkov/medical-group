@@ -89,7 +89,7 @@ function modalsLoader(wrapperSelector, content) {
 setTimeout(() => {
 modalsLoader('.modals-list', `
     <div id="service-modal-1" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-1.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -166,7 +166,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-2" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-2.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -240,7 +240,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-3" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-3.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -309,7 +309,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-4" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-4.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -403,7 +403,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-5" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-5.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -496,7 +496,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-6" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-6.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -541,7 +541,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-7" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-7.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -602,7 +602,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-8" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-8.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -655,7 +655,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-9" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-9.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -744,7 +744,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-10" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-10.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -837,7 +837,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-11" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-11.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -881,7 +881,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-12" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-12.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -950,7 +950,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-13" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-13.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -1003,7 +1003,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-14" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-14.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -1092,7 +1092,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-15" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-15.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -1232,7 +1232,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-16" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-16.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -1365,7 +1365,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-17" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-17.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">
@@ -1426,7 +1426,7 @@ modalsLoader('.modals-list', `
       </div>
     </div>
     <div id="service-modal-18" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
+      <img src="../images/service/item-18.jpg" alt="">
       <button title="close" type="button" class="mfp-close">&#215;</button>
       <div class="service-popup__inner">
         <div class="service-popup__head">

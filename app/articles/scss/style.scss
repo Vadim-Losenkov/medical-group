@@ -18,7 +18,7 @@
     padding: 0 15px;
     margin: 0 auto;
   }
-  
+
   &__item {
     max-width: 520px;
     border-radius: 12px;
@@ -27,17 +27,17 @@
     position: relative;
     z-index: 0;
     transition: 0.3s;
-    
+
     &:hover {
       transform: translateY(-10px);
       box-shadow: 10px 10px 10px rgba(#000, 0.03);
     }
-    
+
     &.main.purple .articles__item-inner {
-      background: linear-gradient(359.97deg, #AE2BFF 0.03%, #6642CB 121.68%) !important;
+      background: linear-gradient(359.97deg, #ae2bff 0.03%, #6642cb 121.68%) !important;
     }
     &.main.orange .articles__item-inner {
-      background: linear-gradient(359.97deg, #FF9D2B 0.03%, #CB8C42 118.57%);
+      background: linear-gradient(359.97deg, #ff9d2b 0.03%, #cb8c42 118.57%);
     }
     &.main {
       position: relative;
@@ -77,8 +77,7 @@
       }
     }
   }
-  
-  
+
   &__item-button {
     background: linear-gradient(89.36deg, #000000 1.5%, #000000 23.41%, #000000 92.05%);
     border-radius: 5px;
@@ -86,7 +85,7 @@
     padding: 13px 27px;
     padding-left: 57px;
     margin-top: 44px;
-  
+
     font-weight: 700;
     font-size: 18px;
     line-height: 148.34%;
@@ -106,10 +105,15 @@
   &__item.big-article .articles__item-inner {
     min-height: 370px;
   }
-  &__item-image {
+  &__item:not(.main) .articles__item-image {
     // border-radius: 12px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+    width: 100%;
+    max-height: 261px;
+    object-fit: cover;
+    object-position: 0 0;
+    background-repeat: no-repeat;
   }
   &__item-inner {
     background: #fff;
@@ -128,7 +132,7 @@
     font-family: "BPG Nino Mtavruli";
     font-weight: 400;
   }
-    
+
   &__item-footer {
     background-color: rgba(226, 226, 226, 0.24);
     display: flex;
@@ -232,12 +236,11 @@
   }
 }
 
-
 .articles-popup {
   max-width: 1026px;
   margin: 0 auto;
   padding: 30px 0;
-  
+
   &:not(.main) {
     img {
       object-fit: cover;
@@ -247,7 +250,6 @@
       max-height: 353px;
       border-radius: 21px 21px 0 0;
     }
-    
   }
 
   &__inner {
@@ -345,7 +347,6 @@
   z-index: 3000 !important;
   color: #000 !important;
   font-size: 34px;
-
 }
 .mfp-zoom-in .mfp-with-anim {
   opacity: 0;
