@@ -17,6 +17,28 @@
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
+    .loading-icon {
+      display: none;
+    }
+    
+    &.loading {
+      padding-bottom: 50px;
+      position: relative;
+      .loading-icon {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('../../images/loading.gif');
+        border-radius: 50%;
+        transform: translateX(-50%);
+        left: 50%;
+      }
+    }
   }
 
   &__item.loading {
@@ -24,6 +46,8 @@
     width: 100%;
     .articles__item-inner {
       min-height: 300px;
+      padding-top: 10px!important;
+      padding-bottom: 50px!important;
     }
     .articles__item-button {
       width: 130px;

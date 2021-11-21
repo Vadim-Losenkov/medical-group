@@ -1,7 +1,7 @@
 const windowHeight = document.documentElement.clientHeight
 const deviceWidth = document.documentElement.clientWidth
 
-const firstArticlesBlock = document.querySelector('.articles__inner')
+const $loadWrapper = document.querySelector('.articles__inner')
 const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
 
@@ -17,22 +17,22 @@ const preloadTemplate = (index) => `
   </div>
 `
 
-const offer = document.querySelector('.service__block')
+window.addEventListener('scroll', scrollLoader)
 
-// window.addEventListener('scroll', scrollLoader)
-
-/* function scrollLoader() {
-  const k = 20 * postNumber
-  if (((window.scrollY + document.documentElement.clientHeight) > offer.clientHeight) && !offer.classList.contains('loading')) {
-    offer.classList.add('loading')
+function scrollLoader() {
+  const pos = $loadWrapper.getBoundingClientRect().top + pageYOffset
+  const height = $loadWrapper.offsetHeight
+  const condition = pageYOffset > (pos + height) - windowHeight && !$loadWrapper.classList.contains('loading')
+  if (condition && postNumber <= 18) {
+    $loadWrapper.classList.add('loading')
     if (deviceWidth < 980) {
-      lazyLoading(3)
+      lazyLoading(1)
     }
     if (deviceWidth <= 1393) {
-      lazyLoading(4)
+      lazyLoading(1)
     }
     if (deviceWidth > 1393) {
-      lazyLoading(6)
+      lazyLoading(1)
     }
   }
 }
@@ -40,26 +40,28 @@ const offer = document.querySelector('.service__block')
 function lazyLoading(count) {
   for (let i = 0; i < count; i++) {
     postNumber++
-    if (url(postNumber)) {
+    if (url(postNumber) && postNumber <= 18) {
       axios.get(url(postNumber)).then((resp) => {
-        firstArticlesBlock.insertAdjacentHTML('beforeend', resp.data.post)
+        $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
         modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
       })
     }
   }
-  offer.classList.remove('loading')
+  setTimeout(function() {
+    $loadWrapper.classList.remove('loading')
+  }, 3000);
 }
-*/
+
 function preloadLazy(count) {
   for (let i = 0; i < count; i++) {
     postNumber++
 
-    const $el = firstArticlesBlock.querySelector(`[data-modal-loader="${i + 1}"]`)
+    const $el = $loadWrapper.querySelector(`[data-modal-loader="${i + 1}"]`)
 
     axios.get(url(i + 1)).then((resp) => {
       $el && $el.parentNode.removeChild($el)
 
-      firstArticlesBlock.insertAdjacentHTML('beforeend', resp.data.post)
+      $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
       modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
     })
   }
@@ -77,10 +79,12 @@ function preloader(selector) {
   }
 
   for (let i = 0; i < postsCount; i++) {
-    firstArticlesBlock.insertAdjacentHTML('beforeend', preloadTemplate(i + 1))
+    $loadWrapper.insertAdjacentHTML('beforeend', preloadTemplate(i + 1))
   }
 
   preloadLazy(postsCount)
 }
 
 preloader('.service__inner')
+
+// переписать выов модалки!!!!!
