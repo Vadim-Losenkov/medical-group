@@ -73,23 +73,10 @@
 // }
 
 // // грузим модалки
-function modalsLoader(wrapperSelector, articlesSelector) {
+function modalsLoader(wrapperSelector, content) {
   const $wrapper = document.querySelector(wrapperSelector)
-  const $service = document.querySelector(articlesSelector)
 
-  axios.get(url(1)).then(function (resp) {
-    $wrapper.innerHTML = template(resp.data)
-  })
-
-  /* const $target = event.target.closest('[data-modal-loader]')
-  if ($target) {
-    const $id = $target.dataset.modalLoader
-    axios.get(url($id)).then(function(resp) {
-      $wrapper.innerHTML = template(resp.data)
-    })
-  }
-  $service.addEventListener('click', (event) => {
-  }) */
+  $wrapper.innerHTML = content
 }
 
 

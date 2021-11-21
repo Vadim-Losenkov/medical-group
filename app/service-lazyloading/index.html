@@ -8,11 +8,11 @@
   <title>service</title>
   <!-- <link rel="stylesheet" href="../css/style.css" type="text/css" media="all" /> -->
   <link rel="stylesheet" href="css/style.min.css" type="text/css" media="all" />
-
+<!-- 
   <script src="//cdn.jsdelivr.net/npm/eruda"></script>
                                             <script>
                                               eruda.init();
-                                            </script>
+                                            </script> -->
       
 </head>
 
@@ -69,7 +69,7 @@
       </div>
     </div>
         <!--  FACE   -->
-        <div class="service__block face">
+        <div class="service__block loading face">
           <h1 class="service__title title">
             <div class="title-grad-1 grad"></div>
             <div class="title-grad-2 grad"></div>
@@ -413,14 +413,17 @@
     </footer>
   </div>
 
-  <div class="modals-list"></div>
+  <div class="modals-list"> </div>
   
   <script src="../js/jquery.min.js"></script>
+  <script src="js/axios.min.js"></script>
+  <script src="js/lazy-loader.js"></script>
+<!-- 
+  <script src="js/modals-loader.js"></script>
+  -->
   <script src="../js/wow.min.js"></script>
   <script src="../js/popup.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/axios.min.js"></script>
-  <script defer src="js/modals-loader.js"></script>
 </body>
 
 </html>

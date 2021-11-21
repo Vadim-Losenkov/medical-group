@@ -11,6 +11,25 @@
     max-width: 1640px;
     padding: 0 10px;
     margin: 0 auto;
+    
+    &.loading {
+      padding-bottom: 50px;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('../../images/loading.gif');
+        border-radius: 50%;
+        transform: translateX(-50%);
+        left: 50%;
+      }
+    }
   }
   &__inner {
     display: flex;

@@ -1,60 +1,21 @@
+// нужно написать функцию, 
+// которая позволяет получать текущий блок 
+// и грузить контент в него
+
+// эти 3 блока должны ьыть в хтмл
+// и последние 2 блока с дисплей нон,
+// но когда приходит ответ с сервера мы
+// рендерим эти блоки вмесие с контентом
+
+// ПЕРЕПИСАТЬ JSON НА ХТМЛ И РЕНДЕРИТЬ ЕГО ВМЕСТО JSON ШАБЛОНА!!!!!!!!!!
+const windowHeight = document.documentElement.clientHeight
+const deviceWidth = document.documentElement.clientWidth
+
 const firstArticlesBlock = document.querySelector('.service__inner')
 const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
 
-const url = (id) => `http://localhost:1234/service-lazyloading/js/post-${id}.json`
-const textLoader = (text) => text.map(t => `<p class="service-popup__text">${t}</p>`).join('')
-const template = (obj, index) => `
-  <div id="service-modal-${index}" class="service-popup mfp-with-anim mfp-hide">
-      <img src="${obj.image}" alt="">
-      <button title="close" type="button" class="mfp-close">&#215;</button>
-      <div class="service-popup__inner">
-        <div class="service-popup__head">
-          <h5 class="service-popup__title">
-            ${obj.title}
-          </h5>
-          <div class="service-popup__price">
-            ${obj.price} <span>დოლარიდან</span>
-          </div>
-        </div>
-        ${textLoader(obj.text)}
-        <div class="service-popup__footer">
-          <a href="#" class="service-popup__link">
-            ზარის განხორციელება
-          </a>
-          <div class="service-popup__mail">
-            <span>
-              E-mail:
-            </span>
-            <a href="mailto:info@medicalgroup.ge">
-              info@medicalgroup.ge
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-`
-
-const postTemplate = (obj, index) => `
-   <a href="#service-modal-${index}" data-modal-loader="1"  class="service__item" data-effect="mfp-zoom-in" >
-    <div style="background-color: #855aff;" class="service__item-grad grad service-grad item-1"></div>
-    <div class="service__item-image">
-      <img src="${obj.image}" alt="">
-    </div>
-    <div class="service__item-inner">
-      <h4 class="service__item-title">
-        ${obj.title}
-      </h4>
-      <p class="service__item-text">
-        ${obj.text}
-      </p>
-      <h6 class="service__item-price">
-        ${obj.price} <span>დოლარიდან</span>
-      </h6>
-    </div>
-  </a>
-`
-
+const url = (id) => `http://localhost:1234/service-lazyloading/data/post-${id}.json`
 const preloadTemplate = (index, gradColor) => `
 <div data-modal-loader="${index}" class="service__item onloading" data-effect="mfp-zoom-in" >
   <div style="background: ${gradColor ? gradColor : 'none'};" class="service__item-grad grad service-grad item-1"></div>
@@ -67,6 +28,40 @@ const preloadTemplate = (index, gradColor) => `
 </div>
 `
 
+const offer = document.querySelector('.service__block')
+
+window.addEventListener('scroll', () => {
+  const k = 20 * postNumber
+  
+  if (((window.scrollY + document.documentElement.clientHeight + 500) > offer.clientHeight) && !offer.classList.contains('loading')) {
+
+    offer.classList.add('loading')
+    if (deviceWidth < 980) {
+      lazyLoading(3)
+    }
+    if (deviceWidth <= 1393) {
+      lazyLoading(4)
+    }
+    if (deviceWidth > 1393) {
+      lazyLoading(6)
+    }
+  }
+})
+
+function lazyLoading(count) {
+  for (let i = 0; i < count; i++) {
+    postNumber++
+    if (url(postNumber)) {
+      axios.get(url(postNumber)).then((resp) => {
+        firstArticlesBlock.insertAdjacentHTML('beforeend', resp.data.post)
+        modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
+      })
+    }
+  }
+  offer.classList.remove('loading')
+}
+
+// подгружаем вместо заглушек
 function preloadLazy(count) {
   for (let i = 0; i < count; i++) {
     postNumber++
@@ -74,17 +69,16 @@ function preloadLazy(count) {
     const $el = firstArticlesBlock.querySelector(`[data-modal-loader="${i + 1}"]`)
     
     axios.get(url(i + 1)).then((resp) => {
-      $el.parentNode.removeChild($el)
+      $el && $el.parentNode.removeChild($el)
       
-      firstArticlesBlock.insertAdjacentHTML('beforeend', postTemplate(resp.data.post, (i + 1)))
-      modalsList.insertAdjacentHTML('beforeend', template(resp.data.modal, (i + 1)))
+      firstArticlesBlock.insertAdjacentHTML('beforeend', resp.data.post)
+      modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
     })
   }
 }
 
 // грузим заглушки в 1й блок articles__inner
 function preloader(selector) {
-  const deviceWidth = document.documentElement.clientWidth
   
   if (deviceWidth < 980) {
     for (let i = 0; i < 3; i++) {
@@ -94,46 +88,20 @@ function preloader(selector) {
     preloadLazy(3)
   } else if (deviceWidth <= 1393) {
     for (let i = 0; i < 4; i++) {
-      firstArticlesBlock.insertAdjacentHTML('beforeend', preloadTemplate())
+      firstArticlesBlock.insertAdjacentHTML('beforeend', preloadTemplate(i + 1))
     }
     
     preloadLazy(4)
   } else if (deviceWidth > 1393) {
     for (let i = 0; i < 6; i++) {
-      firstArticlesBlock.insertAdjacentHTML('beforeend', preloadTemplate())
+      firstArticlesBlock.insertAdjacentHTML('beforeend', preloadTemplate(i + 1))
     }
     
     preloadLazy(6)
   }
 }
 
-// грузим модалки
-function modalsLoader(wrapperSelector, articlesSelector) {
-  const $wrapper = document.querySelector(wrapperSelector)
-  const $service = document.querySelector(articlesSelector)
-
-  axios.get(url(1)).then(function (resp) {
-    $wrapper.innerHTML = template(resp.data)
-  })
-
-  /* const $target = event.target.closest('[data-modal-loader]')
-  if ($target) {
-    const $id = $target.dataset.modalLoader
-    axios.get(url($id)).then(function(resp) {
-      $wrapper.innerHTML = template(resp.data)
-    })
-  }
-  $service.addEventListener('click', (event) => {
-  }) */
-}
-
-
 preloader('.service__inner')
-// modalsLoader('.modals-list', '.service')
-
-// нужна функция, которая получает объект 
-// со статьей и модалкой 
-// и грузит это вместо заглушки
 /* setTimeout(() => {
 modalsLoader('.modals-list', `
     <div id="service-modal-1" class="service-popup mfp-with-anim mfp-hide">
@@ -434,99 +402,6 @@ modalsLoader('.modals-list', `
 
         <p class="service-popup__text">
           სიმსივნური დაავადებები, ჰიპერტონია, სისხლის დაავადებები, ორგანიზმის  მწვავე ანთებითი დაავადებები, ან ქრონიკული დაავადებები გამწვავების დროს, მათ შორის მაღალი ტემპერატურით და ცხელებით მიმდინარე, ალერგიული კერები კანზე, 16 წლამდე ასაკი, ფსიქიკური დაავადებები, ეპილეფსია, შაქრიანი დიაბეტი, კარდიოსტიმულატორი, ფარისებრი ჯირკვლის დაავადებები, კატარაქტა და გლაუკომა, ტრანქვილიზატორების, ნარკოტიკების და ძლიერი ანტიბიოტიკების მიღება, ორსულობა
-        </p>
-        <div class="service-popup__footer">
-          <a href="#" class="service-popup__link">
-            ზარის განხორციელება
-          </a>
-          <div class="service-popup__mail">
-            <span>
-              E-mail:
-            </span>
-            <a href="mailto:info@medicalgroup.ge">
-              info@medicalgroup.ge
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="service-modal-5" class="service-popup mfp-with-anim mfp-hide">
-      <img src="../images/content/articles-7.jpg" alt="">
-      <button title="close" type="button" class="mfp-close">&#215;</button>
-      <div class="service-popup__inner">
-        <div class="service-popup__head">
-          <h5 class="service-popup__title">
-            RF-ლიფტინგი
-          </h5>
-          <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
-          </div>
-        </div>
-        <p class="service-popup__text">
-          RF ლიფტინგი- ეს არის ელექტრული ველის მოქმედება კანსა და კანქვეშა ქსოვილებზე რადიოტალღების სიხშირის დიაპაზონში.
-        </p>
-        <p class="service-popup__text">
-          პროცედურა აბსოლუტურად უმტკივნეულო და უსაფრთხოა. პირველი შედეგი ვლინდება მომენტალურად და იგი თანდათან ძლიერდება. საბოლოო შედეგი დგება მკრუნალობის დაწყებიდან 6 თვის შემდეგ და ეფექტურობას ინარჩუნებს მინიმუმ 2 წლის განმავლობაში.
-        </p>
-
-        <p class="service-popup__text">
-          პროცედურის საშუალებით ხდება კანის გაახალგაზრდავება და გადაჭიმვა (ლიფტინგი) უოპერაციოდ ხანგრძლივმომქმედი ეფექტით.
-        </p>
-
-        <p class="service-popup__text">
-          კანის გაახალგაზრდავება ხდება უჯრედების ბუნებრივი სტიმულაციის გზით, რადიოტალღები მოქმედებს კანის ღრმა ფენებზეც, ახდენს კოლაგენის სინთეზის გააქტიურებას და კანის საერთო ფართობის მნიშვნელოვან შემცირებას, შემაერთებელი ქსოვილის მოდუნებული ბოჭკოების დაჭიმვას, ფიბროზული ქსოვილის ალაგებას. შედეგად, იმატებს კანის ტონუსი, იგი ხდება უფრო მკვრივი და ელასტიური( ოპერაციული გადაჭიმვის შედეგად კანი პირიქით, თხელდება).
-        </p>
-
-        <p class="service-popup__text">
-          ალაგებს მცირე და საშუალო ზომის ნაოჭებს (თვალის გარშემო, ტუჩის ნაოჭები), ასწორებს „ფორთოხლის“ და მოდუნებულ კანს ( სახე, „დეკოლტეს“ მიდამო, მხრის შიდა ზედაპირი, მუცელი, ბარძაყები, დუნდულოები); ამცირებს/ალაგებს სტრიებს, აუმჯობესებს კანის ფერს და სტრუქტურას, ასწორებს გრავიტაციულ ფტოზს და  ლიპოსაქციის შემდგომ დეფექტებს;
-        </p>
-
-        <p class="service-popup__text">
-          ეს მეთოდიკა მნიშვნელოვანია ცელულიტის კომპლექსურ მკურნალობაში.
-        </p>
-
-        <p class="service-popup__text">
-          RF-ლიფტინგის ჩვენებებია: მოშვებული, დაბერებული, გამომშრალი კანი. სტრიები, ნაოჭები, ცელულიტი.
-        </p>
-
-        <p class="service-popup__text">
-          უკუნაჩვენებია:
-        </p>
-
-        <p class="service-popup__text">
-          -ელექტროსტიმულატორის და მეტალის იმპლანტის არსებობა ზემოქმედების არეში.
-        </p>
-
-        <p class="service-popup__text">
-          -სიმსივნე,
-        </p>
-
-        <p class="service-popup__text">
-          -მწვავე ინფექციური და ანთბითი დაავადებები,
-        </p>
-
-        <p class="service-popup__text">
-          -ორსულობა, ლაქტაცია, მენსტრუალური ციკლი,
-        </p>
-
-        <p class="service-popup__text">
-          -სისტემური დეგენერაციული დაავადებები,
-        </p>
-
-        <p class="service-popup__text">
-          -არაა მიზანშეწონილი მისი ჩატარება როზაცეის დროს.
-        </p>
-
-        <p class="service-popup__text">
-          პროცედურის ხანგრძლივობა 30-40 წუთია, პროცედურების რაოდენობა საწყისი მდგომარეობიდან გამომდინარე ინდივიდუალურია, პროცედურებს შორის ინტერვალი 7-10 დღეა.
-        </p>
-
-        <p class="service-popup__text">
-          მისი ჩატარება არ საჭიროებს მოსამზადებელ ან რეაბილიტაციის პერიოდს, არის აბსოლუტურად უმტკივნეულო და არ საჭიროებს ანესთეზიას.
-        </p>
-
-        <p class="service-popup__text">
-          ჩვენს კლინიკაში დანერგილია როგორც მონოპოლარული, ასევე ბი-და ტრიპოლარული თერმოლიფტინგი, რაც საშუალებას იძლევა მოვიცვათ საჭიროებისამებრ, კანის ფენები სხვადასხვა სიღრმეზე და საგრძნობლად გავზარდოთ მეთოდის ეფექტურობის ხარისხი.
         </p>
         <div class="service-popup__footer">
           <a href="#" class="service-popup__link">
