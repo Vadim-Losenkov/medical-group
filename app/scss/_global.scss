@@ -216,6 +216,28 @@ body {
       background-color: #a13791 !important;
     }
   }
+  &__nav-link {
+    position: relative;
+  }
+  &__nav-dropdown {
+    position: absolute;
+    transform: translateY(50px);
+    min-width: 230px;
+    box-shadow: 2px 2px 20px rgba(#000, 0.07);
+    border-radius: 10px;
+    padding: 20px 0;
+    background-color: #fff;
+
+    a {
+      width: 100%;
+      padding: 5px 20px;
+
+      &.active {
+        font-weight: 700;
+        border-right: 2px solid #A13791
+      }
+    }
+  }
   &-mobile {
     display: none;
   }

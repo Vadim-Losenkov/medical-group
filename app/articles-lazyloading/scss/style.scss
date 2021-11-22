@@ -17,12 +17,12 @@
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
+    padding-bottom: 50px;
     .loading-icon {
       display: none;
     }
     
     &.loading {
-      padding-bottom: 50px;
       position: relative;
       .loading-icon {
         display: block;
