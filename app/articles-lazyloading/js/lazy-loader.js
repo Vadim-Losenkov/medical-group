@@ -26,30 +26,33 @@ function scrollLoader() {
   if (condition && postNumber <= 18) {
     $loadWrapper.classList.add('loading')
     if (deviceWidth < 980) {
-      lazyLoading(1)
+      lazyLoading(3)
+      
     }
     if (deviceWidth <= 1393) {
-      lazyLoading(1)
+      lazyLoading(4)
     }
     if (deviceWidth > 1393) {
-      lazyLoading(1)
+      lazyLoading(6)
     }
   }
 }
 
 function lazyLoading(count) {
-  for (let i = 0; i < count; i++) {
+  // for (let i = 0; i < count; i++) {
     postNumber++
-    if (url(postNumber) && postNumber <= 18) {
-      axios.get(url(postNumber)).then((resp) => {
+    const postURL = url(postNumber)
+    if (postURL && postNumber <= 18) {
+      axios.get(postURL).then((resp) => {
+        console.log(postURL);
         $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
         modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
       })
     }
-  }
+  // }
   setTimeout(function() {
     $loadWrapper.classList.remove('loading')
-  }, 3000);
+  }, 1000);
 }
 
 function preloadLazy(count) {
@@ -86,5 +89,3 @@ function preloader(selector) {
 }
 
 preloader('.service__inner')
-
-// переписать выов модалки!!!!!
