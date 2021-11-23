@@ -26,8 +26,8 @@ $(function () {
     })
   })
 
-  $('.faq-popup-btn').magnificPopup({
-
+  $('.faq__inner').magnificPopup({
+    delegate: '.faq-popup-btn',
     type: 'inline',
 
     removalDelay: 500, //delay removal by X to allow out-animation

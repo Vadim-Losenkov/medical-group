@@ -25,8 +25,8 @@ $(function () {
       filter: `blur(${$(window).width() * 0.3}px)`
     })
   })
-  $('.articles__item').magnificPopup({
-
+  $('.articles__inner').magnificPopup({
+    delegate: '.articles__item',
     type: 'inline',
 
     removalDelay: 500, //delay removal by X to allow out-animation
@@ -58,4 +58,8 @@ function addElement(e) {
   this.appendChild(addDiv);
 }
 
-new WOW().init();
+// new WOW().init();
+
+//1
+//2
+// в файле post-10 лежит пост с айдишником 11, так надо!!!!

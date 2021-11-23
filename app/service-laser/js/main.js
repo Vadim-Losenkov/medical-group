@@ -25,8 +25,8 @@ $(function () {
       filter: `blur(${$(window).width() * 0.3}px)`
     })
   })
-  $('.service__item').magnificPopup({
-
+  $('.service__inner').magnificPopup({
+    delegate: '.service__item',
     type: 'inline',
 
     removalDelay: 500, //delay removal by X to allow out-animation

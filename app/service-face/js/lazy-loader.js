@@ -5,7 +5,7 @@ const $loadWrapper = document.querySelector('.service__inner')
 const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
 
-const url = (id) => `http://localhost:1234/service-face/data/post-${id}.json`
+const url = (id) => `https://vadim-losenkov.ru/hosp/service-face/data/post-${id}.json`
 const preloadTemplate = (index, gradColor) => `
 <div data-modal-loader="${index}" class="service__item onloading" data-effect="mfp-zoom-in" >
   <div style="background: ${gradColor ? gradColor : 'none'};" class="service__item-grad grad service-grad item-1"></div>
