@@ -17,6 +17,7 @@ $(function () {
         filter: `blur(${$(window).width() * 0.3}px)`
       })
     })
+    
 })
 
 const headerButton = document.querySelector('.header-mobile__burger')
@@ -24,6 +25,12 @@ const headerContent = document.querySelector('.header-mobile__content')
 headerButton.addEventListener('click', () => {
   headerButton.classList.toggle('open')
   headerContent.classList.toggle('open')
+})
+
+const serviceButton = document.querySelector('#service-button')
+const serviceContent = document.querySelector('#service-dropdown')
+serviceButton.addEventListener('click', () => {
+  serviceContent.classList.toggle('active')
 })
 
 var swiper = new Swiper(".mySwiper", {

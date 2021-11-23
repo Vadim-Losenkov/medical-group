@@ -1,21 +1,21 @@
-
 const windowHeight = document.documentElement.clientHeight
 const deviceWidth = document.documentElement.clientWidth
 
-const $loadWrapper = document.querySelector('.articles__inner')
+const $loadWrapper = document.querySelector('.service__inner')
 const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
 
-const url = (id) => `http://localhost:1234/articles-lazyloading/data/post-${id}.json`
-const preloadTemplate = (index) => `
-  <div data-modal-loader="${index}" class="articles__item loading">
-    <div class="articles__item-inner">
-      <div class="articles__item-button"></div>
-      <h4 class="articles__item-title"></h4>
-      <p class="articles__item-text"></p>
-    </div>
-    <div class="articles__item-footer"></div>
+const url = (id) => `http://localhost:1234/service-face/data/post-${id}.json`
+const preloadTemplate = (index, gradColor) => `
+<div data-modal-loader="${index}" class="service__item onloading" data-effect="mfp-zoom-in" >
+  <div style="background: ${gradColor ? gradColor : 'none'};" class="service__item-grad grad service-grad item-1"></div>
+  <div class="service__item-image"></div>
+  <div class="service__item-inner">
+    <h4 class="service__item-title"></h4>
+    <p class="service__item-text"></p>
+    <h6 class="service__item-price"></h6>
   </div>
+</div>
 `
 
 window.addEventListener('scroll', scrollLoader)
@@ -24,7 +24,7 @@ function scrollLoader() {
   const pos = $loadWrapper.getBoundingClientRect().top + pageYOffset
   const height = $loadWrapper.offsetHeight
   const condition = pageYOffset > (pos + height) - windowHeight && !$loadWrapper.classList.contains('loading')
-  if (condition && postNumber <= 18) {
+  if (condition && postNumber <= 6) {
     $loadWrapper.classList.add('loading')
     if (deviceWidth < 980) {
       lazyLoading(3)
@@ -41,7 +41,7 @@ function lazyLoading(count) {
     postNumber++
     const postURL = url(postNumber)
     
-    const condition = postURL && postNumber <= 18
+    const condition = postURL && postNumber <= 6
 
     if (condition && $loadWrapper.classList.contains('loading')) {
       axios.get(postURL).then((resp) => {
