@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="css/style.min.css" type="text/css" media="all" />
 
   <!-- <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-              <script>
-                eruda.init();
-              </script> -->
+                <script>
+                  eruda.init();
+                </script> -->
 </head>
 
 
@@ -27,7 +27,17 @@
             <a class="header__nav-link" href="../index.html">მთავარი</a>
             <a class="header__nav-link active" href="../news">აქციები/სიახლე</a>
             <a class="header__nav-link" href="../articles">სტატიები</a>
-            <a class="header__nav-link" href="../service">მომსახურება</a>
+            <div class="header__nav-link" id="service-button">
+              <span>
+                მომსახურება
+              </span>
+              <div class="header__nav-dropdown" id="service-dropdown">
+                <a class="header-mobile__nav-link" href="../service-face">სახის მოვლა </a>
+                <a class="header-mobile__nav-link" href="../service-body">სხეულის მოვლა</a>
+                <a class="header-mobile__nav-link" href="../service-laser">ლაზერული ეპილაცია</a>
+                <a class="header-mobile__nav-link" href="../service-more">service-4</a>
+              </div>
+            </div>
             <a class="header__nav-link" href="../contacts">კონტაქტი</a>
             <a class="header__nav-link" href="../faq">FAQ</a><a href="tel:032 215 52 25" class="header__nav-phone">032 215 52 25</a>
           </div>
@@ -48,14 +58,18 @@
           <nav class="header-mobile__nav">
             <div class="header-mobile__nav-wrapper">
               <nav class="header-mobile__nav">
-            <div class="header-mobile__nav-wrapper">
-              <a class="header-mobile__nav-link" href="../index.html">მთავარი</a>
-              <a class="header-mobile__nav-link laser" href="../articles">სტატიები</a>
-              <a class="header-mobile__nav-link active" href="../news">სიახლეები</a><!-- news -->
-              <a class="header-mobile__nav-link" href="../contacts">კონტაქტი</a> <!-- contacts -->
-              <a href="tel:032 215 52 25" class="header-mobile__nav-phone"><span>032 215 52 25</span></a>
-            </div>
-          </nav>
+                <div class="header-mobile__nav-wrapper">
+                  <a class="header-mobile__nav-link" href="../index.html">მთავარი</a>
+                  <a class="header-mobile__nav-link" href="../service-face">სახის მოვლა </a>
+                  <a class="header-mobile__nav-link face" href="../service-body">სხეულის მოვლა</a>
+                  <a class="header-mobile__nav-link body" href="../service-laser">ლაზერული ეპილაცია</a>
+                  <a class="header-mobile__nav-link body" href="../service-more">block-4</a>
+                  <a class="header-mobile__nav-link laser" href="../articles">სტატიები</a>
+                  <a class="header-mobile__nav-link active" href="../news">სიახლეები</a><!-- news -->
+                  <a class="header-mobile__nav-link" href="../contacts">კონტაქტი</a> <!-- contacts -->
+                  <a href="tel:032 215 52 25" class="header-mobile__nav-phone"><span>032 215 52 25</span></a>
+                </div>
+              </nav>
             </div>
           </nav>
         </div>
@@ -80,12 +94,12 @@
                 </p>
               </div>
 
-              <a data-effect="mfp-zoom-in"  href="#modal-item-1" class="news__card news-modal pink wow slideInLeft" data-wave
+              <a data-effect="mfp-zoom-in" href="#modal-item-1" class="news__card news-modal pink wow slideInLeft" data-wave
                 data-wow-duration="0.9s">
                 <img src="../images/content/news-1.png" alt="" class="news__card-image">
                 <div class="news__card-box">
                   <button class="news__card-button">
-                     სიახლე
+                    სიახლე
                   </button>
                   <h5 class="news__card-title">
                     სასაჩუქრე ბარათები
@@ -95,7 +109,7 @@
                   </p>
                 </div>
               </a>
-              <a data-effect="mfp-zoom-in"  href="#modal-item-2" class="news__card news-modal green white left wow slideInLeft" data-wave
+              <a data-effect="mfp-zoom-in" href="#modal-item-2" class="news__card news-modal green white left wow slideInLeft" data-wave
                 data-wow-duration="1.1s">
                 <img src="../images/content/news-2.png" alt="" class="news__card-image">
                 <div class="news__card-box">
@@ -110,7 +124,7 @@
                   </p>
                 </div>
               </a>
-              <a data-effect="mfp-zoom-in"  href="#modal-item-3" class="news__card news-modal purple white wow slideInLeft" data-wave
+              <a data-effect="mfp-zoom-in" href="#modal-item-3" class="news__card news-modal purple white wow slideInLeft" data-wave
                 data-wow-duration="1.3s">
                 <img src="../images/content/news-3.png" alt="" class="news__card-image">
                 <div class="news__card-box">
@@ -125,8 +139,8 @@
                   </p>
                 </div>
               </a>
-<!--                  MOBILE           -->
-              <a data-effect="mfp-zoom-in"  href="#modal-item-1" data-wave class="news__mobile news-modal head main wow flipInY"
+              <!--                  MOBILE           -->
+              <a data-effect="mfp-zoom-in" href="#modal-item-1" data-wave class="news__mobile news-modal head main wow flipInY"
                 data-wow-duration="0.75s">
                 <img src="../images/content/news-mobile-head.png" alt="" class="news__mobile-image news-head">
                 <div class="news__mobile-inner">
@@ -149,7 +163,7 @@
                   </div>
                 </div>
               </a>
-              <a data-effect="mfp-zoom-in"  href="#modal-item-2" data-wave class="news__mobile news-modal main green wow flipInY"
+              <a data-effect="mfp-zoom-in" href="#modal-item-2" data-wave class="news__mobile news-modal main green wow flipInY"
                 data-wow-duration="0.75s">
                 <div class="news__mobile-inner">
                   <img src="../images/content/news-mobile-green.jpg" class="news-default" alt="">
@@ -172,7 +186,7 @@
                   </div>
                 </div>
               </a>
-              <a data-effect="mfp-zoom-in"  href="#modal-item-3" data-wave class="news__mobile news-modal main purple wow flipInY" data-wow-duration="0.75s">
+              <a data-effect="mfp-zoom-in" href="#modal-item-3" data-wave class="news__mobile news-modal main purple wow flipInY" data-wow-duration="0.75s">
                 <div class="news__mobile-inner">
                   <img src="../images/content/news-mobile-purple.jpg" class="news-default" alt="">
                   <button class="news__mobile-button">
@@ -212,7 +226,7 @@
                 people’s new environmental sensibilities
               </p>
 
-              <a data-effect="mfp-zoom-in"  href="#modal-item-5" data-wave class="news__item news-modal wow slideInRight" data-wow-duration="0.7s">
+              <a data-effect="mfp-zoom-in" href="#modal-item-5" data-wave class="news__item news-modal wow slideInRight" data-wow-duration="0.7s">
                 <img src="../images/content/news-item-1.jpg" alt="" class="news__item-image">
                 <div class="news__item-box">
                   <div class="news__item-date">
@@ -226,7 +240,7 @@
                   </p>
                 </div>
               </a>
-              <a data-effect="mfp-zoom-in"  href="#modal-item-6" data-wave class="news__item news-modal wow slideInRight" data-wow-duration="0.9s">
+              <a data-effect="mfp-zoom-in" href="#modal-item-6" data-wave class="news__item news-modal wow slideInRight" data-wow-duration="0.9s">
                 <img src="../images/content/news-item-2.jpg" alt="" class="news__item-image">
                 <div class="news__item-box">
                   <div class="news__item-date">
@@ -240,7 +254,7 @@
                   </p>
                 </div>
               </a>
-              <a data-effect="mfp-zoom-in"  href="#modal-item-7" data-wave class="news__item news-modal wow slideInRight" data-wow-duration="1.1s">
+              <a data-effect="mfp-zoom-in" href="#modal-item-7" data-wave class="news__item news-modal wow slideInRight" data-wow-duration="1.1s">
                 <img src="../images/content/news-item-3.jpg" alt="" class="news__item-image">
                 <div class="news__item-box">
                   <div class="news__item-date">
@@ -254,7 +268,7 @@
                   </p>
                 </div>
               </a>
-              <a data-effect="mfp-zoom-in"  href="#modal-item-8" data-wave class="news__item news-modal wow slideInRight" data-wow-duration="1.3s">
+              <a data-effect="mfp-zoom-in" href="#modal-item-8" data-wave class="news__item news-modal wow slideInRight" data-wow-duration="1.3s">
                 <img src="../images/content/news-item-4.jpg" alt="" class="news__item-image">
                 <div class="news__item-box">
                   <div class="news__item-date">
@@ -262,20 +276,6 @@
                   </div>
                   <h4 class="news__item-title">
                     <i></i> -20% ლაზერულ ეპილაციაზე ქალბატონებისთვის
-                  </h4>
-                  <p class="news__item-text">
-                    ლაზერული ეპილაცია ალექსანდრიტისა და უახლესი თაობის, Nd: yag ლაზერებით ყველა ტიპის კანისა და თმისთვის...
-                  </p>
-                </div>
-              </a>
-              <a data-effect="mfp-zoom-in"  href="#modal-item-9" data-wave class="news__item news-modal">
-                <img src="../images/content/news-item-1.jpg" alt="" class="news__item-image">
-                <div class="news__item-box">
-                  <div class="news__item-date">
-                    11.11.21 in 14:30
-                  </div>
-                  <h4 class="news__item-title">
-                    <i></i> ლაზერული ეპილაცია მამაკაცებისთვის
                   </h4>
                   <p class="news__item-text">
                     ლაზერული ეპილაცია ალექსანდრიტისა და უახლესი თაობის, Nd: yag ლაზერებით ყველა ტიპის კანისა და თმისთვის...
@@ -416,7 +416,7 @@
           - ფოტოდაბერების მკურნალობა.
         </p>
         <p class="news-popup__text">
-          ლაზერის მოქმედების მექანიზმი გასხვავდება სხვა ანალოგებისგან იმით, რომ მოქმედებს ერთდროულად ორი ტიპის სხივით 
+          ლაზერის მოქმედების მექანიზმი გასხვავდება სხვა ანალოგებისგან იმით, რომ მოქმედებს ერთდროულად ორი ტიპის სხივით
           (თითოეული 1.3 მმ და 4 მმ სიღმემდე მოქმედებით) , ამიტომაც განკურნებას სჭირდება ნაკლები დრო და თითქმის არ აქვს
           გვერდითი მოვლენები.
         </p>
@@ -489,26 +489,26 @@
           გთავაზობთ ფასდაკლებას პლაზმოლიფტინგზე! ფასები ზონების მიხედვით შემდეგნაირია:
         </p>
         <p class="news-popup__text">
-        <div class="news-popup__price">
-          <span>სახის ზონა 1 სეანსი</span>
-          <div class="middle"></div>
-          <span>80 ლარი</span>
-        </div>
-        <div class="news-popup__price">
-          <span>სახის ზონა 2 სეანსი </span>
-          <div class="middle"></div>
-          <span>138 ლარი</span>
-        </div>
-        <div class="news-popup__price">
-          <span>სახის ზონა 3 სეანსი</span>
-          <div class="middle"></div>
-          <span>190 ლარი</span>
-        </div>
-        <div class="news-popup__price">
-          <span>თავის თმიანი ნაწილი</span>
-          <div class="middle"></div>
-          <span>59 ლარი</span>
-        </div>
+          <div class="news-popup__price">
+            <span>სახის ზონა 1 სეანსი</span>
+            <div class="middle"></div>
+            <span>80 ლარი</span>
+          </div>
+          <div class="news-popup__price">
+            <span>სახის ზონა 2 სეანსი </span>
+            <div class="middle"></div>
+            <span>138 ლარი</span>
+          </div>
+          <div class="news-popup__price">
+            <span>სახის ზონა 3 სეანსი</span>
+            <div class="middle"></div>
+            <span>190 ლარი</span>
+          </div>
+          <div class="news-popup__price">
+            <span>თავის თმიანი ნაწილი</span>
+            <div class="middle"></div>
+            <span>59 ლარი</span>
+          </div>
         </p>
 
         <p style="margin-top: 20px;" class="news-popup__text">
@@ -1331,7 +1331,7 @@
           <br>
           მუხლის ზონა -  8 ლარი
           <br>
-ტერფი - 7 ლარი
+          ტერფი - 7 ლარი
         </p>
         <p class="news-popup__text">
           Nd:Yag (ნეოდიმური) ტიპის ლაზერით

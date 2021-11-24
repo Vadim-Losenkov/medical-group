@@ -1,0 +1,224 @@
+@import "fonts";
+@import "../../scss/vars";
+@import "../../scss/libs/reset";
+@import "../../scss/libs/animate";
+@import "../../scss/libs/swiper-bundle.min.scss";
+@import "../../scss/mixins";
+@import "../../scss/global";
+
+.gallery {
+  
+  &__title {
+    justify-content: center;
+  }
+  &__text {
+    @extend %fw300;
+    font-size: 18px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: 0.035em;
+    color: #353537;
+    margin: 0 auto;
+    margin-bottom: 105px;
+    max-width: 715px;
+  }
+}
+
+.mobile-swiper {
+  display: none;
+}
+.mySwiper {
+  max-width: 1635px;
+  height: 610px;
+  margin: 0 auto;
+}
+.mySwiper .swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.mySwiper .swiper-slide {
+  .swiper-slide-shadow-left,
+  .swiper-slide-shadow-right {
+    display: none !important;
+  }
+  
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  border-radius: 40px;
+  height: 577px;
+  width: 1012px;
+  position: relative;
+  img {
+    border-radius: 40px;
+    width: 100%;
+    height: 100%;
+  }
+  &::before {
+    content: "";
+    transition: all 0.3s;
+    box-shadow: inset 0 !important;
+  }
+}
+.mySwiper .swiper-slide-active {
+  &::before {
+    content: "";
+    transition: all 0.3s;
+    box-shadow: inset 0 !important;
+  }
+  transition: all 0.6s;
+}
+.mySwiper .swiper-slide-prev {
+  position: relative;
+  opacity: 0.9;
+  &::before {
+    content: "";
+    transition: all 0.3s;
+    border-radius: 40px;
+    box-shadow: inset 430px 0px 123px 111px rgba(255, 255, 255, 0.8) !important;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+}
+
+.mySwiper .swiper-slide-next {
+  position: relative;
+  opacity: 0.9;
+  &::before {
+    content: "";
+    transition: all 0.3s;
+    border-radius: 40px;
+    box-shadow: inset -430px 0px 123px 111px rgba(255, 255, 255, 0.8) !important;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    // background:
+    z-index: 9999;
+  }
+}
+
+.mySwiper .swiper-pagination {
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.mySwiper .swiper-pagination-bullet {
+  height: 3px;
+  width: 82px;
+  margin: 0 6px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.mySwiper .swiper-pagination-bullet-active {
+  transition: 0.3s;
+  background-color: #855aff;
+  border-radius: 0;
+}
+
+.mobile-swiper {
+  // height: 700px;
+  height: 410px;
+  margin: 0 auto;
+  margin-top: -70px;
+}
+.mobile-swiper .swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+}
+.mobile-swiper .swiper-slide {
+  margin: 0 auto;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  width: 390px;
+  height: 270px;
+  border-radius: 40px;
+  filter: blur(2px);
+  
+  &::before {
+    content: "";
+    border-radius: 11px;
+    position: absolute;
+    background-color: rgba(#fff, .3);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+
+  img {
+    border-radius: 11px;
+  }
+}
+.mobile-swiper .swiper-slide-active {
+  transition: all 0.6s;
+  opacity: 1;
+  filter: blur(0px);
+  &::before {
+    content: "";
+    border-radius: 11px;
+    position: absolute;
+    background-color: rgba(#fff, .0);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+}
+
+@media (max-width: 1100px) {
+  .mySwiper {
+    height: 400px;
+  }
+  .mySwiper .swiper-slide {
+    width: 640px;
+    height: 350px;
+  }
+  .mySwiper .swiper-pagination {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .mySwiper {
+    display: none;
+  }
+  .mobile-swiper {
+    display: block;
+  }
+  .gallery__title {
+    margin-top: 43px;
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-swiper .swiper-slide {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@import "media";

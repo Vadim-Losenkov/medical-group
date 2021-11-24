@@ -5,7 +5,7 @@ const $loadWrapper = document.querySelector('.service__inner')
 const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
 
-const url = (id) => `https://vadim-losenkov.ru/hosp/service-face/data/post-${id}.json`
+const url = (id) => `http://localhost:1234/service-face/data/post-${id}.json`
 const preloadTemplate = (index, gradColor) => `
 <div data-modal-loader="${index}" class="service__item onloading" data-effect="mfp-zoom-in" >
   <div style="background: ${gradColor ? gradColor : 'none'};" class="service__item-grad grad service-grad item-1"></div>
@@ -24,7 +24,7 @@ function scrollLoader() {
   const pos = $loadWrapper.getBoundingClientRect().top + pageYOffset
   const height = $loadWrapper.offsetHeight
   const condition = pageYOffset > (pos + height) - windowHeight && !$loadWrapper.classList.contains('loading')
-  if (condition && postNumber <= 6) {
+  if (condition && postNumber <= 11) {
     $loadWrapper.classList.add('loading')
     if (deviceWidth < 980) {
       lazyLoading(3)
@@ -41,7 +41,7 @@ function lazyLoading(count) {
     postNumber++
     const postURL = url(postNumber)
     
-    const condition = postURL && postNumber <= 6
+    const condition = postURL && postNumber <= 11
 
     if (condition && $loadWrapper.classList.contains('loading')) {
       axios.get(postURL).then((resp) => {

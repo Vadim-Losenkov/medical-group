@@ -1,9 +1,5 @@
 $(function () {
   $(document.body).addClass('visible')
-  $('.header-mobile__burger').on('click', () => {
-    $('.header-mobile__burger').toggleClass('open')
-    $('.header-mobile__content').toggleClass('open')
-  })
 
   const $grad = $('.grad')
   const $grad2 = $('.grad2')
@@ -66,6 +62,18 @@ $(function () {
   }, 0);
 })
 
+const headerButton = document.querySelector('.header-mobile__burger')
+const headerContent = document.querySelector('.header-mobile__content')
+headerButton.addEventListener('click', () => {
+  headerButton.classList.toggle('open')
+  headerContent.classList.toggle('open')
+})
+
+const serviceButton = document.querySelector('#service-button')
+const serviceContent = document.querySelector('#service-dropdown')
+serviceButton.addEventListener('click', () => {
+  serviceContent.classList.toggle('active')
+})
 
 const $buttons = document.querySelectorAll('[data-wave]')
 $buttons.forEach($button => $button.addEventListener('click', addElement))
