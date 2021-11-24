@@ -5,7 +5,7 @@ const $loadWrapper = document.querySelector('.faq__inner')
 const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
 
-const url = (id) => `http://localhost:5500/app/faq-lazyloading/data/post-${id}.json`
+const url = (id) => `https://vadim-losenkov.ru/hosp/faq/data/post-${id}.json`
 const preloadTemplate = (index) => `
   <div data-modal-loader="${index}" class="articles__item loading">
     <div class="articles__item-inner">

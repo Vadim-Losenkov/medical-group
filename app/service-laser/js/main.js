@@ -75,6 +75,7 @@ serviceButton.addEventListener('click', () => {
   serviceContent.classList.toggle('active')
 })
 
+
 const $buttons = document.querySelectorAll('[data-wave]')
 $buttons.forEach($button => $button.addEventListener('click', addElement))
 

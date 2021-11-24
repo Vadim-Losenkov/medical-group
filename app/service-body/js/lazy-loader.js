@@ -18,6 +18,7 @@ const preloadTemplate = (index, gradColor) => `
 </div>
 `
 
+
 window.addEventListener('scroll', scrollLoader)
 
 function scrollLoader() {

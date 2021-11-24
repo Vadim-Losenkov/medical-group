@@ -6,7 +6,7 @@ const $loadWrapper = document.querySelector('.articles__inner')
 const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
 
-const url = (id) => `https://vadim-losenkov.ru/hosp/articles-lazyloading/data/post-${id}.json`
+const url = (id) => `https://vadim-losenkov.ru/hosp/articles/data/post-${id}.json`
 const preloadTemplate = (index) => `
   <div data-modal-loader="${index}" class="articles__item loading">
     <div class="articles__item-inner">
