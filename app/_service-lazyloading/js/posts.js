@@ -15,7 +15,7 @@ obj = {
                   RF ლიფტინგი- ეს არის ელექტრული ველის მოქმედება...
                 </p>
                 <h6 class="service__item-price">
-                  900$ <span>დოლარიდან</span>
+                  
                 </h6>
               </div>
             </a>
@@ -29,7 +29,7 @@ obj = {
             RF-ლიფტინგი
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">

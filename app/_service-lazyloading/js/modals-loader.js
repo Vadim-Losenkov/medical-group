@@ -113,7 +113,7 @@ modalsLoader('.modals-list', `
             პლაზმოლიფტინგი
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -190,7 +190,7 @@ modalsLoader('.modals-list', `
             ბიორევიტალიზაცია
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -264,7 +264,7 @@ modalsLoader('.modals-list', `
             მეზოთერაპია
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -333,7 +333,7 @@ modalsLoader('.modals-list', `
             ფოტონოთერაპია
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -427,7 +427,7 @@ modalsLoader('.modals-list', `
             ელექტროკოაგულაცია
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -472,7 +472,7 @@ modalsLoader('.modals-list', `
             სახის კანის აპარატული, ღრმა წმენდა
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -533,7 +533,7 @@ modalsLoader('.modals-list', `
             აპარატურული მიკდროდერმაბრაზია
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -586,7 +586,7 @@ modalsLoader('.modals-list', `
             ულტრაბგერითი სკრაბერი
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -675,7 +675,7 @@ modalsLoader('.modals-list', `
             ფილერები
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -768,7 +768,7 @@ modalsLoader('.modals-list', `
             ბოტოქსი
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -812,7 +812,7 @@ modalsLoader('.modals-list', `
             HIFU ტექნოლოგია - High Intensity Focused Ultrasound
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -881,7 +881,7 @@ modalsLoader('.modals-list', `
             ულტრაბგერითი კავიტაცია (უოპერაციო ლიპოსაქცია)
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -934,7 +934,7 @@ modalsLoader('.modals-list', `
             პრესოთერაპია(გარდამავალი პნევმოკომპრესია)
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -1023,7 +1023,7 @@ modalsLoader('.modals-list', `
             ფრაქციული ლაზერული თერმოლიზი და XPL სისტემა
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -1163,7 +1163,7 @@ modalsLoader('.modals-list', `
             კაპილარებისა და წვრილი ვენების ალაგება
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -1296,7 +1296,7 @@ modalsLoader('.modals-list', `
             ეპილაცია ალექსანდრიტის ლაზერით
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
@@ -1357,7 +1357,7 @@ modalsLoader('.modals-list', `
             ეპილაცია Nd:yag (ნეოდიმური) ლაზერით
           </h5>
           <div class="service-popup__price">
-            900$ <span>დოლარიდან</span>
+            
           </div>
         </div>
         <p class="service-popup__text">
