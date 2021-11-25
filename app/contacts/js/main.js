@@ -16,7 +16,7 @@ const items = [
     text: `Vaja-Pshavela 78a, at the exit of Vazha-Pshavela metro station`
   },
   { 
-    coord: [41.686470, 44.837647],
+    coord: [41.686598, 44.836605],
     obj: {},
     obj2: {
       // Опции
@@ -29,7 +29,7 @@ const items = [
       // её "ножки" (точки привязки).
       iconImageOffset: [-260, -200],
     },
-    text: `65 'Ketevan Tsamebuli`
+    text: `65a 'Ketevan Tsamebuli`
   },
   { 
     coord: [41.755939, 44.775789],

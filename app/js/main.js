@@ -17,7 +17,10 @@ $(function () {
         filter: `blur(${$(window).width() * 0.3}px)`
       })
     })
-    
+    $('.header-mobile__nav-link.vis').on('click', () => {
+      $('.header-mobile__nav-link.vis').toggleClass('open')
+      $('.header-mobile__dropdown').slideToggle(300)
+    })
 })
 
 const headerButton = document.querySelector('.header-mobile__burger')
