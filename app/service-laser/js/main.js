@@ -33,33 +33,12 @@ $(function () {
     },
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });
-  
-  setTimeout(function() {
-    const hash = window.location.hash
-    $('.header-mobile__nav-link.current-page').on('click', () => setTimeout(() => location.reload()))
-    if (hash === '#face') {
-      const $top = $('.service__block.face').offset().top
-      const $link = $('.header-mobile__nav-link.face')
-      $('body,html').animate({scrollTop: $top}, 0)
-      
-      $('.header-mobile__nav-link').removeClass('active')
-      $link.addClass('active')
-    } else if (hash === '#body') {
-      const $link = $('.header-mobile__nav-link.body')
-      const $top = $('.service__block.body').offset().top
-      $('body,html').animate({scrollTop: $top}, 0)
-      
-      $('.header-mobile__nav-link').removeClass('active')
-      $link.addClass('active')
-    } else if (hash === '#laser') {
-      const $top = $('.service__block.laser').offset().top
-      const $link = $('.header-mobile__nav-link.laser')
-      $('body,html').animate({scrollTop: $top}, 0)
-      
-      $('.header-mobile__nav-link').removeClass('active')
-      $link.addClass('active')
-    }
-  }, 0);
+  $('.header-mobile__nav-link.vis').on('click', () => {
+
+      $('.header-mobile__nav-link.vis').toggleClass('open')
+
+      $('.header-mobile__dropdown').slideToggle(300)
+    })
 })
 
 const headerButton = document.querySelector('.header-mobile__burger')

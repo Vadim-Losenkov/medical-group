@@ -77,7 +77,7 @@ function preloader(selector) {
   } else if (deviceWidth <= 1393) {
     postsCount = 4
   } else if (deviceWidth > 1393) {
-    postsCount = 6
+    postsCount = 11
   }
 
   for (let i = 0; i < postsCount; i++) {

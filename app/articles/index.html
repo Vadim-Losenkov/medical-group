@@ -58,10 +58,16 @@
           <nav class="header-mobile__nav">
             <div class="header-mobile__nav-wrapper">
               <a class="header-mobile__nav-link" href="../index.html">მთავარი</a>
-              <a class="header-mobile__nav-link" href="../service-face">სახის მოვლა </a>
-              <a class="header-mobile__nav-link face" href="../service-body">სხეულის მოვლა</a>
-              <a class="header-mobile__nav-link body" href="../service-laser">ლაზერული ეპილაცია</a>
-              
+              <div class="header-mobile__nav-button" id="service-button-mobile">
+                <div class="header-mobile__nav-link vis">
+                  მომსახურება
+                </div>
+                <div class="header-mobile__dropdown">
+                  <a class="header-mobile__nav-link face current-page" href="../service-face">სახის მოვლა </a>
+                  <a class="header-mobile__nav-link body current-page" href="../service-body">სხეულის მოვლა</a>
+                  <a class="header-mobile__nav-link laser current-page" href="../service-laser">ლაზერული ეპილაცია</a>
+                </div>
+              </div>
               <a class="header-mobile__nav-link active" href="../articles">სტატიები</a>
               <a class="header-mobile__nav-link" href="../news">სიახლეები</a><!-- news -->
               <a class="header-mobile__nav-link" href="../contacts">კონტაქტი</a> <!-- contacts -->
@@ -81,10 +87,7 @@
           </div>
           სტატიები
         </h1>
-        <p class="articles__text wow fadeInLeft" data-wow-duration="1s">
-          The recent interest in crafts in America is not only a matter of economics. It’s also a reflection of people’s
-          new environmental sensibilities
-        </p>
+        <p class="articles__text wow fadeInLeft" data-wow-duration="1s"></p>
         <div class="articles__inner articles-plants">
           <div class="loading-icon"></div>
         </div>

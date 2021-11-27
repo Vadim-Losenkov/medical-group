@@ -93,7 +93,12 @@ $(function () {
       $('html, body').animate({ scrollTop: destination }, 200)
     });
     
-    
+    $('.header-mobile__nav-link.vis').on('click', () => {
+
+      $('.header-mobile__nav-link.vis').toggleClass('open')
+
+      $('.header-mobile__dropdown').slideToggle(300)
+    })
     
     
     if (ymaps) {
