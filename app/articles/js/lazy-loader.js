@@ -5,8 +5,8 @@ const deviceWidth = document.documentElement.clientWidth
 const $loadWrapper = document.querySelector('.articles__inner')
 const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
-
-const url = (id) => `https://vadim-losenkov.ru/hosp/articles/data/post-${id}.json`
+// https://vadim-losenkov.ru/hosp
+const url = (id) => `http://localhost:5500/app/articles/data/post-${id}.json`
 const preloadTemplate = (index) => `
   <div data-modal-loader="${index}" class="articles__item loading">
     <div class="articles__item-inner">
@@ -18,8 +18,6 @@ const preloadTemplate = (index) => `
   </div>
 `
 
-window.addEventListener('scroll', scrollLoader)
-
 function scrollLoader() {
   const pos = $loadWrapper.getBoundingClientRect().top + pageYOffset
   const height = $loadWrapper.offsetHeight
@@ -27,11 +25,17 @@ function scrollLoader() {
   if (condition && postNumber <= 18) {
     $loadWrapper.classList.add('loading')
     if (deviceWidth < 980) {
-      lazyLoading(3)
+      setTimeout(() => {
+        lazyLoading(3)
+      }, 100);
     } else if (deviceWidth <= 1393) {
-      lazyLoading(4)
+      setTimeout(() => {
+        lazyLoading(4)
+      }, 100);
     } else if (deviceWidth > 1393) {
-      lazyLoading(6)
+      setTimeout(() => {
+        lazyLoading(6)
+      }, 100);
     }
   }
 }
@@ -55,17 +59,20 @@ function lazyLoading(count) {
 }
 
 function preloadLazy(count) {
+  window.addEventListener('scroll', scrollLoader)
   for (let i = 0; i < count; i++) {
     postNumber++
 
     const $el = $loadWrapper.querySelector(`[data-modal-loader="${i + 1}"]`)
 
-    axios.get(url(i + 1)).then((resp) => {
-      $el && $el.parentNode.removeChild($el)
-
-      $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
-      modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
-    })
+    setTimeout(() => {
+      axios.get(url(i + 1)).then((resp) => {
+        $el && $el.parentNode.removeChild($el)
+  
+        $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
+        modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
+      })
+    }, 100);
   }
 }
 
@@ -83,8 +90,9 @@ function preloader(selector) {
   for (let i = 0; i < postsCount; i++) {
     $loadWrapper.insertAdjacentHTML('beforeend', preloadTemplate(i + 1))
   }
-
-  preloadLazy(postsCount)
+  setTimeout(() => {
+    preloadLazy(postsCount)
+  }, 100);
 }
 
 preloader('.articles__inner')
