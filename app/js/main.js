@@ -37,29 +37,29 @@ serviceButton.addEventListener('click', () => {
 })
 
 var swiper = new Swiper(".mySwiper", {
-  direction: "vertical",
-  effect: 'coverflow',
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: 'auto',
-  autoplay: { delay: 3000, },
-  coverflowEffect: {
-    rotate: 0,
-    stretch: 32,
-    depth: 20,
-    modifier: 10,
-    slideShadows: true,
-  },
-  breakpoints: {
-    700: {
-      coverflowEffect: {
-      rotate: 0,
-      stretch: 52,
-      depth: 20,
-      modifier: 10,
-      slideShadows: true,
-      }
-    }
+  direction: "vertical", 
+  effect: 'coverflow', 
+  grabCursor: true, 
+  centeredSlides: true, 
+  slidesPerView: 'auto', 
+  autoplay: { delay: 3000, }, 
+  coverflowEffect: { 
+    rotate: 0, 
+    stretch: 32, 
+    depth: 20, 
+    modifier: 10, 
+    slideShadows: true, 
+  }, 
+  breakpoints: { 
+    700: { 
+      coverflowEffect: { 
+        rotate: 0, 
+        stretch: 52, 
+        depth: 20, 
+        modifier: 10, 
+        slideShadows: true, 
+      } 
+    } 
   },
 });
 

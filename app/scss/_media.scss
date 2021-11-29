@@ -19,14 +19,17 @@
   }
   .top__image {
     margin-top: 0px;
+    display: none;
   }
   .top__box {
     max-width: 100%;
   }
-  .top__inner {
+  .top__wrapper {
     margin-top: 90px;
     max-width: 768px;
     margin: 0 auto;
+  }
+  .top__inner {
     flex-wrap: wrap;
   }
 }
@@ -237,6 +240,17 @@
 }
 
 @media (max-width: 530px) {
+  .articles__title {
+    font-size: 32px !important;
+  }
+  .articles__item-title {
+    font-size: 24px;
+  }
+  .articles__item-footer {
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 16px !important;
+  }
   .top__info-buttons button {
     padding: 15px 25px !important;
   }

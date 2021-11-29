@@ -12,11 +12,13 @@
   }
   &__inner {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__wrapper {
     max-width: 1550px;
     margin: 0 auto;
     margin-top: 94px;
-    justify-content: space-between;
-    align-items: center;
   }
   
   &__box {
@@ -141,6 +143,11 @@
     justify-content: center;
     align-items: center;
   }
+  &__articles-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   &__image {
     padding: 30px 55px;
@@ -225,6 +232,38 @@
   }
 }
 
+.top-slide {
+      display: block;
+
+      padding: 0;
+      border-radius: 9px;
+      max-width: 390px;
+      background: #fff!important;
+      position: relative;
+      z-index: 100;
+      box-shadow: 2px 2px 10px rgba(#000, .1);
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 196px;
+        border-radius: 9px 9px 0 0;
+        background-position: center center;
+      }
+    
+    &__item-box {
+      box-shadow: 2px 2px 10px rgba(#000, .05);
+      border-radius: 9px;
+      position: relative;
+      z-index: 100;
+      background: #fff!important;
+      padding: 30px 27px;
+    }
+    &__item-title {
+      font-size: 20px;
+    }
+}
+
 .mySwiper {
   height: 700px;
   @media (max-width: 700px) {
@@ -257,4 +296,152 @@
   opacity: 1;
 }
 
+.articles {
+  &__item {
+    max-width: 450px;
+    width: 100%;
+    border-radius: 12px;
+    margin: 0 15px;
+    margin-bottom: 44px;
+    position: relative;
+    z-index: 100;
+    transition: 0.3s;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 10px 10px 10px rgba(#000, 0.03);
+    }
+
+    &.main.purple .articles__item-inner {
+      background: linear-gradient(359.97deg, #ae2bff 0.03%, #6642cb 121.68%) !important;
+    }
+    &.main.orange .articles__item-inner {
+      background: linear-gradient(359.97deg, #ff9d2b 0.03%, #cb8c42 118.57%);
+    }
+    &.main {
+      position: relative;
+      padding-top: 290px;
+      img {
+        position: absolute;
+        z-index: 111;
+        top: 0;
+        height: 448px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: none;
+      }
+      .articles__item-inner {
+        position: relative;
+        padding-top: 157px;
+        background: linear-gradient(357.23deg, #38a77a 2.31%, #42cb93 99.44%);
+        border-radius: 12px 12px 0px 0px;
+        .articles__item-title,
+        .articles__item-text {
+          color: #fff;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 157px;
+          top: 0;
+          // bottom: 157px;
+          background: linear-gradient(159.16deg, rgba(255, 255, 255, 0.08) 18%, rgba(29, 29, 29, 0.12) 91.03%);
+          border-radius: 12px 12px 0px 0px;
+        }
+      }
+    }
+  }
+
+  &__item-button {
+    background: linear-gradient(89.36deg, #000000 1.5%, #000000 23.41%, #000000 92.05%);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 13px 27px;
+    padding-left: 57px;
+    margin-top: 44px;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 148.34%;
+    /* identical to box height, or 27px */
+    letter-spacing: 0.035em;
+    color: #ffffff;
+    position: relative;
+    &::before {
+      content: "⚡";
+      position: absolute;
+      left: 15px;
+      font-size: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__item.big-article .articles__item-inner {
+    min-height: 370px;
+  }
+  &__item:not(.main) .articles__item-image {
+    // border-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: 0 0;
+    background-repeat: no-repeat;
+  }
+  &__item-inner {
+    background: #fff;
+    padding: 40px;
+  }
+  &__item-title {
+    font-size: 30px;
+    line-height: 42px;
+    color: #26262b;
+    font-family: "BPG Nino Mtavruli";
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  &__item-text {
+    font-family: "BPG Nino Mtavruli";
+    font-weight: 400;
+  }
+
+  &__item-footer {
+    background-color: rgba(226, 226, 226, 0.24);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    position: relative;
+    z-index: 10;
+    line-height: 148.34%;
+    letter-spacing: 0.035em;
+    color: #ababab;
+    padding: 36px 46px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+  &__item-time {
+    position: relative;
+    padding-left: 36px;
+    &::before {
+      content: "";
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 18px;
+      height: 20px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url("../../images/icons/time.svg");
+    }
+  }
+}
 @import "media";
