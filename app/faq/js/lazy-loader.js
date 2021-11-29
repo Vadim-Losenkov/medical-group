@@ -1,10 +1,12 @@
+
 const windowHeight = document.documentElement.clientHeight
 const deviceWidth = document.documentElement.clientWidth
 
 const $loadWrapper = document.querySelector('.faq__inner')
 const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
-
+// https://vadim-losenkov.ru/hosp
+// http://localhost:5500/app
 const url = (id) => `https://vadim-losenkov.ru/hosp/faq/data/post-${id}.json`
 const preloadTemplate = (index) => `
   <div data-modal-loader="${index}" class="articles__item loading">
@@ -17,56 +19,67 @@ const preloadTemplate = (index) => `
   </div>
 `
 
-window.addEventListener('scroll', scrollLoader)
-
 function scrollLoader() {
   const pos = $loadWrapper.getBoundingClientRect().top + pageYOffset
   const height = $loadWrapper.offsetHeight
   const condition = pageYOffset > (pos + height) - windowHeight && !$loadWrapper.classList.contains('loading')
-  if (condition && postNumber <= 15) {
+  if (condition && postNumber <= 18) {
     $loadWrapper.classList.add('loading')
     if (deviceWidth < 980) {
-      lazyLoading(3)
+      setTimeout(() => {
+        lazyLoading(3)
+      }, 100);
     } else if (deviceWidth <= 1393) {
-      lazyLoading(4)
+      setTimeout(() => {
+        lazyLoading(4)
+      }, 100);
     } else if (deviceWidth > 1393) {
-      lazyLoading(6)
+      setTimeout(() => {
+        lazyLoading(6)
+      }, 100);
     }
   }
 }
 
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 function lazyLoading(count) {
-  for (let i = 0; i < count; i++) {
+  for (let i = 0, p = Promise.resolve(); i < count; i++) {
     postNumber++
     const postURL = url(postNumber)
-    
-    const condition = postURL && postNumber <= 15
+    const condition = postURL && postNumber <= 18
 
     if (condition && $loadWrapper.classList.contains('loading')) {
-      axios.get(postURL).then((resp) => {
-        console.log(postURL);
-        $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
-        modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
-      })
+      p = p.then(() => delay(10))
+           .then(() => axios.get(postURL).then((resp) => {
+             $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
+             modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
+           }))
     }
   }
-  setTimeout(() => {
-    $loadWrapper.classList.remove('loading')
-  }, 1000);
+  $loadWrapper.classList.remove('loading')
 }
 
 function preloadLazy(count) {
-  for (let i = 0; i < count; i++) {
+  const $elements = $loadWrapper.querySelectorAll(`[data-modal-loader]`)
+  $elements.forEach($el => {
+    $el.parentNode.removeChild($el)
+  })
+
+  for (let i = 0, p = Promise.resolve(); i < count; i++) {
     postNumber++
+    
+    p = p.then(() => delay(10))
+         .then(() => axios.get(url(i + 1)).then((resp) => {
+          // $el && $el.parentNode.removeChild($el)
+    
+          $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
+          modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
 
-    const $el = $loadWrapper.querySelector(`[data-modal-loader="${i + 1}"]`)
-
-    axios.get(url(i + 1)).then((resp) => {
-      $el && $el.parentNode.removeChild($el)
-
-      $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
-      modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
-    })
+          if (i === count - 1) {
+            window.addEventListener('scroll', scrollLoader)
+          }
+        }))
   }
 }
 
@@ -84,8 +97,7 @@ function preloader(selector) {
   for (let i = 0; i < postsCount; i++) {
     $loadWrapper.insertAdjacentHTML('beforeend', preloadTemplate(i + 1))
   }
-
   preloadLazy(postsCount)
 }
 
-preloader('.service__inner')
+preloader('.faq__inner')

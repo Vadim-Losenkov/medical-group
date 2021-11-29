@@ -18,7 +18,8 @@ const preloadTemplate = (index, gradColor) => `
 </div>
 `
 
-window.addEventListener('scroll', scrollLoader)
+// https://vadim-losenkov.ru/hosp/
+// http://localhost:5500/app
 
 function scrollLoader() {
   const pos = $loadWrapper.getBoundingClientRect().top + pageYOffset
@@ -27,45 +28,60 @@ function scrollLoader() {
   if (condition && postNumber <= 11) {
     $loadWrapper.classList.add('loading')
     if (deviceWidth < 980) {
-      lazyLoading(3)
+      setTimeout(() => {
+        lazyLoading(3)
+      }, 100);
     } else if (deviceWidth <= 1393) {
-      lazyLoading(4)
+      setTimeout(() => {
+        lazyLoading(4)
+      }, 100);
     } else if (deviceWidth > 1393) {
-      lazyLoading(6)
+      setTimeout(() => {
+        lazyLoading(11)
+      }, 100);
     }
   }
 }
 
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 function lazyLoading(count) {
-  for (let i = 0; i < count; i++) {
+  for (let i = 0, p = Promise.resolve(); i < count; i++) {
     postNumber++
     const postURL = url(postNumber)
-    
     const condition = postURL && postNumber <= 11
 
     if (condition && $loadWrapper.classList.contains('loading')) {
-      axios.get(postURL).then((resp) => {
-        console.log(postURL);
-        $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
-        modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
-      })
+      p = p.then(() => delay(10))
+           .then(() => axios.get(postURL).then((resp) => {
+             $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
+             modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
+           }))
     }
   }
   $loadWrapper.classList.remove('loading')
 }
 
 function preloadLazy(count) {
-  for (let i = 0; i < count; i++) {
+  const $elements = $loadWrapper.querySelectorAll(`[data-modal-loader]`)
+  $elements.forEach($el => {
+    $el.parentNode.removeChild($el)
+  })
+
+  for (let i = 0, p = Promise.resolve(); i < count; i++) {
     postNumber++
+    
+    p = p.then(() => delay(10))
+         .then(() => axios.get(url(i + 1)).then((resp) => {
+          // $el && $el.parentNode.removeChild($el)
+    
+          $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
+          modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
 
-    const $el = $loadWrapper.querySelector(`[data-modal-loader="${i + 1}"]`)
-
-    axios.get(url(i + 1)).then((resp) => {
-      $el && $el.parentNode.removeChild($el)
-
-      $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
-      modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
-    })
+          if (i === count - 1) {
+            window.addEventListener('scroll', scrollLoader)
+          }
+        }))
   }
 }
 
@@ -83,8 +99,8 @@ function preloader(selector) {
   for (let i = 0; i < postsCount; i++) {
     $loadWrapper.insertAdjacentHTML('beforeend', preloadTemplate(i + 1))
   }
-
   preloadLazy(postsCount)
 }
 
-preloader('.articles__inner')
+preloader('.faq__inner')
+
