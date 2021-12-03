@@ -20,7 +20,6 @@
     margin: 0 auto;
     margin-top: 94px;
   }
-  
   &__box {
     max-width: 492px;
     margin-top: 60px;
@@ -297,6 +296,9 @@
 }
 
 .articles {
+  &-swiper {
+    display: none;
+  }
   &__item {
     max-width: 450px;
     width: 100%;
@@ -309,7 +311,6 @@
     
     &:hover {
       transform: translateY(-10px);
-      box-shadow: 10px 10px 10px rgba(#000, 0.03);
     }
 
     &.main.purple .articles__item-inner {
@@ -397,6 +398,9 @@
   &__item-inner {
     background: #fff;
     padding: 40px;
+    padding-bottom: 30px;
+    border-radius: 0 0 9px 9px;
+    box-shadow: 2px 2px 10px rgba(#000, .07);
   }
   &__item-title {
     font-size: 30px;
@@ -412,7 +416,7 @@
   }
 
   &__item-footer {
-    background-color: rgba(226, 226, 226, 0.24);
+    background-color: #f6f6f6;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -471,3 +471,9 @@ body {
     animation: 0 !important;
   }
 }
+
+@media (max-width: 320px) {
+  body {
+    zoom: 80%!important;
+  }
+}

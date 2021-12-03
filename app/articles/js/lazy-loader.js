@@ -28,11 +28,11 @@ function scrollLoader() {
       setTimeout(() => {
         lazyLoading(3)
       }, 100);
-    } else if (deviceWidth <= 1393) {
+    } else if (deviceWidth <= 1200) {
       setTimeout(() => {
         lazyLoading(4)
       }, 100);
-    } else if (deviceWidth > 1393) {
+    } else if (deviceWidth > 1200) {
       setTimeout(() => {
         lazyLoading(18)
       }, 100);
@@ -87,9 +87,9 @@ function preloader(selector) {
 
   if (deviceWidth < 980) {
     postsCount = 3
-  } else if (deviceWidth <= 1393) {
+  } else if (deviceWidth <= 1200) {
     postsCount = 4
-  } else if (deviceWidth > 1393) {
+  } else if (deviceWidth > 1200) {
     postsCount = 18
   }
 

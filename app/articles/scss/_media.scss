@@ -1,3 +1,12 @@
+@media (max-width: 1430px) {
+  .articles__inner {
+    max-width: 1140px;
+  }
+  .articles__item.main.orange {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
 @media (max-width: 1366px) {
   body {
     zoom: 90%;
@@ -234,6 +243,12 @@
       top: -50px;
       left: 70%;
     }
+  }
+}
+@media (max-width: 800px) {
+  .articles__item.main.orange {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 @media (max-width: 420px) {

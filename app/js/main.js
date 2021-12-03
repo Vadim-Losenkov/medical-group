@@ -36,7 +36,7 @@ serviceButton.addEventListener('click', () => {
   serviceContent.classList.toggle('active')
 })
 
-var swiper = new Swiper(".mySwiper", {
+new Swiper(".mySwiper", {
   direction: "vertical", 
   effect: 'coverflow', 
   grabCursor: true, 
@@ -62,5 +62,30 @@ var swiper = new Swiper(".mySwiper", {
     } 
   },
 });
+new Swiper(".articles-swiper", {
+  direction: "vertical", 
+  effect: 'coverflow', 
+  grabCursor: true, 
+  centeredSlides: true, 
+  slidesPerView: 'auto', 
+  autoplay: { delay: 3000, }, 
+  coverflowEffect: { 
+    rotate: 0, 
+    stretch: 58, 
+    depth: 20, 
+    modifier: 10, 
+    slideShadows: false, 
+  }, 
+  breakpoints: { 
+    700: { 
+      coverflowEffect: { 
+        rotate: 0, 
+        stretch: 58, 
+        depth: 20, 
+        modifier: 10, 
+        slideShadows: false, 
+      } 
+    } 
+  },
+});
 
-new WOW().init();
