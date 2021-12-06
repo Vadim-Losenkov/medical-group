@@ -1,4 +1,3 @@
-
 const windowHeight = document.documentElement.clientHeight
 const deviceWidth = document.documentElement.clientWidth
 
@@ -40,7 +39,13 @@ function scrollLoader() {
   }
 }
 
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+const request = url => new Promise((resolve, reject) => {
+  axios.get(url).then((resp) => {
+    setTimeout(() => {
+      resolve(resp)
+    }, 10)
+  })
+})
 
 function lazyLoading(count) {
   for (let i = 0, p = Promise.resolve(); i < count; i++) {
@@ -49,36 +54,33 @@ function lazyLoading(count) {
     const condition = postURL && postNumber <= 18
 
     if (condition && $loadWrapper.classList.contains('loading')) {
-      p = p.then(() => delay(10))
-           .then(() => axios.get(postURL).then((resp) => {
+      p = p.then(() => request(postURL))
+         .then((resp) => {
              $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
              modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
-           }))
+         })
     }
   }
   $loadWrapper.classList.remove('loading')
 }
-
 function preloadLazy(count) {
   const $elements = $loadWrapper.querySelectorAll(`[data-modal-loader]`)
   $elements.forEach($el => {
     $el.parentNode.removeChild($el)
   })
-
+  console.log(count);
   for (let i = 0, p = Promise.resolve(); i < count; i++) {
     postNumber++
     
-    p = p.then(() => delay(10))
-         .then(() => axios.get(url(i + 1)).then((resp) => {
-          // $el && $el.parentNode.removeChild($el)
-    
-          $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
-          modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
+    p = p.then(() => request(url(i + 1)))
+         .then((resp) => {
+             $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
+             modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
 
-          if (i === count - 1) {
-            window.addEventListener('scroll', scrollLoader)
-          }
-        }))
+             if (i === count - 1) {
+              window.addEventListener('scroll', scrollLoader)
+            }
+         })
   }
 }
 

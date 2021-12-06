@@ -31,19 +31,25 @@ function scrollLoader() {
       setTimeout(() => {
         lazyLoading(3)
       }, 100);
-    } else if (deviceWidth <= 1393) {
+    } else if (deviceWidth <= 1200) {
       setTimeout(() => {
         lazyLoading(4)
       }, 100);
-    } else if (deviceWidth > 1393) {
+    } else if (deviceWidth > 1200) {
       setTimeout(() => {
-        lazyLoading(6)
+        lazyLoading(18)
       }, 100);
     }
   }
 }
 
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+const request = url => new Promise((resolve, reject) => {
+  axios.get(url).then((resp) => {
+    setTimeout(() => {
+      resolve(resp)
+    }, 10)
+  })
+})
 
 function lazyLoading(count) {
   for (let i = 0, p = Promise.resolve(); i < count; i++) {
@@ -52,36 +58,33 @@ function lazyLoading(count) {
     const condition = postURL && postNumber <= 18
 
     if (condition && $loadWrapper.classList.contains('loading')) {
-      p = p.then(() => delay(10))
-           .then(() => axios.get(postURL).then((resp) => {
+      p = p.then(() => request(postURL))
+         .then((resp) => {
              $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
              modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
-           }))
+         })
     }
   }
   $loadWrapper.classList.remove('loading')
 }
-
 function preloadLazy(count) {
   const $elements = $loadWrapper.querySelectorAll(`[data-modal-loader]`)
   $elements.forEach($el => {
     $el.parentNode.removeChild($el)
   })
-
+  console.log(count);
   for (let i = 0, p = Promise.resolve(); i < count; i++) {
     postNumber++
     
-    p = p.then(() => delay(10))
-         .then(() => axios.get(url(i + 1)).then((resp) => {
-          // $el && $el.parentNode.removeChild($el)
-    
-          $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
-          modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
+    p = p.then(() => request(url(i + 1)))
+         .then((resp) => {
+             $loadWrapper.insertAdjacentHTML('beforeend', resp.data.post)
+             modalsList.insertAdjacentHTML('beforeend', resp.data.modal)
 
-          if (i === count - 1) {
-            window.addEventListener('scroll', scrollLoader)
-          }
-        }))
+             if (i === count - 1) {
+              window.addEventListener('scroll', scrollLoader)
+            }
+         })
   }
 }
 
@@ -90,10 +93,10 @@ function preloader(selector) {
 
   if (deviceWidth < 980) {
     postsCount = 3
-  } else if (deviceWidth <= 1393) {
+  } else if (deviceWidth <= 1200) {
     postsCount = 4
-  } else if (deviceWidth > 1393) {
-    postsCount = 6
+  } else if (deviceWidth > 1200) {
+    postsCount = 18
   }
 
   for (let i = 0; i < postsCount; i++) {
