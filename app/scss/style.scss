@@ -265,6 +265,11 @@
 
 .mySwiper {
   height: 700px;
+  img {
+    object-fit: cover;
+    object-position: top center;
+  }
+  
   @media (max-width: 700px) {
     height: 500px;
   }
@@ -275,8 +280,8 @@
   padding-bottom: 50px;
 }
 .mySwiper .swiper-slide {
-  background-position: center;
-  background-size: cover;
+  object-fit: cover;
+  object-position: top center;
   width: 700px;
   height: 600px;
   border-radius: 40px;
