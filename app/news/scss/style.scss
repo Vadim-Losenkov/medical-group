@@ -52,7 +52,6 @@
       transform: translateY(30px) scale(1, 1);
     }
   }
-
   &__block {
     max-width: 681px;
     width: 100%;
@@ -113,7 +112,9 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 100%;
+    min-height: 100%;
+    max-width: 320px;
+    object-fit: cover;
   }
   &__card.green {
     background: linear-gradient(314.75deg, #37bb85 25.08%, #42cb93 102.34%);
@@ -318,7 +319,6 @@
       text-decoration: underline;
     }
   }
-  
   &__price {
     display: flex;
     align-items: flex-end;

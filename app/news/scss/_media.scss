@@ -227,6 +227,11 @@
       &.head .news__mobile-text {
         color: #000 !important;
       }
+      &.head {
+        img {
+          object-fit: cover;
+        }
+      }
       &.head .news__mobile-inner {
         padding-top: 112px;
         &::before {
