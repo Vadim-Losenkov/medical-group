@@ -323,7 +323,6 @@
   margin: 0 auto;
   padding: 30px 0;
 
-  &:not(.main) {
     img {
       object-fit: cover;
       background-repeat: no-repeat;
@@ -332,7 +331,6 @@
       max-height: 353px;
       border-radius: 21px 21px 0 0;
     }
-  }
 
   &__inner {
     position: relative;
