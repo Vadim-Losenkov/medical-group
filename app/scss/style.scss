@@ -391,11 +391,9 @@
     min-height: 370px;
   }
   &__item:not(.main) .articles__item-image {
-    // border-radius: 12px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-radius: 12px;
     width: 100%;
-    max-height: 200px;
+    max-height: 300px;
     object-fit: cover;
     object-position: 0 0;
     background-repeat: no-repeat;
@@ -452,5 +450,12 @@
       background-image: url("../../images/icons/time.svg");
     }
   }
+}
+
+.articles-swiper .swiper-slide {
+  opacity: .6;
+}
+.articles-swiper .swiper-slide-active {
+  opacity: 1;
 }
 @import "media";

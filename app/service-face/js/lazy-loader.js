@@ -6,6 +6,7 @@ const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
 
 // https://vadim-losenkov.ru/hosp/
+// const url = (id) => `https://61b3a14eaf5ff70017ca2023.mockapi.io/service-face/${id}`
 const url = (id) => `https://vadim-losenkov.ru/hosp/service-face/data/post-${id}.json`
 const preloadTemplate = (index, gradColor) => `
 <div data-modal-loader="${index}" class="service__item onloading" data-effect="mfp-zoom-in" >
@@ -106,4 +107,12 @@ function preloader(selector) {
   preloadLazy(postsCount)
 }
 preloader('.faq__inner')
-
+/* const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+for (let i = 0, p = Promise.resolve(); i < 12; i++) {
+  p = p.then(() => delay(1000))
+       .then(() => {
+        axios.get(`http://localhost:8003/service-face/data/post-${i}.json`).then((resp) => {
+          axios.post('https://61b3a14eaf5ff70017ca2023.mockapi.io/service-face', resp.data)
+        })
+       })
+} */

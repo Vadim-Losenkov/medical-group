@@ -115,11 +115,14 @@
     min-height: 100%;
     max-width: 320px;
     object-fit: cover;
+    
   }
   &__card.green {
     background: linear-gradient(314.75deg, #37bb85 25.08%, #42cb93 102.34%);
   }
   &__card.left .news__card-image {
+    max-width: 320px;
+    object-fit: cover;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -133,7 +136,7 @@
   &__card.pink {
     min-height: 358px;
     .news__card-image {
-      height: auto;
+      height: calc(100% + 60px);
     }
   }
   &__card.purple {
@@ -196,14 +199,12 @@
     border-radius: 23px;
     padding-right: 10px;
     transition: .3s;
-    &:hover {
-      transform: translateX(10px);
-      box-shadow: 10px 10px 20px rgba(#000, 0.08);
-    }
+    
   }
   &__item-image {
     width: 245px;
     height: 257px;
+    object-fit: cover;
   }
   &__item-box {
     padding: 30px 0;

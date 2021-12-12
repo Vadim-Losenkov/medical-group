@@ -60,7 +60,6 @@
       }
       &.open::before {
         transform: translateY(-70%) rotate(180deg);
-        
       }
     }
     &__burger {
@@ -200,10 +199,6 @@
       z-index: 10;
       transition: 0.3s;
       display: block;
-      &:hover {
-        transform: translateY(-10px);
-        box-shadow: 10px 10px 10px rgba(#000, 0.03);
-      }
 
       &.main.purple {
         padding-top: 0;
@@ -261,10 +256,8 @@
           height: 157px;
           width: 100%;
           left: 0;
-        }
-        &:hover {
-          transform: translateY(-10px);
-          box-shadow: none;
+          object-fit: cover;
+          
         }
         .news__mobile-inner {
           position: relative;

@@ -71,9 +71,9 @@ new Swiper(".articles-swiper", {
   autoplay: { delay: 3000, }, 
   coverflowEffect: { 
     rotate: 0, 
-    stretch: 58, 
-    depth: 20, 
-    modifier: 10, 
+    stretch: 125, 
+    depth: 10, 
+    modifier: 5, 
     slideShadows: false, 
   }, 
   breakpoints: { 
