@@ -5,7 +5,9 @@ const $loadWrapper = document.querySelector('.service__inner')
 const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
 
-const url = (id) => `https://vadim-losenkov.ru/hosp/service-laser/data/post-${id}.json`
+// const url = (id) => `https://vadim-losenkov.ru/hosp/service-laser/data/post-${id}.json`
+const url = (id) => `../service-laser/data/post-${id}.json`
+
 const preloadTemplate = (index, gradColor) => `
 <div data-modal-loader="${index}" class="service__item onloading" data-effect="mfp-zoom-in" >
   <div style="background: ${gradColor ? gradColor : 'none'};" class="service__item-grad grad service-grad item-1"></div>
@@ -29,11 +31,11 @@ function scrollLoader() {
     $loadWrapper.classList.add('loading')
     if (deviceWidth < 980) {
       setTimeout(() => {
-        lazyLoading(3)
+        lazyLoading(6)
       }, 100);
     } else if (deviceWidth <= 1200) {
       setTimeout(() => {
-        lazyLoading(4)
+        lazyLoading(6)
       }, 100);
     } else if (deviceWidth > 1200) {
       setTimeout(() => {
@@ -92,9 +94,9 @@ function preloader(selector) {
   let postsCount = 6
 
   if (deviceWidth < 980) {
-    postsCount = 3
+    postsCount = 6
   } else if (deviceWidth <= 1200) {
-    postsCount = 4
+    postsCount = 6
   } else if (deviceWidth > 1200) {
     postsCount = 18
   }
@@ -104,6 +106,4 @@ function preloader(selector) {
   }
   preloadLazy(postsCount)
 }
-
 preloader('.faq__inner')
-

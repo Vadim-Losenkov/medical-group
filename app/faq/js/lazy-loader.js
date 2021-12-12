@@ -7,7 +7,9 @@ const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
 // https://vadim-losenkov.ru/hosp
 // http://localhost:5500/app
-const url = (id) => `https://vadim-losenkov.ru/hosp/faq/data/post-${id}.json`
+// const url = (id) => `https://vadim-losenkov.ru/hosp/faq/data/post-${id}.json`
+const url = (id) => `../faq/data/post-${id}.json`
+
 const preloadTemplate = (index) => `
   <div data-modal-loader="${index}" class="articles__item loading">
     <div class="articles__item-inner">
@@ -27,11 +29,11 @@ function scrollLoader() {
     $loadWrapper.classList.add('loading')
     if (deviceWidth < 980) {
       setTimeout(() => {
-        lazyLoading(3)
+        lazyLoading(6)
       }, 100);
     } else if (deviceWidth <= 1200) {
       setTimeout(() => {
-        lazyLoading(4)
+        lazyLoading(6)
       }, 100);
     } else if (deviceWidth > 1200) {
       setTimeout(() => {
@@ -90,9 +92,9 @@ function preloader(selector) {
   let postsCount = 6
 
   if (deviceWidth < 980) {
-    postsCount = 3
+    postsCount = 6
   } else if (deviceWidth <= 1200) {
-    postsCount = 4
+    postsCount = 6
   } else if (deviceWidth > 1200) {
     postsCount = 18
   }

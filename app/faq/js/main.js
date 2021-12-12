@@ -75,4 +75,4 @@ function addElement(e) {
   this.appendChild(addDiv);
 }
 
-new WOW().init();
+// new WOW().init();
