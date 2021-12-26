@@ -236,7 +236,7 @@
       .green img {
         background: linear-gradient(182.43deg, #ffffff 37.94%, rgba(255, 255, 255, 0) 110.6%);
       }
-
+      
       &.main {
         position: relative;
         padding-top: 150px;
@@ -244,7 +244,7 @@
         img.news-head {
           position: absolute;
           z-index: 111;
-          top: 0;
+          top: 60px;
           height: 308px;
           left: 50%;
           transform: translateX(-50%);

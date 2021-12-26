@@ -121,12 +121,15 @@
     }
     &.main {
       position: relative;
-      padding-top: 290px;
+      padding-top: 112px;
       img {
         position: absolute;
         z-index: 111;
         top: 0;
-        height: 448px;
+        height: 270px;
+        width: 100%;
+        object-fit: cover;
+        // object-position: center bottom;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -157,6 +160,10 @@
       }
     }
     &.main.orange {
+      padding-top: 100px;
+      img {
+        height: 258px;
+      }
     }
   }
 

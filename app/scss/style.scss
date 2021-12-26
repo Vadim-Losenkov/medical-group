@@ -452,10 +452,23 @@
   }
 }
 
+.articles-swiper {
+  max-height: 380px;
+}
 .articles-swiper .swiper-slide {
+  img {
+    height: 300px;
+  }
   opacity: .6;
+  height: 300px;
+  height: auto;
 }
 .articles-swiper .swiper-slide-active {
+  img {
+    height: 300px;
+  }
+  height: 300px;
   opacity: 1;
+  height: auto;
 }
 @import "media";

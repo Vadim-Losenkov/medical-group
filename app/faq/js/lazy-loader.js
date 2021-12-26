@@ -10,6 +10,9 @@ let postNumber = 0
 // const url = (id) => `https://vadim-losenkov.ru/hosp/faq/data/post-${id}.json`
 const url = (id) => `../faq/data/post-${id}.json`
 
+let openPopup
+let popupNumber
+
 const preloadTemplate = (index) => `
   <div data-modal-loader="${index}" class="articles__item loading">
     <div class="articles__item-inner">
@@ -83,20 +86,21 @@ function preloadLazy(count) {
 
              if (i === count - 1) {
               window.addEventListener('scroll', scrollLoader)
+              openPopup && document.querySelector(`[href="${window.location.hash}"]`).click()
             }
          })
   }
 }
 
-function preloader(selector) {
-  let postsCount = 6
+function preloader(selector, count = 6) {
+  let postsCount = count
 
   if (deviceWidth < 980) {
-    postsCount = 6
+    postsCount = count
   } else if (deviceWidth <= 1200) {
-    postsCount = 6
+    postsCount = count
   } else if (deviceWidth > 1200) {
-    postsCount = 18
+    postsCount = 15
   }
 
   for (let i = 0; i < postsCount; i++) {
@@ -104,4 +108,12 @@ function preloader(selector) {
   }
   preloadLazy(postsCount)
 }
-preloader('.faq__inner')
+
+window.onload = function() {
+  openPopup = window.location.hash.startsWith('#modal-item-')
+  if (openPopup) {
+    preloader('.faq__inner', 15)
+  } else {
+    preloader('.faq__inner')
+  }
+}

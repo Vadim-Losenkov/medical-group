@@ -222,7 +222,7 @@
       padding-top: 112px;
     }
   }
-  .articles__item.main:not(:first-child) {
+  /* .articles__item.main:not(:first-child) {
     padding-top: 0;
     img {
       display: none;
@@ -233,7 +233,7 @@
         display: none;
       }
     }
-  }
+  } */
   .articles-plants {
     &::before {
       right: 70%;

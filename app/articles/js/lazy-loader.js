@@ -4,6 +4,10 @@ const deviceWidth = document.documentElement.clientWidth
 const $loadWrapper = document.querySelector('.articles__inner')
 const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
+
+let openPopup
+// let popupNumber
+
 // https://vadim-losenkov.ru/hosp
 // const url = (id) => `https://vadim-losenkov.ru/hosp/articles/data/post-${id}.json`
 const url = (id) => `../articles/data/post-${id}.json`
@@ -80,18 +84,19 @@ function preloadLazy(count) {
 
              if (i === count - 1) {
               window.addEventListener('scroll', scrollLoader)
+              openPopup && document.querySelector(`[href="${window.location.hash}"]`).click()
             }
          })
   }
 }
 
-function preloader(selector) {
-  let postsCount = 6
+function preloader(selector, count = 6) {
+  let postsCount = count
 
   if (deviceWidth < 980) {
-    postsCount = 6
+    postsCount = count
   } else if (deviceWidth <= 1200) {
-    postsCount = 6
+    postsCount = count
   } else if (deviceWidth > 1200) {
     postsCount = 18
   }
@@ -101,4 +106,12 @@ function preloader(selector) {
   }
   preloadLazy(postsCount)
 }
-preloader('.faq__inner')
+
+window.onload = function() {
+  openPopup = window.location.hash.startsWith('#articles-modal-')
+  if (openPopup) {
+    preloader('.faq__inner', 18)
+  } else {
+    preloader('.faq__inner')
+  }
+}

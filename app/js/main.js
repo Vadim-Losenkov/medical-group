@@ -42,7 +42,10 @@ new Swiper(".mySwiper", {
   grabCursor: true, 
   centeredSlides: true, 
   slidesPerView: 'auto', 
-  autoplay: { delay: 3000, }, 
+  autoplay: { 
+    delay: 3000,
+    disableOnInteraction: false
+  }, 
   coverflowEffect: { 
     rotate: 0, 
     stretch: 32, 
@@ -68,11 +71,14 @@ new Swiper(".articles-swiper", {
   grabCursor: true, 
   centeredSlides: true, 
   slidesPerView: 'auto', 
-  autoplay: { delay: 3000, }, 
+  autoplay: { 
+    delay: 3000,
+    disableOnInteraction: false
+  }, 
   coverflowEffect: { 
     rotate: 0, 
-    stretch: 125, 
-    depth: 10, 
+    stretch: 65, 
+    depth: 15, 
     modifier: 5, 
     slideShadows: false, 
   }, 

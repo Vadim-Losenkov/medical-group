@@ -5,9 +5,12 @@ const $loadWrapper = document.querySelector('.service__inner')
 const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
 
-// https://vadim-losenkov.ru/hosp/
-// const url = (id) => `https://61b3a14eaf5ff70017ca2023.mockapi.io/service-face/${id}`
+let openPopup
+let popupNumber
+
+// const url = (id) => `https://vadim-losenkov.ru/hosp/service-body/data/post-${id}.json`
 const url = (id) => `../service-face/data/post-${id}.json`
+
 const preloadTemplate = (index, gradColor) => `
 <div data-modal-loader="${index}" class="service__item onloading" data-effect="mfp-zoom-in" >
   <div style="background: ${gradColor ? gradColor : 'none'};" class="service__item-grad grad service-grad item-1"></div>
@@ -20,7 +23,7 @@ const preloadTemplate = (index, gradColor) => `
 </div>
 `
 
-// https://vadim-losenkov.ru/hosp/
+// https://vadim-losenkov.ru/hosp
 // http://localhost:5500/app
 
 function scrollLoader() {
@@ -85,20 +88,21 @@ function preloadLazy(count) {
 
              if (i === count - 1) {
               window.addEventListener('scroll', scrollLoader)
+              openPopup && document.querySelector(`[href="${window.location.hash}"]`).click()
             }
          })
   }
 }
 
-function preloader(selector) {
-  let postsCount = 6
+function preloader(selector, count = 5) {
+  let postsCount = count
 
   if (deviceWidth < 980) {
-    postsCount = 6
+    postsCount = count
   } else if (deviceWidth <= 1200) {
-    postsCount = 6
+    postsCount = count
   } else if (deviceWidth > 1200) {
-    postsCount = 18
+    postsCount = 11
   }
 
   for (let i = 0; i < postsCount; i++) {
@@ -106,14 +110,12 @@ function preloader(selector) {
   }
   preloadLazy(postsCount)
 }
-preloader('.faq__inner')
 
-/* const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-for (let i = 0, p = Promise.resolve(); i < 12; i++) {
-  p = p.then(() => delay(1000))
-       .then(() => {
-        axios.get(`http://localhost:8003/service-face/data/post-${i}.json`).then((resp) => {
-          axios.post('https://61b3a14eaf5ff70017ca2023.mockapi.io/service-face', resp.data)
-        })
-       })
-} */
+window.onload = function() {
+  openPopup = window.location.hash.startsWith('#service-modal-')
+  if (openPopup) {
+    preloader('.faq__inner', 11)
+  } else {
+    preloader('.faq__inner')
+  }
+}
