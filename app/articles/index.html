@@ -111,7 +111,14 @@
   <script src="../js/popup.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/axios.min.js"></script>
-  <script src="js/lazy-loader.js"></script>
+  <script src="../js/post-loader.js"></script>
+  <script>
+    postLoader({
+      folder: 'articles',
+      postsSelector: '.articles__inner'
+    })
+  </script>
+  <!-- <script src="js/lazy-loader.js"></script> -->
 </body>
 
 </html>

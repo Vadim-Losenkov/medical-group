@@ -28,12 +28,8 @@ $(function () {
     removalDelay: 500, //delay removal by X to allow out-animation
     callbacks: {
       beforeOpen: function () {
-        window.location.hash = this.st.el[0].hash
         this.st.mainClass = this.st.el.attr('data-effect');
-      },
-      afterClose: function() {
-        window.location.hash = ''
-      },
+      }
     },
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });

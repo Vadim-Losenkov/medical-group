@@ -28,12 +28,8 @@ $(function () {
       removalDelay: 500, //delay removal by X to allow out-animation
       callbacks: {
         beforeOpen: function () {
-          window.location.hash = this.st.el[0].hash
           this.st.mainClass = this.st.el.attr('data-effect');
-        },
-        afterClose: function() {
-          window.location.hash = ''
-        },
+        }
       },
       midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
     });
@@ -44,15 +40,6 @@ $(function () {
       $('.header-mobile__dropdown').slideToggle(300)
     })
 })
-
-
-window.onload = function() {
-  openPopup = window.location.hash.startsWith('#modal-item-')
-  if (openPopup) {
-    document.querySelector(`[href="${window.location.hash}"]`).click()
-  }
-}
-
 
 const headerButton = document.querySelector('.header-mobile__burger')
 const headerContent = document.querySelector('.header-mobile__content')

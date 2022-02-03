@@ -5,10 +5,7 @@ const $loadWrapper = document.querySelector('.service__inner')
 const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
 
-let openPopup
-let popupNumber
-
-// const url = (id) => `https://vadim-losenkov.ru/hosp/service-body/data/post-${id}.json`
+// const url = (id) => `https://vadim-losenkov.ru/hosp/service-laser/data/post-${id}.json`
 const url = (id) => `../service-laser/data/post-${id}.json`
 
 const preloadTemplate = (index, gradColor) => `
@@ -88,21 +85,20 @@ function preloadLazy(count) {
 
              if (i === count - 1) {
               window.addEventListener('scroll', scrollLoader)
-              openPopup && document.querySelector(`[href="${window.location.hash}"]`).click()
             }
          })
   }
 }
 
-function preloader(selector, count = 5) {
-  let postsCount = count
+function preloader(selector) {
+  let postsCount = 6
 
   if (deviceWidth < 980) {
-    postsCount = count
-  } else if (deviceWidth <= 1200) {
-    postsCount = count
-  } else if (deviceWidth > 1200) {
     postsCount = 6
+  } else if (deviceWidth <= 1200) {
+    postsCount = 6
+  } else if (deviceWidth > 1200) {
+    postsCount = 18
   }
 
   for (let i = 0; i < postsCount; i++) {
@@ -110,12 +106,4 @@ function preloader(selector, count = 5) {
   }
   preloadLazy(postsCount)
 }
-
-window.onload = function() {
-  openPopup = window.location.hash.startsWith('#service-modal-')
-  if (openPopup) {
-    preloader('.faq__inner', 6)
-  } else {
-    preloader('.faq__inner')
-  }
-}
+preloader('.faq__inner')

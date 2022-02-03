@@ -6,7 +6,7 @@ const modalsList = document.querySelector('.modals-list')
 let postNumber = 0
 
 let openPopup
-// let popupNumber
+let popupNumber
 
 // https://vadim-losenkov.ru/hosp
 // const url = (id) => `https://vadim-losenkov.ru/hosp/articles/data/post-${id}.json`
@@ -84,7 +84,7 @@ function preloadLazy(count) {
 
              if (i === count - 1) {
               window.addEventListener('scroll', scrollLoader)
-              openPopup && document.querySelector(`[href="${window.location.hash}"]`).click()
+              openPopup && $('.articles__inner').magnificPopup('open', popupNumber)
             }
          })
   }
@@ -110,6 +110,8 @@ function preloader(selector, count = 6) {
 window.onload = function() {
   openPopup = window.location.hash.startsWith('#articles-modal-')
   if (openPopup) {
+    popupNumber = (+window.location.hash.slice(-1)) - 1
+    console.log(popupNumber);
     preloader('.faq__inner', 18)
   } else {
     preloader('.faq__inner')
