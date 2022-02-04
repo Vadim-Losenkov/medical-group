@@ -24,19 +24,20 @@ $(function () {
   $('.service__inner').magnificPopup({
     delegate: '.service__item',
     type: 'inline',
-
     removalDelay: 500, //delay removal by X to allow out-animation
     callbacks: {
       beforeOpen: function () {
+        window.location.hash = this.st.el[0].hash
         this.st.mainClass = this.st.el.attr('data-effect');
-      }
+      },
+      afterClose: function() {
+        window.location.hash = ''
+      },
     },
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });
   $('.header-mobile__nav-link.vis').on('click', () => {
-
       $('.header-mobile__nav-link.vis').toggleClass('open')
-
       $('.header-mobile__dropdown').slideToggle(300)
     })
 })

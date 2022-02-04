@@ -109,10 +109,16 @@
   <div class="modals-list"></div>
 
   <script src="js/axios.min.js"></script>
-  <script src="js/lazy-loader.js"></script>
   <script src="../js/jquery.min.js"></script>
   <script src="../js/wow.min.js"></script>
   <script src="../js/popup.min.js"></script>
+  <script src="../js/post-loader.js"></script>
+  <script>
+    postLoader({
+      folder: ['faq'],
+      postsSelector: '.faq__inner'
+    })
+  </script>
   <script src="js/main.js"></script>
 </body>
 
